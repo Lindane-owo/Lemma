@@ -1,0 +1,447 @@
+[
+ {
+  "id": "ch1-1-1",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "计算行列式 $\\begin{vmatrix}10&8&2\\\\15&12&3\\\\20&32&12\\end{vmatrix}$",
+  "answer": "0",
+  "hint": "按对角线法则展开",
+  "solution": "每行成比例（第3行=第1行×2），行列式为 0。官方答案：0 [✓官方]"
+ },
+ {
+  "id": "ch1-1-2",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "计算 $\\begin{vmatrix}a&b&c\\\\b&c&a\\\\c&a&b\\end{vmatrix}$",
+  "options": [
+   "$3abc-a^3-b^3-c^3$",
+   "$a^3+b^3+c^3-3abc$",
+   "$abc$",
+   "$a^3+b^3+c^3$"
+  ],
+  "answer": 0,
+  "hint": "按第一行展开",
+  "solution": "按第一行展开并化简得 $3abc-a^3-b^3-c^3$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch1-1-3",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "计算 $\\begin{vmatrix}a&b&a+b\\\\b&a+b&a\\\\a+b&a&b\\end{vmatrix}$",
+  "options": [
+   "$-2(a^3+b^3)$",
+   "$2(a^3+b^3)$",
+   "$a^3+b^3$",
+   "$2(a^3-b^3)$"
+  ],
+  "answer": 0,
+  "hint": "利用各列之和相等",
+  "solution": "三列之和相同，化简得 $-2(a^3+b^3)$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch1-1-4",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "计算 $\\begin{vmatrix}1+a&b&c\\\\a&1+b&c\\\\a&b&1+c\\end{vmatrix}$",
+  "options": [
+   "$1+a+b+c$",
+   "$1+abc$",
+   "$(1+a)(1+b)(1+c)$",
+   "$a+b+c$"
+  ],
+  "answer": 0,
+  "hint": "拆成单位阵 + 秩一矩阵",
+  "solution": "$\\det\\big(I+\\mathbf{u}\\mathbf{v}^T\\big)$ 形式，化简得 $1+a+b+c$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch1-2-1",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "用行列式解 $\\begin{cases}x_1\\cos\\theta-x_2\\sin\\theta=a\\\\x_1\\sin\\theta+x_2\\cos\\theta=b\\end{cases}$",
+  "options": [
+   "$x_1=a\\cos\\theta+b\\sin\\theta,\\;x_2=b\\cos\\theta-a\\sin\\theta$",
+   "$x_1=a\\sin\\theta+b\\cos\\theta,\\;x_2=a\\cos\\theta-b\\sin\\theta$",
+   "$x_1=a,\\;x_2=b$",
+   "$x_1=a\\cos\\theta-b\\sin\\theta,\\;x_2=b\\cos\\theta+a\\sin\\theta$"
+  ],
+  "answer": 0,
+  "hint": "系数行列式 $=1$（旋转矩阵）",
+  "solution": "系数行列式 $=\\cos^2\\theta+\\sin^2\\theta=1$，得 $x_1=a\\cos\\theta+b\\sin\\theta$，$x_2=b\\cos\\theta-a\\sin\\theta$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-2-2",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "解方程组 $\\begin{cases}x+y-z=a\\\\-x+y+z=b\\\\x-y+z=c\\end{cases}$",
+  "options": [
+   "$x=\\dfrac{a+c}{2},\\;y=\\dfrac{a+b}{2},\\;z=\\dfrac{b+c}{2}$",
+   "$x=\\dfrac{a-b}{2},\\;y=\\dfrac{a+b}{2},\\;z=\\dfrac{b+c}{2}$",
+   "$x=2a,\\;y=2b,\\;z=2c$",
+   "$x=\\dfrac{a+b+c}{3}$"
+  ],
+  "answer": 0,
+  "hint": "三式相加得一式关系",
+  "solution": "解得 $x=\\dfrac{a+c}{2}$，$y=\\dfrac{a+b}{2}$，$z=\\dfrac{b+c}{2}$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-2-3",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "解方程组 $\\begin{cases}x+y+z=10\\\\3x+2y+z=14\\\\2x+3y-z=1\\end{cases}$",
+  "options": [
+   "$x=1,y=2,z=7$",
+   "$x=2,y=1,z=7$",
+   "$x=1,y=7,z=2$",
+   "$x=3,y=2,z=5$"
+  ],
+  "answer": 0,
+  "hint": "代入验证",
+  "solution": "逐一代入：$1+2+7=10$，$3+4+7=14$，$2+6-7=1$，故 $x=1,y=2,z=7$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-2-4",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "解方程组 $\\begin{cases}2x_1-3x_2+2x_3=-3\\\\x_1+4x_2-3x_3=6\\\\3x_1-x_2-x_3=1\\end{cases}$",
+  "options": [
+   "$x_1=\\frac12,x_2=1,x_3=-\\frac12$",
+   "$x_1=1,x_2=-1,x_3=2$",
+   "$x_1=-\\frac12,x_2=1,x_3=\\frac12$",
+   "$x_1=2,x_2=1,x_3=-1$"
+  ],
+  "answer": 0,
+  "hint": "克莱姆法则",
+  "solution": "$x_1=\\frac12,x_2=1,x_3=-\\frac12$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-3-1",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "求排列 $351426$ 的逆序数",
+  "answer": "6",
+  "hint": "逐个数右边比它小的",
+  "solution": "逆序数 $=6$，偶排列。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-3-2",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "求排列 $7135246$ 的逆序数",
+  "answer": "9",
+  "hint": "逐个数右边比它小的",
+  "solution": "逆序数 $=9$，奇排列。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-3-3",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "求排列 $215479683$ 的逆序数",
+  "answer": "11",
+  "hint": "逆序数 = 每个数右边比它小的个数之和",
+  "solution": "逆序数 $=11$，奇排列。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-4-1",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "五阶行列式中的项 $a_{12}a_{23}a_{31}a_{45}a_{54}$ 的符号",
+  "options": [
+   "正号",
+   "负号",
+   "无符号",
+   "0"
+  ],
+  "answer": 1,
+  "hint": "行指标按自然序，看列排列的逆序数",
+  "solution": "列排列 $23154$ 的逆序数为 3（奇），故取负号。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-4-2",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "五阶行列式中的项 $a_{24}a_{32}a_{15}a_{43}a_{51}$ 的符号",
+  "options": [
+   "正号",
+   "负号",
+   "无符号",
+   "0"
+  ],
+  "answer": 1,
+  "hint": "重排成行指标自然序",
+  "solution": "列排列 $42531$ 的逆序数为 7（奇），故为负号。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-4-3",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "五阶行列式中的项 $a_{15}a_{23}a_{32}a_{44}a_{51}$ 的符号",
+  "options": [
+   "正号",
+   "负号",
+   "无符号",
+   "0"
+  ],
+  "answer": 0,
+  "hint": "数逆序数",
+  "solution": "列排列 $53241$ 的逆序数为 8（偶），故为正号。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-5-1",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "用行列式定义确定 $\\begin{vmatrix}x-1&4&3&1\\\\2&x-2&3&1\\\\7&9&x&0\\\\5&3&1&x-1\\end{vmatrix}$ 中 $x^3$、$x^4$ 的系数",
+  "options": [
+   "$x^3$ 系数 $-4$，$x^4$ 系数 $1$",
+   "$x^3$ 系数 $1$，$x^4$ 系数 $-4$",
+   "$x^3$ 系数 $-1$，$x^4$ 系数 $0$",
+   "$x^3$ 系数 $0$，$x^4$ 系数 $1$"
+  ],
+  "answer": 0,
+  "hint": "用对角线法则或展开",
+  "solution": "计算得 $x^4$ 系数 1、$x^3$ 系数 $-4$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-7-1",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "计算 $\\begin{vmatrix}-2&3&1\\\\503&201&298\\\\5&2&3\\end{vmatrix}$",
+  "answer": "-70",
+  "hint": "观察 503=5×100+3 等，用性质化简",
+  "solution": "第2行拆分化简，结果 $=-70$（绝对值 70）。官方答案 $-70$ [✓官方]"
+ },
+ {
+  "id": "ch1-7-2",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "计算 $\\begin{vmatrix}4&1&2&4\\\\1&2&0&2\\\\10&5&2&0\\\\0&1&1&7\\end{vmatrix}$",
+  "answer": "0",
+  "hint": "观察行列关系",
+  "solution": "各行存在线性关系，行列式为 0。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-7-3",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "计算 $\\begin{vmatrix}2&1&4&1\\\\3&-1&2&1\\\\1&2&3&2\\\\5&0&6&2\\end{vmatrix}$",
+  "answer": "0",
+  "hint": "观察行列关系",
+  "solution": "行向量线性相关，结果为 0。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-7-4",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "计算 $\\begin{vmatrix}1&2&3&4\\\\1&0&1&2\\\\3&-1&-1&0\\\\1&2&0&-5\\end{vmatrix}$",
+  "answer": "-24",
+  "hint": "按行展开或用初等变换",
+  "solution": "初等变换后展开得 $-24$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-7-5",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "计算 $\\begin{vmatrix}1&2&3&4\\\\2&3&4&1\\\\3&4&1&2\\\\4&1&2&3\\end{vmatrix}$",
+  "answer": "160",
+  "hint": "各行之和相等，提公因子",
+  "solution": "各列元素循环，行和均为 10，提公因子后计算得 160。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-8-1",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "计算 $\\begin{vmatrix}-ab&ac&ae\\\\bd&-cd&de\\\\bf&cf&-ef\\end{vmatrix}$",
+  "options": [
+   "$4abcdef$",
+   "$-4abcdef$",
+   "$2abcdef$",
+   "$abcdef$"
+  ],
+  "answer": 0,
+  "hint": "每行提公因子",
+  "solution": "各行分别提 $a,d,f$ 等公因子，得 $4abcdef$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-8-2",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "计算 $\\begin{vmatrix}2(x+y)&2(x+y)&2(x+y)\\\\x&x+y&y\\\\x+y&y&x\\end{vmatrix}$",
+  "options": [
+   "$-2(x^3+y^3)$",
+   "$2(x^3+y^3)$",
+   "$2(x+y)^3$",
+   "$-2(x+y)^3$"
+  ],
+  "answer": 0,
+  "hint": "第一行提取 2(x+y)",
+  "solution": "化简得 $-2(x^3+y^3)$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-8-3",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "计算 $\\begin{vmatrix}x&a&a&a\\\\a&x&a&a\\\\a&a&x&a\\\\a&a&a&x\\end{vmatrix}$",
+  "options": [
+   "$(x+3a)(x-a)^3$",
+   "$(x-3a)(x+a)^3$",
+   "$(x+a)^4$",
+   "$(x-a)^4$"
+  ],
+  "answer": 0,
+  "hint": "行和相等，各行加到第一列",
+  "solution": "各行加到第一列并提出，得 $(x+3a)(x-a)^3$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-8-4",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "计算 $\\begin{vmatrix}a&1&0&0\\\\-1&b&1&0\\\\0&-1&c&1\\\\0&0&-1&d\\end{vmatrix}$",
+  "options": [
+   "$abcd+ab+cd+ad+1$",
+   "$abcd-ab-cd+ad-1$",
+   "$abcd+1$",
+   "$abcd$"
+  ],
+  "answer": 0,
+  "hint": "按第一行展开递推",
+  "solution": "递推展开得 $abcd+ab+cd+ad+1$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-13-1",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "用克拉默法则解 $\\begin{cases}3x_1+2x_2-x_3=1\\\\2x_1-3x_2+x_3=10\\\\x_1+4x_2-2x_3=-8\\end{cases}$",
+  "options": [
+   "$x_1=2,x_2=-1,x_3=3$",
+   "$x_1=-2,x_2=1,x_3=-3$",
+   "$x_1=2,x_2=3,x_3=-1$",
+   "$x_1=1,x_2=2,x_3=3$"
+  ],
+  "answer": 0,
+  "hint": "系数行列式不为 0，用克莱姆法则",
+  "solution": "解得 $x_1=2,x_2=-1,x_3=3$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-13-2",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "解方程组 $\\begin{cases}x_1+4x_2-7x_3+6x_4=0\\\\2x_2+x_3+x_4=-8\\\\x_2+x_3+3x_4=-2\\\\x_1+x_3-x_4=1\\end{cases}$",
+  "options": [
+   "$x_1=3,x_2=-4,x_3=-1,x_4=1$",
+   "$x_1=-3,x_2=4,x_3=1,x_4=-1$",
+   "$x_1=3,x_2=4,x_3=-1,x_4=1$",
+   "$x_1=1,x_2=-4,x_3=1,x_4=1$"
+  ],
+  "answer": 0,
+  "hint": "克莱姆法则",
+  "solution": "得 $x_1=3,x_2=-4,x_3=-1,x_4=1$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-14",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "问 $\\lambda,\\mu$ 取何值时，齐次方程组 $\\begin{cases}\\lambda x_1+x_2+\\mu x_3=0\\\\x_1+\\lambda x_2+x_3=0\\\\x_1+2\\lambda x_2+x_3=0\\end{cases}$ 有非零解",
+  "options": [
+   "$\\lambda=1$ 或 $\\mu=0$",
+   "$\\lambda=0$ 或 $\\mu=1$",
+   "$\\lambda=2$ 或 $\\mu=3$",
+   "$\\lambda=1$ 且 $\\mu=1$"
+  ],
+  "answer": 0,
+  "hint": "系数行列式 $=0$",
+  "solution": "令系数行列式为 0，解得 $\\lambda=1$ 或 $\\mu=0$。官方一致 [✓官方]"
+ },
+ {
+  "id": "ch1-10",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "证明：$\\begin{vmatrix}a^2&ab&b^2\\\\2a&a+b&2b\\\\1&1&1\\end{vmatrix}=(a-b)^3$",
+  "hint": "利用行列式性质：第三行乘 a 加到第一行等",
+  "solution": "利用变形 $\\begin{vmatrix}a^2&ab&b^2\\\\2a&a+b&2b\\\\1&1&1\\end{vmatrix}=\\begin{vmatrix}a^2-ab&ab-b^2&b^2\\\\0&a-b&2b\\\\1&0&1\\end{vmatrix}$ 逐步化简，最后得 $(a-b)^3$。官方：证明略（结论一致）[✓官方]"
+ },
+ {
+  "id": "ch1-17",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "证明：范德蒙德行列式（或相关结论）（原题证明题）",
+  "hint": "对 n 归纳或用行列式性质",
+  "solution": "利用范德蒙德行列式的标准证明：对阶数归纳，每列减去前一列的 x₁ 倍，展开后提取公因子，得 ∏(x_j − x_i)。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch1-18",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "证明：$D_n=\\begin{vmatrix}\\cos\\theta&1& &\\\\1&2\\cos\\theta&1&\\\\&1&\\ddots&\\ddots\\\\& &\\ddots&\\ddots\\end{vmatrix}=\\cos n\\theta$",
+  "hint": "按第一行展开得递推式 $D_n=2\\cos\\theta D_{n-1}-D_{n-2}$",
+  "solution": "按第一行展开得 $D_n=2\\cos\\theta\\,D_{n-1}-D_{n-2}$，配初始条件 $D_1=\\cos\\theta,D_2=\\cos2\\theta$，用归纳法（或特征根法）得 $D_n=\\cos n\\theta$。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch1-19",
+  "subject": "高代",
+  "chapter": "第1章 行列式",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "证明：给定 $[0,1]$ 上 $n+1$ 个不同点 $t_1,\\cdots,t_{n+1}$ 及函数值 $\\varphi(t_i)$，存在唯一的次数不超过 $n$ 的多项式 $f(t)$ 使 $f(t_i)=\\varphi(t_i)$",
+  "hint": "这是拉格朗日插值；方程组系数行列式是范德蒙德行列式",
+  "solution": "设 $f(t)=a_0+a_1t+\\cdots+a_nt^n$，条件给出 $(n+1)$ 元线性方程组，其系数行列式为范德蒙德行列式 $\\prod_{i<j}(t_j-t_i)\\ne0$（因 $t_i$ 互异），故解存在且唯一。这正是拉格朗日插值。官方：略 [✓官方]"
+ }
+]

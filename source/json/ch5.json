@@ -1,0 +1,222 @@
+[
+ {
+  "id": "ch5-1",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "解下列齐次线性方程组：(1) $\\begin{cases}2x_1-4x_2+5x_3+3x_4=0\\\\3x_1-6x_2+4x_3+2x_4=0\\\\4x_1-8x_2+17x_3+11x_4=0\\end{cases}$；(2) $\\begin{cases}2x_1-4x_2+17x_3-6x_4=0\\\\ x_1+x_2-2x_3+3x_4=0\\\\3x_1+x_2+x_3+5x_4=0\\\\3x_1-x_2+8x_3+x_4=0\\end{cases}$；(3) $\\begin{cases}2x_1+x_2-x_3-x_4+x_5=0\\\\ x_1-x_2+x_3+x_4-2x_5=0\\\\3x_1+3x_2-3x_3-3x_4+4x_5=0\\\\4x_1-5x_2-5x_3-5x_4+7x_5=0\\end{cases}$；(4) $\\begin{cases}x_1+x_2+x_3+x_4+x_5=0\\\\2x_1+3x_2+x_3+x_4-3x_5=0\\\\ x_1+2x_3+2x_4+6x_5=0\\\\4x_1+5x_2+3x_3+4x_4-x_5=0\\end{cases}$。",
+  "answer": "(1) $x=k_1(2,1,0,0)^{\\mathrm T}+k_2(2,0,-5,7)^{\\mathrm T}$；(2) $x=k_1(-3,7,2,0)^{\\mathrm T}+k_2(-1,-2,0,1)^{\\mathrm T}$；(3) $x=k_1(0,0,1,-1,0)^{\\mathrm T}+k_2(1,0,5,0,3)^{\\mathrm T}$；(4) $x=k_1(-2,1,1,0,0)^{\\mathrm T}+k_2(-6,5,0,0,1)^{\\mathrm T}$",
+  "hint": "系数矩阵作初等行变换化行最简形，非主元列对应的自由未知量给出基础解系",
+  "solution": "(1) 系数矩阵秩为 2，$x_2,x_4$ 为自由未知量，由 $7x_3+5x_4=0$、$x_1=2x_2+\\frac{2}{7}x_4$ 得基础解系 $(2,1,0,0)^{\\mathrm T},(2,0,-5,7)^{\\mathrm T}$。(2) 秩为 2，解得 $x_1=-\\frac{3}{2}x_3-x_4$ 型关系，取自由未知量 $x_3,x_4$ 得基础解系 $(-3,7,2,0)^{\\mathrm T},(-1,-2,0,1)^{\\mathrm T}$。(3) 第 3、4 列相同，秩为 3，$x_4,x_5$ 为自由未知量：$x_1=\\frac13x_5$、$x_2=0$、$x_3=-x_4+\\frac53x_5$，取 $(x_4,x_5)=(1,0),(0,3)$ 得基础解系 $(0,0,1,-1,0)^{\\mathrm T},(1,0,5,0,3)^{\\mathrm T}$。（官方答案给的是 3 个解向量，相当于只解了前三个方程，与本题四个方程不符，此处按四个方程给出）(4) 秩为 2，$x_3,x_4,x_5$ 中 $x_3,x_4$ 与 $x_5$ 分别给出方向，得基础解系 $(-2,1,1,0,0)^{\\mathrm T},(-6,5,0,0,1)^{\\mathrm T}$。其中 (1)(2)(4) 与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-2",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "解下列非齐次线性方程组：(1) $\\begin{cases}x_1+3x_3+x_4=2\\\\ x_1-3x_2+x_4=-1\\\\2x_1+x_2+7x_3+2x_4=5\\\\4x_1+2x_2+14x_3=6\\end{cases}$；(2) $\\begin{cases}x_1-x_2+3x_3-x_4=1\\\\2x_1-x_2-x_3+4x_4=2\\\\3x_1-2x_2+2x_3+3x_4=3\\\\ x_1-4x_3+5x_4=-1\\end{cases}$；(3) $\\begin{cases}x_1+2x_2+3x_3-x_4=1\\\\3x_1+2x_2+x_3-x_4=1\\\\2x_1+2x_2+2x_3-x_4=1\\\\2x_1+3x_2+x_3+x_4=1\\\\5x_1+5x_2+2x_3=2\\end{cases}$；(4) $\\begin{cases}x_1+x_2+x_3+x_4+x_5=7\\\\3x_1+2x_2+x_3+x_4-3x_5=-2\\\\ x_2+2x_3+2x_4+6x_5=23\\\\5x_1+4x_2+3x_3+3x_4-x_5=12\\end{cases}$。",
+  "answer": "(1) $x=k(-3,-1,1,0)^{\\mathrm T}+(1,1,0,1)^{\\mathrm T}$；(2) 无解；(3) $x=k(5,-7,5,6)^{\\mathrm T}+(\\frac16,\\frac16,\\frac16,0)^{\\mathrm T}$；(4) $x=k_1(1,-2,1,0,0)^{\\mathrm T}+k_2(1,-2,0,1,0)^{\\mathrm T}+k_3(5,-6,0,0,1)^{\\mathrm T}+(-16,23,0,0,0)^{\\mathrm T}$",
+  "hint": "对增广矩阵作初等行变换：$\\mathrm r(A)\\neq\\mathrm r(A,b)$ 无解，$\\mathrm r(A)=\\mathrm r(A,b)=r$ 时解为特解加基础解系",
+  "solution": "(1) 增广矩阵化行最简形，$\\mathrm r(A)=\\mathrm r(A,b)=3$，$n-r=1$；特解 $(1,1,0,1)^{\\mathrm T}$，导出组基础解系 $(-3,-1,1,0)^{\\mathrm T}$。(2) 第 3 个方程恰为前两个方程之和，但由前两个方程推出的 $x_2-7x_3+6x_4=0$ 代入第 4 个方程得 $x_2-7x_3+6x_4=-2$，矛盾，故 $\\mathrm r(A)<\\mathrm r(A,b)$，无解。(3) $\\mathrm r(A)=\\mathrm r(A,b)=3$，$n-r=1$；特解 $(\\frac16,\\frac16,\\frac16,0)^{\\mathrm T}$，基础解系 $(5,-7,5,6)^{\\mathrm T}$。(4) $\\mathrm r(A)=\\mathrm r(A,b)=2$，$n-r=3$；特解 $(-16,23,0,0,0)^{\\mathrm T}$，导出组基础解系 $(1,-2,1,0,0)^{\\mathrm T},(1,-2,0,1,0)^{\\mathrm T},(5,-6,0,0,1)^{\\mathrm T}$。与官方答案一致（官方 (4) 第一个解向量印作 $(0,-2,1,0,0)$，首分量应为 1）[✓官方]"
+ },
+ {
+  "id": "ch5-3",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "设方程组 $\\begin{cases}x_1+x_3=2\\\\ x_1+2x_2-x_3=0\\\\2x_1+x_2-ax_3=b\\end{cases}$。(1) 确定当 $a,b$ 分别为何值时，方程组无解？有唯一解？有无穷多个解？(2) 在有解时求出方程组的解。",
+  "answer": "(1) $a=-1$ 且 $b\\neq3$ 时无解；$a\\neq-1$ 时有唯一解；$a=-1$ 且 $b=3$ 时有无穷多个解。(2) $a\\neq-1$ 时 $x_1=\\frac{2a+b-1}{a+1}$，$x_2=\\frac{2-a-b}{a+1}$，$x_3=\\frac{3-b}{a+1}$；$a=-1,b=3$ 时 $x_1=2-c$，$x_2=-1+c$，$x_3=c$（$c$ 任意）",
+  "hint": "先算系数行列式 $|A|=-2(a+1)$，再分别讨论 $a\\neq-1$ 与 $a=-1$",
+  "solution": "系数行列式 $\\begin{vmatrix}1&0&1\\\\1&2&-1\\\\2&1&-a\\end{vmatrix}=-2(a+1)$。当 $a\\neq-1$ 时 $|A|\\neq0$，由克莱姆法则（或消元）得唯一解 $x_1=\\frac{2a+b-1}{a+1}$，$x_2=\\frac{2-a-b}{a+1}$，$x_3=\\frac{3-b}{a+1}$。当 $a=-1$ 时对增广矩阵作行变换，第三个方程化为 $0\\cdot x_3=b-3$：若 $b\\neq3$ 则无解；若 $b=3$ 则 $\\mathrm r(A)=\\mathrm r(A,b)=2<3$，有无穷多解，令 $x_3=c$ 得 $x_1=2-c$，$x_2=c-1$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-4",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "非齐次线性方程组 $\\begin{cases}-2x_1+x_2+x_3=-2\\\\ x_1-2x_2+x_3=\\lambda\\\\ x_1+x_2-2x_3=\\lambda^2\\end{cases}$，当 $\\lambda$ 取何值时有解？并求出它的解。",
+  "answer": "$\\lambda=1$ 时 $x=k(1,1,1)^{\\mathrm T}+(1,0,0)^{\\mathrm T}$；$\\lambda=-2$ 时 $x=k(1,1,1)^{\\mathrm T}+(2,2,0)^{\\mathrm T}$；其他 $\\lambda$ 值无解",
+  "hint": "系数矩阵各行之和为零，三式相加得 $0=\\lambda^2+\\lambda-2$，这就是有解的条件",
+  "solution": "系数行列式 $\\begin{vmatrix}-2&1&1\\\\1&-2&1\\\\1&1&-2\\end{vmatrix}=0$，且 $\\mathrm r(A)=2$。把三个方程相加，左边为 0，右边为 $\\lambda^2+\\lambda-2$，故有解 $\\Leftrightarrow \\lambda^2+\\lambda-2=0\\Leftrightarrow \\lambda=1$ 或 $\\lambda=-2$。$\\lambda=1$ 时特解 $(1,0,0)^{\\mathrm T}$，导出组基础解系 $(1,1,1)^{\\mathrm T}$；$\\lambda=-2$ 时特解 $(2,2,0)^{\\mathrm T}$，基础解系仍为 $(1,1,1)^{\\mathrm T}$。与官方答案一致（官方把 $\\lambda=-2$ 的特解印作 $(1,2,0)^{\\mathrm T}$，代回第一式不成立，应为 $(2,2,0)^{\\mathrm T}$）[✓官方]"
+ },
+ {
+  "id": "ch5-5",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 3,
+  "type": "fill",
+  "statement": "设 $\\begin{cases}(2-\\lambda)x_1+2x_2-2x_3=1\\\\2x_1+(5-\\lambda)x_2-4x_3=2\\\\-2x_1-4x_2+(5-\\lambda)x_3=-\\lambda-1\\end{cases}$，问 $\\lambda$ 取何值时，此方程组有唯一解？无解？有无穷多个解？并在有解时求出它的全部解。",
+  "answer": "$\\lambda\\neq1$ 且 $\\lambda\\neq10$ 时有唯一解；$\\lambda=10$ 时无解；$\\lambda=1$ 时有无穷多个解 $x=k_1(-2,1,0)^{\\mathrm T}+k_2(2,0,1)^{\\mathrm T}+(1,0,0)^{\\mathrm T}$",
+  "hint": "算系数行列式 $|A|=-(\\lambda-1)^2(\\lambda-10)$，再逐个讨论",
+  "solution": "系数行列式 $|A|=-(\\lambda-1)^2(\\lambda-10)$。$\\lambda\\neq1,10$ 时 $|A|\\neq0$，有唯一解。$\\lambda=10$ 时 $\\mathrm r(A)=2$，而增广矩阵中第三个方程与另两个不相容（如 $\\mathrm r(A,b)=3$），无解。$\\lambda=1$ 时三个方程都化为 $x_1+2x_2-2x_3=1$，$\\mathrm r(A)=\\mathrm r(A,b)=1$，$n-r=2$，特解 $(1,0,0)^{\\mathrm T}$，导出组为 $x_1+2x_2-2x_3=0$，基础解系 $(-2,1,0)^{\\mathrm T},(2,0,1)^{\\mathrm T}$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-6",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 3,
+  "type": "fill",
+  "statement": "$a,b$ 取何值时，方程组 $\\begin{cases}x_1+x_2+x_3+x_4=0\\\\ x_2+2x_3+2x_4=1\\\\-x_2+(a-3)x_3-2x_4=b\\\\3x_1+2x_2+x_3+ax_4=-1\\end{cases}$ 有唯一解？无解？有无穷多个解？并在有无穷多个解时求出一般解。",
+  "answer": "(1) $a\\neq1$ 时有唯一解；(2) $a=1$ 且 $b\\neq-1$ 时无解；(3) $a=1$ 且 $b=-1$ 时有无穷多个解，一般解为 $x=k_1(1,-2,1,0)^{\\mathrm T}+k_2(1,-2,0,1)^{\\mathrm T}+(-1,1,0,0)^{\\mathrm T}$",
+  "hint": "系数行列式 $|A|=(a-1)^2$，先按 $a\\neq1$、$a=1$ 讨论，再代回第 3 个方程定 $b$",
+  "solution": "系数行列式 $|A|=(a-1)^2$。当 $a\\neq1$ 时 $|A|\\neq0$，有唯一解。当 $a=1$ 时，第 2、3 个方程左端成比例（第 3 个为第 2 个的相反数），第三个方程化为 $-x_2-2x_3-2x_4=b$，而由第二个方程得 $x_2+2x_3+2x_4=1$，故当 $b\\neq-1$ 时矛盾无解；当 $b=-1$ 时两方程同解，$\\mathrm r(A)=\\mathrm r(A,b)=2$，$n-r=2$。此时 $x_2=1-2x_3-2x_4$，$x_1=-x_2-x_3-x_4=-1+x_3+x_4$，取特解 $(-1,1,0,0)^{\\mathrm T}$，基础解系 $(1,-2,1,0)^{\\mathrm T},(1,-2,0,1)^{\\mathrm T}$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-7",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "设 $A=\\begin{pmatrix}1&1&2\\\\2&2&4\\\\3&3&6\\end{pmatrix}$，求作一个秩为 2 的方阵 $B$，使 $AB=0$。",
+  "answer": "$B=\\begin{pmatrix}1&2&0\\\\1&0&0\\\\-1&-1&0\\end{pmatrix}$（答案不唯一）",
+  "hint": "$B$ 的每一列都应是 $Ax=0$ 的解；取两个线性无关的解作前两列，第三列取零",
+  "solution": "$A$ 的三行都是 $(1,1,2)$ 的倍数，$\\mathrm r(A)=1$，$Ax=\\mathbf 0$ 即 $x_1+x_2+2x_3=0$，其基础解系可取 $(1,1,-1)^{\\mathrm T},(2,0,-1)^{\\mathrm T}$。令 $B$ 的前两列为这两个向量、第三列为零向量，得 $B=\\begin{pmatrix}1&2&0\\\\1&0&0\\\\-1&-1&0\\end{pmatrix}$，此时 $AB=0$ 且 $\\mathrm r(B)=2$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-8",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 3,
+  "type": "fill",
+  "statement": "设 $\\alpha_1=(1,0,2,3)^{\\mathrm T}$，$\\alpha_2=(1,1,3,5)^{\\mathrm T}$，$\\alpha_3=(1,-1,a+2,1)^{\\mathrm T}$，$\\alpha_4=(1,2,4,a+8)^{\\mathrm T}$，$\\beta=(1,1,b+3,5)^{\\mathrm T}$。(1) $a,b$ 为何值时 $\\beta$ 不能由 $\\alpha_1,\\alpha_2,\\alpha_3,\\alpha_4$ 线性表出？(2) $a,b$ 为何值时 $\\beta$ 可以由它们线性表出，且表示法唯一，写出表示式。",
+  "answer": "(1) $a=-1$ 且 $b\\neq0$ 时不能表出；(2) $a\\neq-1$ 时表示法唯一，$\\beta=-\\frac{2b}{a+1}\\alpha_1+\\frac{a+b+1}{a+1}\\alpha_2+\\frac{b}{a+1}\\alpha_3$（$\\alpha_4$ 的系数为 0）",
+  "hint": "对增广矩阵 $(\\alpha_1,\\alpha_2,\\alpha_3,\\alpha_4,\\beta)$ 作行变换，由 $a+1$ 是否为 0 讨论",
+  "solution": "设 $\\beta=x_1\\alpha_1+x_2\\alpha_2+x_3\\alpha_3+x_4\\alpha_4$，对增广矩阵作行变换，方程组的第 3、4 行化为 $(a+1)x_3=b$ 与 $(a+1)x_4=0$。当 $a\\neq-1$ 时 $x_4=0$，$x_3=\\frac{b}{a+1}$，回代得 $x_2=1+x_3=\\frac{a+b+1}{a+1}$，$x_1=-\\frac{2b}{a+1}$，表示法唯一。当 $a=-1$ 时化为 $0\\cdot x_3=b$：若 $b\\neq0$ 则无解，$\\beta$ 不能表出；若 $b=0$ 则有无穷多种表示。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-9",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "$A$ 为 $n$ 阶矩阵，证明存在 $n$ 阶非零矩阵 $B$，使 $AB=0$ 的充分必要条件是 $|A|=0$。",
+  "answer": "证明见解析",
+  "hint": "把 $B$ 按列分块，$AB=0$ 等价于 $B$ 的每一列都是 $Ax=0$ 的解",
+  "solution": "设 $B=(\\beta_1,\\cdots,\\beta_n)$，则 $AB=(A\\beta_1,\\cdots,A\\beta_n)$，故 $AB=0\\Leftrightarrow$ 每一列 $\\beta_j$ 都是齐次方程组 $Ax=\\mathbf 0$ 的解。若 $|A|=0$，则 $\\mathrm r(A)<n$，$Ax=\\mathbf 0$ 有非零解 $\\beta$，取 $B=(\\beta,0,\\cdots,0)\\neq0$ 即得 $AB=0$。反之，若存在非零 $B$ 使 $AB=0$，则 $B$ 的某个非零列是 $Ax=\\mathbf 0$ 的非零解，故 $Ax=\\mathbf 0$ 有非零解，$\\mathrm r(A)<n$，即 $|A|=0$。"
+ },
+ {
+  "id": "ch5-10",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "求一个齐次线性方程组，使它的基础解系为 $\\xi_1=(0,1,2,3)^{\\mathrm T}$，$\\xi_2=(3,2,1,0)^{\\mathrm T}$。",
+  "answer": "$\\begin{cases}x_1-2x_2+x_3=0\\\\2x_1-3x_2+x_4=0\\end{cases}$（答案不唯一）",
+  "hint": "所求方程组的系数行向量应与 $\\xi_1,\\xi_2$ 都正交，即系数矩阵的秩为 $4-2=2$",
+  "solution": "设所求方程组的一个方程为 $a_1x_1+a_2x_2+a_3x_3+a_4x_4=0$，它须以 $\\xi_1,\\xi_2$ 为解：$\\begin{cases}a_2+2a_3+3a_4=0\\\\3a_1+2a_2+a_3=0\\end{cases}$，其解空间维数为 2，取两组线性无关的解 $(1,-2,1,0)$、$(2,-3,0,1)$ 作系数行，得方程组 $\\begin{cases}x_1-2x_2+x_3=0\\\\2x_1-3x_2+x_4=0\\end{cases}$，其系数矩阵秩为 2，基础解系正是 $\\xi_1,\\xi_2$。与官方答案一致（答案不唯一）[✓官方]"
+ },
+ {
+  "id": "ch5-11",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 3,
+  "type": "fill",
+  "statement": "设非齐次线性方程组 $Ax=b$，系数矩阵 $A$ 为 $5\\times3$ 矩阵，$\\mathrm r(A)=2$，且 $\\eta_1,\\eta_2$ 是该方程组的两个解，有 $\\eta_1+\\eta_2=(1,3,0)^{\\mathrm T}$，$2\\eta_1+3\\eta_2=(2,5,1)^{\\mathrm T}$，求该方程组的通解。",
+  "answer": "$x=k(1,5,-2)^{\\mathrm T}+(0,-1,1)^{\\mathrm T}$，$k$ 为任意常数",
+  "hint": "$\\eta_1-\\eta_2$ 是导出组的解，且解空间维数为 $3-2=1$",
+  "solution": "由 $\\eta_1+\\eta_2=(1,3,0)^{\\mathrm T}$ 与 $2\\eta_1+3\\eta_2=(2,5,1)^{\\mathrm T}$ 相减（后者减前者的 2 倍）得 $\\eta_2=(2,5,1)^{\\mathrm T}-(2,6,0)^{\\mathrm T}=(0,-1,1)^{\\mathrm T}$，从而 $\\eta_1=(1,4,-1)^{\\mathrm T}$。因 $\\mathrm r(A)=2$，导出组解空间维数为 $3-2=1$，$\\eta_1-\\eta_2=(1,5,-2)^{\\mathrm T}$ 是导出组的基础解系，故通解为 $x=(0,-1,1)^{\\mathrm T}+k(1,5,-2)^{\\mathrm T}$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-12",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "判断下列命题的正误，试说明判断理由：(1) 若齐次线性方程组 $Ax=0$ 有无穷多个解，则非齐次线性方程组 $Ax=b$ 有解；(2) 非齐次线性方程组 $Ax=b$ 的解集构成一个解空间；(3) 设 $A$ 为 $m\\times n$ 矩阵，$\\mathrm r(A)=m$，则非齐次线性方程组 $Ax=b$ 有解；(4) 设 $A$ 为 $m\\times n$ 矩阵，齐次线性方程组 $Ax=0$ 仅有零解的充分必要条件是 $A$ 的 $n$ 个列向量线性无关；(5) $A,B$ 为 $n$ 阶方阵，齐次线性方程组 $ABx=0$ 与 $Bx=0$ 同解，则 $\\mathrm r(AB)=\\mathrm r(B)$。",
+  "answer": "(3)(4)(5) 正确；(1)(2) 错误",
+  "hint": "(1) 有无穷多解只说明 $\\mathrm r(A)<n$，不含 $b$ 的信息；(2) 解集一般不是向量空间（除 $b=0$）",
+  "solution": "(1) 错：$Ax=0$ 有无穷多解只说明 $\\mathrm r(A)<n$，与 $b$ 是否属于 $A$ 的列空间无关，$Ax=b$ 可能无解。(2) 错：$b\\neq0$ 时解集不含零向量，对加法、数乘都不封闭，不构成向量空间。(3) 对：$\\mathrm r(A)=m$ 说明 $A$ 的列向量张成 $\\mathbf R^m$，任一 $b\\in\\mathbf R^m$ 都在列空间中，故必有解。(4) 对：$Ax=0$ 仅有零解 $\\Leftrightarrow \\mathrm r(A)=n$ $\\Leftrightarrow$ $A$ 的 $n$ 个列向量线性无关。(5) 对：两方程组同解，解空间维数相同，即 $n-\\mathrm r(AB)=n-\\mathrm r(B)$，故 $\\mathrm r(AB)=\\mathrm r(B)$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-13",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $A,B$ 都是 $n$ 阶方阵，且 $AB=0$，证明 $\\mathrm r(A)+\\mathrm r(B)\\leqslant n$。",
+  "answer": "证明见解析",
+  "hint": "$B$ 的每个列向量都是 $Ax=0$ 的解，故 $B$ 的列空间含于 $A$ 的零空间",
+  "solution": "$AB=0$ 说明 $B$ 的每一列 $\\beta_j$ 都满足 $A\\beta_j=\\mathbf 0$，即 $B$ 的列空间包含在 $Ax=\\mathbf 0$ 的解空间（$A$ 的零空间）中。零空间维数为 $n-\\mathrm r(A)$，故 $\\mathrm r(B)\\leqslant n-\\mathrm r(A)$，即 $\\mathrm r(A)+\\mathrm r(B)\\leqslant n$。"
+ },
+ {
+  "id": "ch5-14",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "若 $n$ 阶方阵 $A$ 满足 $A^2=A$，证明 $\\mathrm r(A)+\\mathrm r(A-E)=n$。",
+  "answer": "证明见解析",
+  "hint": "一方面 $\\mathrm r(A)+\\mathrm r(A-E)\\geqslant \\mathrm r(A-(A-E))=n$，另一方面用第 13 题",
+  "solution": "由 $A^2=A$ 得 $A(A-E)=A^2-A=0$，由上一题得 $\\mathrm r(A)+\\mathrm r(A-E)\\leqslant n$。另一方面，$A-(A-E)=E$，由 $\\mathrm r(X-Y)\\leqslant \\mathrm r(X)+\\mathrm r(Y)$（即 $\\mathrm r(E)\\leqslant \\mathrm r(A)+\\mathrm r(A-E)$）得 $n\\leqslant \\mathrm r(A)+\\mathrm r(A-E)$。两式合并即得 $\\mathrm r(A)+\\mathrm r(A-E)=n$。"
+ },
+ {
+  "id": "ch5-15",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设 $A$ 为 $n$ 阶方阵，$A^*$ 为 $A$ 的伴随矩阵，证明：$\\mathrm r(A^*)=\\begin{cases}n,&\\mathrm r(A)=n\\\\1,&\\mathrm r(A)=n-1\\\\0,&\\mathrm r(A)<n-1\\end{cases}$",
+  "answer": "证明见解析",
+  "hint": "用 $AA^*=|A|E$；$\\mathrm r(A)=n-1$ 时 $A^*\\neq0$ 但 $A^*$ 的列都是 $Ax=0$ 的解",
+  "solution": "(1) 若 $\\mathrm r(A)=n$，则 $|A|\\neq0$，$A^*=|A|A^{-1}$ 可逆，$\\mathrm r(A^*)=n$。(2) 若 $\\mathrm r(A)=n-1$，则 $|A|=0$，$AA^*=|A|E=0$；由第 13 题 $\\mathrm r(A)+\\mathrm r(A^*)\\leqslant n$ 得 $\\mathrm r(A^*)\\leqslant1$。又 $\\mathrm r(A)=n-1$ 说明存在 $n-1$ 阶非零子式，故 $A^*$ 中至少有一个元素非零，$\\mathrm r(A^*)\\geqslant1$，于是 $\\mathrm r(A^*)=1$。(3) 若 $\\mathrm r(A)<n-1$，则 $A$ 的所有 $n-1$ 阶子式全为零，$A^*=0$，$\\mathrm r(A^*)=0$。"
+ },
+ {
+  "id": "ch5-16",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设 $\\eta^*$ 是非齐次线性方程组 $Ax=b$ 的一个解，$\\xi_1,\\xi_2,\\cdots,\\xi_{n-r}$ 是对应的齐次线性方程组的一个基础解系。证明：(1) $\\eta^*,\\xi_1,\\xi_2,\\cdots,\\xi_{n-r}$ 线性无关；(2) $\\eta^*,\\eta^*+\\xi_1,\\eta^*+\\xi_2,\\cdots,\\eta^*+\\xi_{n-r}$ 线性无关。",
+  "answer": "证明见解析",
+  "hint": "(1) 左乘 $A$ 把 $\\xi_i$ 项消去；(2) 先看 $\\eta^*$ 的系数，再化为 (1)",
+  "solution": "(1) 设 $k_0\\eta^*+k_1\\xi_1+\\cdots+k_{n-r}\\xi_{n-r}=\\mathbf 0$。两边左乘 $A$，利用 $A\\eta^*=b$、$A\\xi_i=\\mathbf 0$ 得 $k_0b=\\mathbf 0$；若 $b\\neq\\mathbf 0$ 则 $k_0=0$（$b=\\mathbf 0$ 时 $\\eta^*$ 本身是齐次解，可直接归入基础解系讨论），再由 $\\xi_1,\\cdots,\\xi_{n-r}$ 线性无关得 $k_1=\\cdots=k_{n-r}=0$，故线性无关。(2) 设 $c_0\\eta^*+c_1(\\eta^*+\\xi_1)+\\cdots+c_{n-r}(\\eta^*+\\xi_{n-r})=\\mathbf 0$，即 $(c_0+\\cdots+c_{n-r})\\eta^*+c_1\\xi_1+\\cdots+c_{n-r}\\xi_{n-r}=\\mathbf 0$。由 (1) 知 $c_0+\\cdots+c_{n-r}=0$ 且 $c_1=\\cdots=c_{n-r}=0$，从而 $c_0=0$，故该向量组线性无关。"
+ },
+ {
+  "id": "ch5-17",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设非齐次线性方程组 $Ax=b$ 的系数矩阵的秩为 $r$，$\\eta_1,\\eta_2,\\cdots,\\eta_{n-r+1}$ 是它的 $n-r+1$ 个线性无关解。试证它的任一解可表示为 $x=k_1\\eta_1+k_2\\eta_2+\\cdots+k_{n-r+1}\\eta_{n-r+1}$，其中 $k_1+k_2+\\cdots+k_{n-r+1}=1$。",
+  "answer": "证明见解析",
+  "hint": "任一解 $x$ 与 $\\eta_{n-r+1}$ 之差是齐次解，而 $\\eta_i-\\eta_{n-r+1}$ 构成基础解系",
+  "solution": "令 $\\gamma_i=\\eta_i-\\eta_{n-r+1}\\ (i=1,\\cdots,n-r)$，它们都是 $Ax=\\mathbf 0$ 的解。若 $\\sum_{i=1}^{n-r}c_i\\gamma_i=\\mathbf 0$，则 $\\sum c_i\\eta_i-(\\sum c_i)\\eta_{n-r+1}=\\mathbf 0$，由 $\\eta_1,\\cdots,\\eta_{n-r+1}$ 线性无关得所有 $c_i=0$，故 $\\gamma_1,\\cdots,\\gamma_{n-r}$ 线性无关，是导出组的基础解系。设 $x$ 是任一解，则 $x-\\eta_{n-r+1}$ 是齐次解，可写为 $\\sum_{i=1}^{n-r}c_i\\gamma_i$，于是 $x=\\sum_{i=1}^{n-r}c_i\\eta_i+(1-\\sum_{i=1}^{n-r}c_i)\\eta_{n-r+1}$。取 $k_i=c_i\\ (i\\leqslant n-r)$，$k_{n-r+1}=1-\\sum c_i$，即得所述形式且系数之和为 1。"
+ },
+ {
+  "id": "ch5-18",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "设 $n$ 阶矩阵 $A$ 各行元素之和均为零，且 $\\mathrm r(A)=n-1$，求齐次线性方程组 $Ax=\\mathbf 0$ 的全部解。",
+  "answer": "$x=c(1,1,\\cdots,1)^{\\mathrm T}$，$c$ 为任意常数",
+  "hint": "各行之和为零即 $A(1,1,\\cdots,1)^{\\mathrm T}=\\mathbf 0$，再比较解空间维数",
+  "solution": "由各行元素之和为零得 $A(1,1,\\cdots,1)^{\\mathrm T}=\\mathbf 0$，故 $(1,1,\\cdots,1)^{\\mathrm T}$ 是解；又 $\\mathrm r(A)=n-1$，解空间维数为 $n-(n-1)=1$，故全部解为 $x=c(1,1,\\cdots,1)^{\\mathrm T}$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-19",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "设 $A$ 为 $4\\times3$ 矩阵，且线性方程组 $Ax=b$ 满足 $\\mathrm r(A)=\\mathrm r(A,b)=2$，并且已知 $\\gamma_1=(-1,1,0)^{\\mathrm T}$，$\\gamma_2=(1,0,1)^{\\mathrm T}$ 为该方程组的两个解，试求该方程组的全部解。",
+  "answer": "$x=\\gamma_1+c(\\gamma_1-\\gamma_2)=(-1,1,0)^{\\mathrm T}+c(-2,1,-1)^{\\mathrm T}$，$c$ 为任意常数",
+  "hint": "解空间维数为 $3-2=1$，$\\gamma_1-\\gamma_2$ 是导出组的基础解系",
+  "solution": "由 $\\mathrm r(A)=2$ 且未知量个数为 3，导出组 $Ax=\\mathbf 0$ 的解空间维数为 $3-2=1$。$\\gamma_1-\\gamma_2=(-2,1,-1)^{\\mathrm T}$ 是导出组的非零解，故为基础解系，全部解为 $x=\\gamma_1+c(\\gamma_1-\\gamma_2)=(-1,1,0)^{\\mathrm T}+c(-2,1,-1)^{\\mathrm T}$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch5-20",
+  "subject": "高代",
+  "chapter": "第5章 线性方程组",
+  "difficulty": 3,
+  "type": "fill",
+  "statement": "设四元齐次线性方程组 (I) 为 $\\begin{cases}x_1+x_2=0\\\\ x_2-x_4=0\\end{cases}$，又已知某个齐次线性方程组 (II) 的全部解为 $c_1(0,1,1,0)^{\\mathrm T}+c_2(-1,2,2,1)^{\\mathrm T}$（$c_1,c_2$ 为任意常数）。(1) 求线性方程组 (I) 的基础解系；(2) 问线性方程组 (I) 与 (II) 是否有非零的公共解？若有，求出所有非零公共解；若没有，说明理由。",
+  "answer": "(1) 基础解系 $(0,0,1,0)^{\\mathrm T},(-1,1,0,1)^{\\mathrm T}$；(2) 有非零公共解，全部非零公共解为 $k(-1,1,1,1)^{\\mathrm T}$（$k\\neq0$）",
+  "hint": "(2) 把 (II) 的通解代入 (I) 的两个方程，得 $c_1=-c_2$",
+  "solution": "(1) (I) 中 $x_1=-x_2$，$x_4=x_2$，$x_2,x_3$ 为自由未知量，取 $(x_2,x_3)=(1,0),(0,1)$ 得基础解系 $(-1,1,0,1)^{\\mathrm T},(0,0,1,0)^{\\mathrm T}$。(2) 设 $x=(-c_2,\\,c_1+2c_2,\\,c_1+2c_2,\\,c_2)^{\\mathrm T}$ 同时满足 (I)：由 $x_1+x_2=0$ 得 $c_1+c_2=0$，由 $x_2-x_4=0$ 得 $c_1+c_2=0$，两条件相同。取 $c_1=-c_2$，得 $x=(-c_2,c_2,c_2,c_2)^{\\mathrm T}=k(-1,1,1,1)^{\\mathrm T}$。故两方程组有非零公共解，全部非零公共解为 $k(-1,1,1,1)^{\\mathrm T}\\ (k\\neq0)$。与官方答案一致 [✓官方]"
+ }
+]

@@ -1,0 +1,591 @@
+[
+ {
+  "id": "ch6-1-1",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "设 $A,B$ 为 $n$ 阶方阵，证明 $\\operatorname{tr}(A+B)=\\operatorname{tr}(A)+\\operatorname{tr}(B)$。",
+  "answer": "证明见解析",
+  "hint": "把迹写成对角元之和，逐项拆开",
+  "solution": "设 $A=(a_{ij})$，$B=(b_{ij})$，则 $A+B$ 的第 $i$ 个对角元为 $a_{ii}+b_{ii}$，于是\n$$\\operatorname{tr}(A+B)=\\sum_{i=1}^{n}(a_{ii}+b_{ii})=\\sum_{i=1}^{n}a_{ii}+\\sum_{i=1}^{n}b_{ii}=\\operatorname{tr}(A)+\\operatorname{tr}(B).$$\n官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch6-1-2",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "设 $A$ 为 $n$ 阶方阵，$k$ 为任意数，证明 $\\operatorname{tr}(kA)=k\\operatorname{tr}(A)$。",
+  "answer": "证明见解析",
+  "hint": "$kA$ 的对角元是 $ka_{ii}$",
+  "solution": "$kA$ 的第 $i$ 个对角元为 $ka_{ii}$，故\n$$\\operatorname{tr}(kA)=\\sum_{i=1}^{n}ka_{ii}=k\\sum_{i=1}^{n}a_{ii}=k\\operatorname{tr}(A).$$\n官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch6-1-3",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "设 $A,B$ 为 $n$ 阶方阵，证明 $\\operatorname{tr}(AB)=\\operatorname{tr}(BA)$。",
+  "answer": "证明见解析",
+  "hint": "写出 $(AB)_{ii}$ 与 $(BA)_{ii}$，交换求和次序",
+  "solution": "$(AB)_{ii}=\\sum_{j}a_{ij}b_{ji}$，$(BA)_{ii}=\\sum_{j}b_{ij}a_{ji}$，于是\n$$\\operatorname{tr}(AB)=\\sum_{i}\\sum_{j}a_{ij}b_{ji}=\\sum_{j}\\sum_{i}b_{ji}a_{ij}=\\operatorname{tr}(BA).$$\n官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch6-2-1",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "求矩阵 $A=\\begin{pmatrix}3&4\\\\5&2\\end{pmatrix}$ 的特征值与特征向量。",
+  "options": [
+   "$\\lambda_1=7,\\ p_1=k(4,-5)^{\\mathrm T}$；$\\lambda_2=-2,\\ p_2=k(1,1)^{\\mathrm T}$（$k\\neq0$）",
+   "$\\lambda_1=-7,\\ p_1=k(1,1)^{\\mathrm T}$；$\\lambda_2=2,\\ p_2=k(4,-5)^{\\mathrm T}$（$k\\neq0$）",
+   "$\\lambda_1=7,\\ p_1=k(1,1)^{\\mathrm T}$；$\\lambda_2=-2,\\ p_2=k(4,-5)^{\\mathrm T}$（$k\\neq0$）",
+   "$\\lambda_1=7,\\ p_1=k(1,-1)^{\\mathrm T}$；$\\lambda_2=-2,\\ p_2=k(4,5)^{\\mathrm T}$（$k\\neq0$）"
+  ],
+  "answer": 2,
+  "hint": "解 $|\\lambda E-A|=0$，再解 $(\\lambda E-A)x=0$",
+  "solution": "$|\\lambda E-A|=\\begin{vmatrix}\\lambda-3&-4\\\\-5&\\lambda-2\\end{vmatrix}=(\\lambda-3)(\\lambda-2)-20=\\lambda^{2}-5\\lambda-14=(\\lambda-7)(\\lambda+2)$，故 $\\lambda_1=7,\\ \\lambda_2=-2$。\n$\\lambda=7$ 时 $(7E-A)x=0$，解得 $p_1=k(1,1)^{\\mathrm T}$；$\\lambda=-2$ 时解得 $p_2=k(4,-5)^{\\mathrm T}$（$k\\neq0$）[✓官方]"
+ },
+ {
+  "id": "ch6-2-2",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求矩阵 $A=\\begin{pmatrix}0&0&1\\\\0&1&0\\\\1&0&0\\end{pmatrix}$ 的特征值与特征向量。",
+  "options": [
+   "$\\lambda_1=\\lambda_2=1$，$p=k(1,0,0)^{\\mathrm T}$；$\\lambda_3=-1$，$p=k(1,0,-1)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=-1$，$p=k_1(0,1,0)^{\\mathrm T}+k_2(1,0,1)^{\\mathrm T}$；$\\lambda_3=1$，$p=k(1,0,-1)^{\\mathrm T}$",
+   "$\\lambda_1=1,\\ \\lambda_2=-1,\\ \\lambda_3=0$，对应特征向量分别为 $(1,0,1)^{\\mathrm T},(1,0,-1)^{\\mathrm T},(0,1,0)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=1$，$p=k_1(0,1,0)^{\\mathrm T}+k_2(1,0,1)^{\\mathrm T}$；$\\lambda_3=-1$，$p=k(1,0,-1)^{\\mathrm T}$"
+  ],
+  "answer": 3,
+  "hint": "这是交换第 1、3 分量的矩阵，可先猜 $1$ 与 $-1$",
+  "solution": "$|\\lambda E-A|=\\begin{vmatrix}\\lambda&0&-1\\\\0&\\lambda-1&0\\\\-1&0&\\lambda\\end{vmatrix}=(\\lambda-1)(\\lambda^{2}-1)=(\\lambda-1)^{2}(\\lambda+1)$。\n$\\lambda=1$：解 $(E-A)x=0$ 得 $x_1=x_3$，$x_2$ 任意，$p=k_1(0,1,0)^{\\mathrm T}+k_2(1,0,1)^{\\mathrm T}$；\n$\\lambda=-1$：解得 $p=k(1,0,-1)^{\\mathrm T}$（$k,k_1,k_2$ 不同时为零）[✓官方]"
+ },
+ {
+  "id": "ch6-2-3",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求矩阵 $A=\\begin{pmatrix}1&2&3\\\\2&1&3\\\\3&3&6\\end{pmatrix}$ 的特征值与特征向量。",
+  "options": [
+   "$\\lambda_1=-1,\\ p_1=k(1,-1,0)^{\\mathrm T}$；$\\lambda_2=9,\\ p_2=k(1,1,2)^{\\mathrm T}$；$\\lambda_3=0,\\ p_3=k(1,1,-1)^{\\mathrm T}$",
+   "$\\lambda_1=-1,\\ p_1=k(1,1,0)^{\\mathrm T}$；$\\lambda_2=9,\\ p_2=k(1,1,2)^{\\mathrm T}$；$\\lambda_3=0,\\ p_3=k(1,-1,1)^{\\mathrm T}$",
+   "$\\lambda_1=1,\\ p_1=k(1,-1,0)^{\\mathrm T}$；$\\lambda_2=9,\\ p_2=k(1,1,2)^{\\mathrm T}$；$\\lambda_3=0,\\ p_3=k(1,1,-1)^{\\mathrm T}$",
+   "$\\lambda_1=-1,\\ p_1=k(1,-1,0)^{\\mathrm T}$；$\\lambda_2=9,\\ p_2=k(1,1,-2)^{\\mathrm T}$；$\\lambda_3=0,\\ p_3=k(1,-1,-1)^{\\mathrm T}$"
+  ],
+  "answer": 0,
+  "hint": "先算 $|\\lambda E-A|$，可提出因子 $\\lambda$ 与 $\\lambda+1$",
+  "solution": "$|\\lambda E-A|=\\lambda(\\lambda+1)(\\lambda-9)$，故 $\\lambda_1=-1,\\ \\lambda_2=9,\\ \\lambda_3=0$。\n$\\lambda=-1$：$p_1=k(1,-1,0)^{\\mathrm T}$；$\\lambda=9$：$p_2=k(1,1,2)^{\\mathrm T}$；$\\lambda=0$：解 $Ax=0$ 得 $p_3=k(1,1,-1)^{\\mathrm T}$ [✓官方]"
+ },
+ {
+  "id": "ch6-2-4",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求矩阵 $A=\\begin{pmatrix}2&-1&2\\\\5&-3&3\\\\-1&0&-2\\end{pmatrix}$ 的特征值与特征向量。",
+  "options": [
+   "$\\lambda_1=\\lambda_2=\\lambda_3=-1$，$p=k_1(1,1,0)^{\\mathrm T}+k_2(0,0,1)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=\\lambda_3=-1$，$p=k(1,1,-1)^{\\mathrm T}$（$k\\neq0$）",
+   "$\\lambda_1=-1,\\ \\lambda_2=\\lambda_3=1$，$p_1=k(1,1,-1)^{\\mathrm T}$，$p_2=k(1,0,1)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=\\lambda_3=1$，$p=k(1,1,-1)^{\\mathrm T}$（$k\\neq0$）"
+  ],
+  "answer": 1,
+  "hint": "$|\\lambda E-A|$ 是完全立方，特征子空间只有一维",
+  "solution": "$|\\lambda E-A|=(\\lambda+1)^{3}$，故 $\\lambda_1=\\lambda_2=\\lambda_3=-1$。\n解 $(-E-A)x=0$ 得 $x=k(1,1,-1)^{\\mathrm T}$（$k\\neq0$）——几何重数为 $1$，小于代数重数 $3$，此矩阵不可对角化 [✓官方]"
+ },
+ {
+  "id": "ch6-2-5",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求矩阵 $A=\\begin{pmatrix}1&-3&3\\\\3&-5&3\\\\6&-6&4\\end{pmatrix}$ 的特征值与特征向量。",
+  "options": [
+   "$\\lambda_1=\\lambda_2=-2$，$p=k(1,1,0)^{\\mathrm T}$；$\\lambda_3=4$，$p=k(1,1,2)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=2$，$p=k_1(1,1,0)^{\\mathrm T}+k_2(-1,0,1)^{\\mathrm T}$；$\\lambda_3=-4$，$p=k(1,1,2)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=-2$，$p=k_1(1,1,0)^{\\mathrm T}+k_2(-1,0,1)^{\\mathrm T}$；$\\lambda_3=4$，$p=k(1,1,2)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=-2$，$p=k_1(1,1,0)^{\\mathrm T}+k_2(-1,0,1)^{\\mathrm T}$；$\\lambda_3=4$，$p=k(1,-1,2)^{\\mathrm T}$"
+  ],
+  "answer": 2,
+  "hint": "$|\\lambda E-A|=(\\lambda+2)^{2}(\\lambda-4)$，$\\lambda=-2$ 的特征子空间是二维的",
+  "solution": "$|\\lambda E-A|=(\\lambda+2)^{2}(\\lambda-4)$，故 $\\lambda_1=\\lambda_2=-2,\\ \\lambda_3=4$。\n$\\lambda=-2$：解 $(-2E-A)x=0$ 得 $p=k_1(1,1,0)^{\\mathrm T}+k_2(-1,0,1)^{\\mathrm T}$；$\\lambda=4$：$p=k(1,1,2)^{\\mathrm T}$ [✓官方]"
+ },
+ {
+  "id": "ch6-2-6",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求矩阵 $A=\\begin{pmatrix}1&1&1&1\\\\1&1&-1&-1\\\\1&-1&1&-1\\\\1&-1&-1&1\\end{pmatrix}$ 的特征值与特征向量。",
+  "options": [
+   "$\\lambda_1=\\lambda_2=\\lambda_3=2$，$p=k(1,1,1,1)^{\\mathrm T}$；$\\lambda_4=-2$，$p=k(-1,1,1,1)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=\\lambda_3=-2$，$p=k_1(1,1,0,0)^{\\mathrm T}+k_2(1,0,1,0)^{\\mathrm T}+k_3(1,0,0,1)^{\\mathrm T}$；$\\lambda_4=2$，$p=k(-1,1,1,1)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=\\lambda_3=2$，$p=k_1(1,1,0,0)^{\\mathrm T}+k_2(1,0,1,0)^{\\mathrm T}+k_3(1,0,0,1)^{\\mathrm T}$；$\\lambda_4=-2$，$p=k(1,1,-1,-1)^{\\mathrm T}$",
+   "$\\lambda_1=\\lambda_2=\\lambda_3=2$，$p=k_1(1,1,0,0)^{\\mathrm T}+k_2(1,0,1,0)^{\\mathrm T}+k_3(1,0,0,1)^{\\mathrm T}$；$\\lambda_4=-2$，$p=k(-1,1,1,1)^{\\mathrm T}$"
+  ],
+  "answer": 3,
+  "hint": "各行和的平方：先试全 $1$ 向量与 $(1,-1,-1,-1)$ 型向量",
+  "solution": "$|\\lambda E-A|=(\\lambda-2)^{3}(\\lambda+2)$，故 $\\lambda_1=\\lambda_2=\\lambda_3=2$，$\\lambda_4=-2$。\n$\\lambda=2$：解 $(2E-A)x=0$ 得三维特征子空间，$p=k_1(1,1,0,0)^{\\mathrm T}+k_2(1,0,1,0)^{\\mathrm T}+k_3(1,0,0,1)^{\\mathrm T}$；\n$\\lambda=-2$：$p=k(-1,1,1,1)^{\\mathrm T}$ [✓官方]"
+ },
+ {
+  "id": "ch6-3-1",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $p_1,p_2$ 分别是矩阵 $A$ 的属于特征值 $\\lambda_1,\\lambda_2$ 的特征向量，且 $\\lambda_1\\neq\\lambda_2$。证明：$p_1,p_2$ 线性无关。",
+  "answer": "证明见解析",
+  "hint": "反证：设 $k_1p_1+k_2p_2=0$，两边左乘 $A$ 再相减",
+  "solution": "反设 $p_1,p_2$ 线性相关，则其中之一是另一个的倍数，从而它们属于同一个特征值，与 $\\lambda_1\\neq\\lambda_2$ 矛盾。\n也可直接证：设 $k_1p_1+k_2p_2=0$，左乘 $A$ 得 $k_1\\lambda_1p_1+k_2\\lambda_2p_2=0$；减去第一式乘 $\\lambda_2$，得 $k_1(\\lambda_1-\\lambda_2)p_1=0$。因 $p_1\\neq0$ 且 $\\lambda_1\\neq\\lambda_2$，故 $k_1=0$，进而 $k_2=0$，所以 $p_1,p_2$ 线性无关。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch6-3-2",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $p_1,p_2$ 分别是矩阵 $A$ 的属于特征值 $\\lambda_1,\\lambda_2$ 的特征向量，且 $\\lambda_1\\neq\\lambda_2$。证明：$p_1+p_2$ 不可能是 $A$ 的特征向量。",
+  "answer": "证明见解析",
+  "hint": "反证，并利用 $p_1,p_2$ 线性无关",
+  "solution": "反设 $A(p_1+p_2)=\\lambda(p_1+p_2)$。又 $A(p_1+p_2)=\\lambda_1p_1+\\lambda_2p_2$，两式相减得\n$$(\\lambda_1-\\lambda)p_1+(\\lambda_2-\\lambda)p_2=0.$$\n由上一题 $p_1,p_2$ 线性无关，故 $\\lambda_1=\\lambda=\\lambda_2$，与 $\\lambda_1\\neq\\lambda_2$ 矛盾。所以 $p_1+p_2$ 不是特征向量。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch6-4",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设 $A$ 为 $n$ 阶矩阵，如果任意 $n$ 维非零向量都是 $A$ 的特征向量，证明 $A$ 为数量矩阵，即存在数 $\\lambda$，使得 $A=\\lambda E$。",
+  "answer": "证明见解析",
+  "hint": "取标准基 $e_1,\\cdots,e_n$ 及 $e_i+e_j$，比较特征值",
+  "solution": "设 $Ae_i=\\lambda_ie_i$（$i=1,\\cdots,n$，$e_i$ 为标准基）。对 $i\\neq j$，$e_i+e_j\\neq0$ 也是特征向量，设 $A(e_i+e_j)=\\lambda(e_i+e_j)$，而\n$$A(e_i+e_j)=\\lambda_ie_i+\\lambda_je_j,$$\n比较 $e_i,e_j$ 的系数得 $\\lambda_i=\\lambda=\\lambda_j$。故所有 $\\lambda_i$ 相等，记为 $\\lambda$，于是 $Ae_i=\\lambda e_i\\ (i=1,\\cdots,n)$，即 $A=\\lambda E$。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch6-5-1",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "已知三阶矩阵 $A$ 的特征值为 $\\lambda_1=1,\\ \\lambda_2=0,\\ \\lambda_3=-2$，求 $|A-E|$ 的值。",
+  "answer": "0",
+  "hint": "$f(A)$ 的特征值是 $f(\\lambda_i)$，行列式等于特征值之积",
+  "solution": "若 $\\lambda$ 是 $A$ 的特征值，则 $f(A)$ 的特征值为 $f(\\lambda)$，且 $|f(A)|=\\prod f(\\lambda_i)$。\n$|A-E|=(1-1)(0-1)(-2-1)=0$。官方答案：$0$ [✓官方]"
+ },
+ {
+  "id": "ch6-5-2",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "已知三阶矩阵 $A$ 的特征值为 $\\lambda_1=1,\\ \\lambda_2=0,\\ \\lambda_3=-2$，求 $|A+2E|$ 的值。",
+  "answer": "0",
+  "hint": "$|A+2E|=\\prod(\\lambda_i+2)$",
+  "solution": "$|A+2E|=(1+2)(0+2)(-2+2)=3\\times2\\times0=0$。官方答案：$0$ [✓官方]"
+ },
+ {
+  "id": "ch6-5-3",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "已知三阶矩阵 $A$ 的特征值为 $\\lambda_1=1,\\ \\lambda_2=0,\\ \\lambda_3=-2$，求 $|A^{2}+3A+2E|$ 的值。",
+  "answer": "0",
+  "hint": "先分解 $\\lambda^{2}+3\\lambda+2=(\\lambda+1)(\\lambda+2)$",
+  "solution": "$A^{2}+3A+2E=(A+E)(A+2E)$，其特征值为 $\\lambda_i^{2}+3\\lambda_i+2$：\n$1+3+2=6$，$0+0+2=2$，$4-6+2=0$。故 $|A^{2}+3A+2E|=6\\times2\\times0=0$。官方答案：$0$ [✓官方]"
+ },
+ {
+  "id": "ch6-5-4",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "已知三阶矩阵 $A$ 的特征值为 $\\lambda_1=1,\\ \\lambda_2=0,\\ \\lambda_3=-2$，求 $|A^{2}+3A+4E|$ 的值。",
+  "answer": "64",
+  "hint": "$|A^{2}+3A+4E|=\\prod(\\lambda_i^{2}+3\\lambda_i+4)$",
+  "solution": "$f(\\lambda)=\\lambda^{2}+3\\lambda+4$，$f(1)=8,\\ f(0)=4,\\ f(-2)=2$，故\n$$|A^{2}+3A+4E|=8\\times4\\times2=64.$$\n官方答案：$64$ [✓官方]"
+ },
+ {
+  "id": "ch6-6",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "设 $A$ 是三阶方阵。如果已知 $|A+E|=0,\\ |2E+A|=0,\\ |E-A|=0$，求行列式 $|A^{2}+4A+E|$ 的值。",
+  "answer": "36",
+  "hint": "由三个行列式为 0 定出 $A$ 的三个特征值",
+  "solution": "由 $|A+E|=0$ 得 $\\lambda=-1$；由 $|2E+A|=0$ 得 $\\lambda=-2$；由 $|E-A|=0$ 得 $\\lambda=1$。故 $A$ 的三个特征值为 $-1,-2,1$。\n$f(\\lambda)=\\lambda^{2}+4\\lambda+1$：$f(-1)=-2,\\ f(-2)=-3,\\ f(1)=6$，故 $|A^{2}+4A+E|=(-2)(-3)\\times6=36$。官方答案：$36$ [✓官方]"
+ },
+ {
+  "id": "ch6-7",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "设 $n$ 阶矩阵 $A$ 满足 $A^{2}=A$，求 $A$ 的所有可能的特征值。",
+  "options": [
+   "$\\lambda=0$ 或 $\\lambda=-1$",
+   "$\\lambda=0$ 或 $\\lambda=1$",
+   "$\\lambda=1$ 或 $\\lambda=-1$",
+   "$\\lambda=0,\\ 1,\\ -1$ 都可能"
+  ],
+  "answer": 1,
+  "hint": "由 $Ap=\\lambda p$ 推出 $\\lambda^{2}p=\\lambda p$",
+  "solution": "设 $Ap=\\lambda p$（$p\\neq0$），则 $A^{2}p=\\lambda^{2}p$。由 $A^{2}=A$ 得 $\\lambda^{2}p=\\lambda p$，即 $\\lambda(\\lambda-1)p=0$，故 $\\lambda=0$ 或 $\\lambda=1$。\n两者都能取到（零矩阵与单位矩阵），所以全部可能值为 $0$ 或 $1$。官方答案：$0,1$ [✓官方]"
+ },
+ {
+  "id": "ch6-8",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "已知 $n$ 阶可逆矩阵 $A$ 的全体特征值为 $\\lambda_1,\\lambda_2,\\cdots,\\lambda_n$，求 $A^{-1}$ 的全体特征值。",
+  "options": [
+   "$-\\lambda_1,-\\lambda_2,\\cdots,-\\lambda_n$",
+   "$\\lambda_1^{2},\\lambda_2^{2},\\cdots,\\lambda_n^{2}$",
+   "$\\dfrac{1}{\\lambda_1},\\dfrac{1}{\\lambda_2},\\cdots,\\dfrac{1}{\\lambda_n}$",
+   "$\\dfrac{1}{\\lambda_1^{2}},\\dfrac{1}{\\lambda_2^{2}},\\cdots,\\dfrac{1}{\\lambda_n^{2}}$"
+  ],
+  "answer": 2,
+  "hint": "在 $Ap=\\lambda p$ 两边左乘 $A^{-1}$",
+  "solution": "由 $Ap=\\lambda p$（$p\\neq0$）得 $p=\\lambda A^{-1}p$。因 $A$ 可逆，$\\lambda_i\\neq0$，故 $A^{-1}p=\\frac{1}{\\lambda_i}p$，即 $A^{-1}$ 的特征值为 $\\frac{1}{\\lambda_1},\\cdots,\\frac{1}{\\lambda_n}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-9",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "如果 $n$ 阶矩阵 $A$ 中的所有元素都是 $1$，求 $A$ 的所有特征值，并求 $A$ 的属于特征值 $\\lambda=n$ 的特征向量。",
+  "options": [
+   "特征值为 $0$（$n-1$ 重）与 $n$；$\\lambda=n$ 的特征向量为 $p=k(1,0,\\cdots,0)^{\\mathrm T}$（$k\\neq0$）",
+   "特征值为 $1$（$n-1$ 重）与 $n$；$\\lambda=n$ 的特征向量为 $p=k(1,1,\\cdots,1)^{\\mathrm T}$（$k\\neq0$）",
+   "特征值为 $0$（$n-1$ 重）与 $n$；$\\lambda=n$ 的特征向量为 $p=k(1,-1,\\cdots,-1)^{\\mathrm T}$（$k\\neq0$）",
+   "特征值为 $0$（$n-1$ 重）与 $n$；$\\lambda=n$ 的特征向量为 $p=k(1,1,\\cdots,1)^{\\mathrm T}$（$k\\neq0$）"
+  ],
+  "answer": 3,
+  "hint": "$A$ 是秩为 $1$ 的矩阵 $A=\\mathbf{1}\\mathbf{1}^{\\mathrm T}$",
+  "solution": "记 $\\mathbf{1}=(1,1,\\cdots,1)^{\\mathrm T}$，则 $A=\\mathbf{1}\\mathbf{1}^{\\mathrm T}$，$r(A)=1$，故 $0$ 是 $A$ 的 $n-1$ 重特征值。\n又 $A\\mathbf{1}=\\mathbf{1}(\\mathbf{1}^{\\mathrm T}\\mathbf{1})=n\\mathbf{1}$，故 $\\lambda=n$ 是特征值，对应特征向量 $p=k(1,1,\\cdots,1)^{\\mathrm T}$（$k\\neq0$）。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-10",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "设 $n$ 阶矩阵 $A$ 满足 $A^{2}+4A+4E=O$（$O$ 为零矩阵），求 $A$ 的所有特征值。",
+  "answer": "-2",
+  "hint": "注意 $A^{2}+4A+4E=(A+2E)^{2}$",
+  "solution": "因为 $A^{2}+4A+4E=(A+2E)^{2}=O$。设 $Ap=\\lambda p$（$p\\neq0$），则 $(A+2E)^{2}p=(\\lambda+2)^{2}p=0$，故 $(\\lambda+2)^{2}=0$，即 $\\lambda=-2$。\n所以 $A$ 的全部特征值都是 $-2$。官方答案：$-2$ [✓官方]"
+ },
+ {
+  "id": "ch6-11",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求 $k$ 的值，使得 $\\alpha=\\begin{pmatrix}1\\\\k\\\\1\\end{pmatrix}$ 是 $A=\\begin{pmatrix}2&1&1\\\\1&2&1\\\\1&1&2\\end{pmatrix}$ 的逆矩阵的特征向量。",
+  "options": [
+   "$k=1$（$A$ 的特征值为 $4$）或 $k=-2$（$A$ 的特征值为 $1$）",
+   "$k=1$（$A$ 的特征值为 $4$）",
+   "$k=-2$（$A$ 的特征值为 $1$）",
+   "$k=2$ 或 $k=-1$"
+  ],
+  "answer": 0,
+  "hint": "$A^{-1}$ 与 $A$ 有相同的特征向量",
+  "solution": "$A^{-1}$ 与 $A$ 的特征向量相同，故只需 $A\\alpha$ 与 $\\alpha$ 成比例：\n$$A\\alpha=\\begin{pmatrix}3+k\\\\2k+2\\\\3+k\\end{pmatrix}.$$\n由 $(2k+2)=(3+k)k$ 得 $k^{2}+k-2=0$，即 $k=1$ 或 $k=-2$。\n$k=1$ 时 $A\\alpha=(4,4,4)^{\\mathrm T}=4\\alpha$，$\\alpha$ 是 $A^{-1}$ 的属于 $1/4$ 的特征向量；$k=-2$ 时 $A\\alpha=(1,-2,1)^{\\mathrm T}=\\alpha$，$\\alpha$ 是 $A^{-1}$ 的属于 $1$ 的特征向量。官方答案：$k=1$（对应 $A$ 的特征值 $4$）或 $k=-2$（对应 $A$ 的特征值 $1$）[✓官方]"
+ },
+ {
+  "id": "ch6-12",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求出 $a$ 和 $b$ 的值，使得 $p=\\begin{pmatrix}1\\\\-2\\\\3\\end{pmatrix}$ 是 $A=\\begin{pmatrix}3&2&-1\\\\a&-2&2\\\\3&b&-1\\end{pmatrix}$ 的特征向量，并求出对应的特征值。",
+  "options": [
+   "$a=2,\\ b=6$，对应的特征值 $\\lambda=-4$",
+   "$a=-2,\\ b=6$，对应的特征值 $\\lambda=-4$",
+   "$a=-2,\\ b=-6$，对应的特征值 $\\lambda=4$",
+   "$a=2,\\ b=-6$，对应的特征值 $\\lambda=4$"
+  ],
+  "answer": 1,
+  "hint": "计算 $Ap$，令它与 $p$ 成比例",
+  "solution": "$Ap=\\begin{pmatrix}3-4-3\\\\a+4+6\\\\3-2b-3\\end{pmatrix}=\\begin{pmatrix}-4\\\\a+10\\\\-2b\\end{pmatrix}$。\n令 $Ap=\\lambda p$，由第一分量得 $\\lambda=-4$；再由第二、三分量得 $a+10=8$，$-2b=-12$，故 $a=-2,\\ b=6$，对应特征值 $\\lambda=-4$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-13",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "已知 $12$ 是 $A=\\begin{pmatrix}7&4&-1\\\\4&7&-1\\\\-4&a&4\\end{pmatrix}$ 的一个特征值，求 $a$ 及 $A$ 的另外两个特征值。",
+  "options": [
+   "$a=4$，另外两个特征值 $\\lambda_1=\\lambda_2=3$",
+   "$a=-4$，另外两个特征值 $\\lambda_1=2,\\ \\lambda_2=4$",
+   "$a=-4$，另外两个特征值 $\\lambda_1=\\lambda_2=3$",
+   "$a=4$，另外两个特征值 $\\lambda_1=2,\\ \\lambda_2=4$"
+  ],
+  "answer": 2,
+  "hint": "用 $\\operatorname{tr}A$ 与 $|A|$ 列方程",
+  "solution": "$\\operatorname{tr}A=18$，故另两个特征值满足 $\\lambda_2+\\lambda_3=6$；\n$|A|=120+3a$（按定义展开），而 $|A|=12\\lambda_2\\lambda_3$。\n又 $|3E-A|=0$ 可定出 $a$：把 $a=-4$ 代入可验证 $\\lambda=3$ 是二重特征值（$3E-A$ 的秩为 $1$），此时 $|A|=108=12\\times3\\times3$，一致。\n故 $a=-4$，另外两个特征值 $\\lambda_1=\\lambda_2=3$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-14",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $n$ 阶方阵 $A=(a_{ij})$ 的每一行元素之和同为 $a$，证明 $a$ 必是 $A$ 的特征值，并求 $A$ 的属于这个特征值 $a$ 的一个特征向量 $p$。",
+  "answer": "证明见解析",
+  "hint": "取 $p=(1,1,\\cdots,1)^{\\mathrm T}$，看 $Ap$ 的各分量",
+  "solution": "取 $p=(1,1,\\cdots,1)^{\\mathrm T}\\neq0$。$Ap$ 的第 $i$ 个分量为 $\\sum_{j=1}^{n}a_{ij}=a$，即\n$$Ap=(a,a,\\cdots,a)^{\\mathrm T}=ap.$$\n所以 $a$ 是 $A$ 的特征值，$p=k(1,1,\\cdots,1)^{\\mathrm T}\\ (k\\neq0)$ 是对应的特征向量。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-15-1",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "判断 $A=\\begin{pmatrix}5&4&2\\\\4&5&2\\\\2&2&2\\end{pmatrix}$ 能否相似于对角矩阵；若能，求可逆矩阵 $P$，使 $P^{-1}AP$ 为对角形。",
+  "options": [
+   "能，$P=\\begin{pmatrix}1&0&2\\\\0&1&2\\\\-2&-2&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(1,2,10)$",
+   "能，$P=\\begin{pmatrix}1&0&-2\\\\0&1&-2\\\\2&2&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(1,1,10)$",
+   "能，$P=\\begin{pmatrix}1&0&2\\\\0&1&2\\\\-2&-2&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(1,1,10)$",
+   "不能，因为特征值 $1$ 是二重的"
+  ],
+  "answer": 2,
+  "hint": "$A$ 是实对称矩阵，必可对角化；特征值为 $1,1,10$",
+  "solution": "$A$ 实对称，故可对角化。$|\\lambda E-A|=(\\lambda-1)^{2}(\\lambda-10)$，$\\lambda=1$ 的特征子空间为 $x_1+x_2=0$ 所定平面，取 $p_1=(1,-1,0)^{\\mathrm T}$ 或题中给出的 $(1,0,-2)^{\\mathrm T}$、$(0,1,-2)^{\\mathrm T}$；$\\lambda=10$ 取 $p_3=(2,2,1)^{\\mathrm T}$。\n取 $P=\\begin{pmatrix}1&0&2\\\\0&1&2\\\\-2&-2&1\\end{pmatrix}$，则 $P^{-1}AP=\\mathrm{diag}(1,1,10)$。官方答案一致（$P$ 不唯一）[✓官方]"
+ },
+ {
+  "id": "ch6-15-2",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "判断 $A=\\begin{pmatrix}-1&4&-2\\\\-3&4&0\\\\-3&1&3\\end{pmatrix}$ 能否相似于对角矩阵；若能，求可逆矩阵 $P$，使 $P^{-1}AP$ 为对角形。",
+  "options": [
+   "能，$P=\\begin{pmatrix}1&2&1\\\\1&3&3\\\\1&3&4\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(1,2,4)$",
+   "能，$P=\\begin{pmatrix}1&2&1\\\\3&3&1\\\\4&3&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(1,2,3)$",
+   "不能，因为 $A$ 不是实对称矩阵",
+   "能，$P=\\begin{pmatrix}1&2&1\\\\1&3&3\\\\1&3&4\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(1,2,3)$"
+  ],
+  "answer": 3,
+  "hint": "三个特征值 $1,2,3$ 互不相同，一定可以对角化",
+  "solution": "$|\\lambda E-A|=(\\lambda-1)(\\lambda-2)(\\lambda-3)$，三个特征值互异，故可对角化。\n对应特征向量可取 $p_1=(1,1,1)^{\\mathrm T},\\ p_2=(2,3,3)^{\\mathrm T},\\ p_3=(1,3,4)^{\\mathrm T}$，取\n$$P=\\begin{pmatrix}1&2&1\\\\1&3&3\\\\1&3&4\\end{pmatrix},\\qquad P^{-1}AP=\\mathrm{diag}(1,2,3).$$\n官方答案一致（$P$ 不唯一）[✓官方]"
+ },
+ {
+  "id": "ch6-15-3",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "判断 $A=\\begin{pmatrix}0&0&0\\\\0&0&0\\\\3&0&1\\end{pmatrix}$ 能否相似于对角矩阵；若能，求可逆矩阵 $P$，使 $P^{-1}AP$ 为对角形。",
+  "options": [
+   "能，$P=\\begin{pmatrix}1&0&0\\\\0&1&0\\\\-3&0&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(0,0,1)$",
+   "能，$P=\\begin{pmatrix}1&0&0\\\\0&1&0\\\\-3&0&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(0,1,1)$",
+   "能，$P=\\begin{pmatrix}1&0&0\\\\0&1&0\\\\3&0&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(0,0,1)$",
+   "不能，因为 $A$ 的特征值全为 $0$"
+  ],
+  "answer": 0,
+  "hint": "特征值为 $0,0,1$；$r(0\\cdot E-A)=1$，几何重数为 $2$",
+  "solution": "$|\\lambda E-A|=\\lambda^{2}(\\lambda-1)$，特征值为 $0,0,1$。$r(O-A)=r(A)=1$，故 $\\lambda=0$ 的特征子空间是二维的，$A$ 可对角化。\n$\\lambda=0$：$Ax=0$ 得 $p_1=(0,1,0)^{\\mathrm T},\\ p_2=(1,0,-3)^{\\mathrm T}$；$\\lambda=1$：$p_3=(0,0,1)^{\\mathrm T}$。取\n$$P=\\begin{pmatrix}1&0&0\\\\0&1&0\\\\-3&0&1\\end{pmatrix},\\qquad P^{-1}AP=\\mathrm{diag}(0,0,1).$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-15-4",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "判断 $A=\\begin{pmatrix}a&1&0\\\\0&a&1\\\\0&0&a\\end{pmatrix}$ 能否相似于对角矩阵；若能，求可逆矩阵 $P$，使 $P^{-1}AP$ 为对角形。",
+  "options": [
+   "能，取 $P=E$ 即可，$P^{-1}AP=\\mathrm{diag}(a,a,a)$",
+   "不能，因为 $r(aE-A)=2$，三重特征值 $a$ 只有一个线性无关的特征向量",
+   "不能，因为 $A$ 的特征值有重根",
+   "能，取 $P=\\begin{pmatrix}0&0&1\\\\0&1&0\\\\1&0&0\\end{pmatrix}$ 即可"
+  ],
+  "answer": 1,
+  "hint": "$aE-A$ 的秩为 $2$，特征子空间只有一维",
+  "solution": "$|\\lambda E-A|=(\\lambda-a)^{3}$，特征值为 $a$（三重）。但\n$$r(aE-A)=r\\begin{pmatrix}0&-1&0\\\\0&0&-1\\\\0&0&0\\end{pmatrix}=2,$$\n故 $\\lambda=a$ 的特征子空间只有 $3-2=1$ 维，找不到 $3$ 个线性无关的特征向量，$A$ 不能相似于对角矩阵。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-15-5",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "判断 $A=\\begin{pmatrix}4&6&0\\\\-3&-5&0\\\\-3&-6&1\\end{pmatrix}$ 能否相似于对角矩阵；若能，求可逆矩阵 $P$，使 $P^{-1}AP$ 为对角形。",
+  "options": [
+   "能，$P=\\begin{pmatrix}-2&0&-1\\\\1&0&1\\\\0&1&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(1,1,2)$",
+   "能，$P=\\begin{pmatrix}2&0&1\\\\-1&0&-1\\\\0&1&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(1,1,-2)$",
+   "能，$P=\\begin{pmatrix}-2&0&-1\\\\1&0&1\\\\0&1&1\\end{pmatrix}$，$P^{-1}AP=\\mathrm{diag}(1,1,-2)$",
+   "不能，因为特征值 $1$ 是二重的"
+  ],
+  "answer": 2,
+  "hint": "特征值为 $1,1,-2$；$r(E-A)=1$，故可对角化",
+  "solution": "$|\\lambda E-A|=(\\lambda+2)(\\lambda-1)^{2}$，特征值为 $1,1,-2$。$r(E-A)=r\\begin{pmatrix}-3&-6&0\\\\3&6&0\\\\3&6&0\\end{pmatrix}=1$，故 $\\lambda=1$ 的特征子空间是二维的，$A$ 可对角化。\n$\\lambda=1$：$p_1=(-2,1,0)^{\\mathrm T},\\ p_2=(0,0,1)^{\\mathrm T}$；$\\lambda=-2$：$p_3=(-1,1,1)^{\\mathrm T}$。取\n$$P=\\begin{pmatrix}-2&0&-1\\\\1&0&1\\\\0&1&1\\end{pmatrix},\\qquad P^{-1}AP=\\mathrm{diag}(1,1,-2).$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-16",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "设 $A=\\begin{pmatrix}1&-1&0\\\\-1&0&0\\\\0&0&1\\end{pmatrix}$ 与 $B=\\begin{pmatrix}1&a&0\\\\-1&0&-1\\\\0&a&1\\end{pmatrix}$ 相似，求 $a$。",
+  "answer": "-0.5",
+  "hint": "相似矩阵行列式相等",
+  "solution": "$|A|=1\\cdot(0-0)-(-1)\\cdot(-1-0)+0=-1$。\n$|B|=1\\cdot(0+a)-a\\cdot(-1-0)+0=2a$。\n由相似得 $|A|=|B|$，即 $2a=-1$，故 $a=-\\frac{1}{2}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-17",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求 $x,y$，使 $A=\\begin{pmatrix}2&0&0\\\\0&0&1\\\\0&1&x\\end{pmatrix}$ 与 $B=\\begin{pmatrix}2&0&0\\\\0&y&0\\\\0&0&-1\\end{pmatrix}$ 相似，并求可逆矩阵 $P$，使 $P^{-1}AP=B$。",
+  "options": [
+   "$x=0,\\ y=1$，$P=\\begin{pmatrix}1&0&0\\\\0&1&1\\\\0&-1&1\\end{pmatrix}$",
+   "$x=1,\\ y=0$，$P=\\begin{pmatrix}1&0&0\\\\0&1&1\\\\0&1&-1\\end{pmatrix}$",
+   "$x=0,\\ y=1$，$P=\\begin{pmatrix}1&0&0\\\\0&1&1\\\\0&1&-1\\end{pmatrix}$",
+   "$x=0,\\ y=-1$，$P=\\begin{pmatrix}1&0&0\\\\0&1&1\\\\0&1&-1\\end{pmatrix}$"
+  ],
+  "answer": 2,
+  "hint": "相似矩阵迹相等、特征值相同；$-1$ 必是 $A$ 的特征值",
+  "solution": "$B$ 的特征值为 $2,y,-1$。$A$ 的特征值为 $2$ 与 $\\begin{pmatrix}0&1\\\\1&x\\end{pmatrix}$ 的特征值。\n因 $-1$ 是 $A$ 的特征值，$|-E-\\begin{pmatrix}0&1\\\\1&x\\end{pmatrix}|=\\begin{vmatrix}-1&-1\\\\-1&-x-1\\end{vmatrix}=x=0$，故 $x=0$。此时该 $2$ 阶块特征值为 $1,-1$，与 $y$ 比较得 $y=1$。\n取特征向量 $p_1=(1,0,0)^{\\mathrm T}\\ (\\lambda=2)$，$p_2=(0,1,1)^{\\mathrm T}\\ (\\lambda=1)$，$p_3=(0,1,-1)^{\\mathrm T}\\ (\\lambda=-1)$，则\n$$P=\\begin{pmatrix}1&0&0\\\\0&1&1\\\\0&1&-1\\end{pmatrix},\\qquad P^{-1}AP=\\mathrm{diag}(2,1,-1)=B.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-18",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "已知 $A=\\begin{pmatrix}1&-2&-4\\\\-2&x&-2\\\\-4&-2&1\\end{pmatrix}$ 与 $\\Lambda=\\begin{pmatrix}5&&\\\\&y&\\\\&&-4\\end{pmatrix}$ 相似。求参数 $x,y$ 的值，并求可逆矩阵 $P$，使得 $P^{-1}AP=\\Lambda$。",
+  "options": [
+   "$x=4,\\ y=5$，$P=\\begin{pmatrix}1&0&2\\\\2&-2&1\\\\0&1&-2\\end{pmatrix}$",
+   "$x=4,\\ y=-5$，$P=\\begin{pmatrix}1&0&2\\\\-2&-2&1\\\\0&1&2\\end{pmatrix}$",
+   "$x=-4,\\ y=5$，$P=\\begin{pmatrix}1&0&2\\\\-2&-2&1\\\\0&1&2\\end{pmatrix}$",
+   "$x=4,\\ y=5$，$P=\\begin{pmatrix}1&0&2\\\\-2&-2&1\\\\0&1&2\\end{pmatrix}$"
+  ],
+  "answer": 3,
+  "hint": "用 $\\operatorname{tr}A=\\operatorname{tr}\\Lambda$ 与 $|-4E-A|=0$",
+  "solution": "由 $\\operatorname{tr}A=2+x=1+y$ 得 $y=x+1$。\n又 $-4$ 是 $A$ 的特征值，$|-4E-A|=\\begin{vmatrix}-5&2&4\\\\2&-4-x&2\\\\4&2&-5\\end{vmatrix}=36-9x=0$，得 $x=4$，从而 $y=5$。\n此时 $\\lambda=5$（二重）的特征向量 $p_1=(1,-2,0)^{\\mathrm T},\\ p_2=(0,-2,1)^{\\mathrm T}$；$\\lambda=-4$ 的特征向量 $p_3=(2,1,2)^{\\mathrm T}$，取\n$$P=\\begin{pmatrix}1&0&2\\\\-2&-2&1\\\\0&1&2\\end{pmatrix},\\qquad P^{-1}AP=\\mathrm{diag}(5,5,-4)=\\Lambda.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-19-1",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "求三阶方阵 $A$，使得 $\\lambda_1=1,\\ \\lambda_2=1,\\ \\lambda_3=2$，对应的特征向量为 $p_1=\\begin{pmatrix}1\\\\2\\\\1\\end{pmatrix},\\ p_2=\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix},\\ p_3=\\begin{pmatrix}2\\\\0\\\\-1\\end{pmatrix}$。",
+  "options": [
+   "$A=\\begin{pmatrix}3&2&-2\\\\0&1&0\\\\1&-1&0\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}3&-2&2\\\\0&1&0\\\\1&-1&0\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}3&-2&2\\\\0&1&0\\\\-1&1&0\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}3&-2&2\\\\0&2&0\\\\-1&1&1\\end{pmatrix}$"
+  ],
+  "answer": 2,
+  "hint": "$A=P\\Lambda P^{-1}$，其中 $P=(p_1,p_2,p_3)$",
+  "solution": "令 $P=(p_1,p_2,p_3)=\\begin{pmatrix}1&1&2\\\\2&1&0\\\\1&0&-1\\end{pmatrix}$，$\\Lambda=\\mathrm{diag}(1,1,2)$，则 $A=P\\Lambda P^{-1}$。\n求得 $P^{-1}=\\begin{pmatrix}1&-1&2\\\\-2&3&-4\\\\1&-1&1\\end{pmatrix}$，于是\n$$A=\\begin{pmatrix}1&1&2\\\\2&1&0\\\\1&0&-1\\end{pmatrix}\\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&2\\end{pmatrix}\\begin{pmatrix}1&-1&2\\\\-2&3&-4\\\\1&-1&1\\end{pmatrix}=\\begin{pmatrix}3&-2&2\\\\0&1&0\\\\-1&1&0\\end{pmatrix}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-19-2",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "求三阶方阵 $A$，使得 $\\lambda_1=1,\\ \\lambda_2=-1,\\ \\lambda_3=0$，对应的特征向量为 $p_1=\\begin{pmatrix}1\\\\2\\\\1\\end{pmatrix},\\ p_2=\\begin{pmatrix}0\\\\-2\\\\1\\end{pmatrix},\\ p_3=\\begin{pmatrix}1\\\\1\\\\2\\end{pmatrix}$。",
+  "options": [
+   "$A=\\begin{pmatrix}5&-1&-2\\\\16&-4&-6\\\\2&0&1\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}5&1&-2\\\\-16&-4&-6\\\\2&0&-1\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}5&-1&2\\\\16&-4&6\\\\2&0&-1\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}5&-1&-2\\\\16&-4&-6\\\\2&0&-1\\end{pmatrix}$"
+  ],
+  "answer": 3,
+  "hint": "$A=P\\Lambda P^{-1}$；注意 $P^{-1}$ 的计算",
+  "solution": "令 $P=(p_1,p_2,p_3)=\\begin{pmatrix}1&0&1\\\\2&-2&1\\\\1&1&2\\end{pmatrix}$，$\\Lambda=\\mathrm{diag}(1,-1,0)$，则\n$$A=P\\Lambda P^{-1}=\\begin{pmatrix}1&0&1\\\\2&-2&1\\\\1&1&2\\end{pmatrix}\\begin{pmatrix}1&0&0\\\\0&-1&0\\\\0&0&0\\end{pmatrix}\\begin{pmatrix}5&-1&-2\\\\3&-1&-1\\\\-4&1&2\\end{pmatrix}=\\begin{pmatrix}5&-1&-2\\\\16&-4&-6\\\\2&0&-1\\end{pmatrix}.$$\n验证：$Ap_1=p_1$，$Ap_2=-p_2$，$Ap_3=0$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-20",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求参数 $x$ 的值，使 $A=\\begin{pmatrix}-2&0&0\\\\2&x&2\\\\3&1&1\\end{pmatrix}$ 的特征值为 $-2,-1,2$，并求可逆矩阵 $P$，使 $P^{-1}AP$ 为对角矩阵。",
+  "options": [
+   "$x=0$，$P=\\begin{pmatrix}1&0&0\\\\0&-2&1\\\\-1&1&1\\end{pmatrix}$",
+   "$x=0$，$P=\\begin{pmatrix}1&0&0\\\\0&-2&1\\\\1&-1&1\\end{pmatrix}$",
+   "$x=2$，$P=\\begin{pmatrix}1&0&0\\\\0&-2&1\\\\-1&1&1\\end{pmatrix}$",
+   "$x=0$，$P=\\begin{pmatrix}1&0&0\\\\0&1&1\\\\-1&-2&1\\end{pmatrix}$"
+  ],
+  "answer": 0,
+  "hint": "$\\operatorname{tr}A$ 等于特征值之和",
+  "solution": "$\\operatorname{tr}A=-2+x+1=x-1$，而 $-2-1+2=-1$，故 $x=0$。\n此时 $\\lambda=-2$：$p_1=(1,0,-1)^{\\mathrm T}$；$\\lambda=-1$：$p_2=(0,-2,1)^{\\mathrm T}$；$\\lambda=2$：$p_3=(0,1,1)^{\\mathrm T}$，取\n$$P=\\begin{pmatrix}1&0&0\\\\0&-2&1\\\\-1&1&1\\end{pmatrix},\\qquad P^{-1}AP=\\mathrm{diag}(-2,-1,2).$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-21",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "证明：若 $A$ 与 $B$ 相似，则对任意正整数 $k$，$A^{k}$ 与 $B^{k}$ 也相似。",
+  "answer": "证明见解析",
+  "hint": "把 $B=P^{-1}AP$ 代到 $B^{k}$ 里，中间项相消",
+  "solution": "设 $B=P^{-1}AP$（$P$ 可逆）。则\n$$B^{k}=(P^{-1}AP)(P^{-1}AP)\\cdots(P^{-1}AP)=P^{-1}A^{k}P,$$\n故 $A^{k}$ 与 $B^{k}$ 相似（变换矩阵仍是 $P$）。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch6-22",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $A,B$ 都是 $n$ 阶方阵，$|A|\\neq0$。证明：$AB$ 与 $BA$ 相似。",
+  "answer": "证明见解析",
+  "hint": "注意 $BA=A^{-1}(AB)A$",
+  "solution": "因 $|A|\\neq0$，$A$ 可逆，且\n$$BA=A^{-1}(AB)A,$$\n即 $BA$ 与 $AB$ 相似（相似变换矩阵为 $A$）。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch6-23",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $A,B$ 是 $n$ 阶方阵，$C,D$ 是 $m$ 阶方阵。证明：若 $A$ 与 $B$ 相似，$C$ 与 $D$ 相似，则 $\\begin{pmatrix}A&O_1\\\\O_2&C\\end{pmatrix}$ 与 $\\begin{pmatrix}B&O_1\\\\O_2&D\\end{pmatrix}$ 也相似，其中 $O_1,O_2$ 为零矩阵。",
+  "answer": "证明见解析",
+  "hint": "取分块对角矩阵 $P=\\mathrm{diag}(P_1,P_2)$",
+  "solution": "设 $B=P_1^{-1}AP_1$，$D=P_2^{-1}CP_2$（$P_1,P_2$ 可逆），令 $P=\\begin{pmatrix}P_1&O_1\\\\O_2&P_2\\end{pmatrix}$，则 $P$ 可逆且\n$$P^{-1}=\\begin{pmatrix}P_1^{-1}&O_1\\\\O_2&P_2^{-1}\\end{pmatrix},\\qquad\nP^{-1}\\begin{pmatrix}A&O_1\\\\O_2&C\\end{pmatrix}P=\\begin{pmatrix}P_1^{-1}AP_1&O_1\\\\O_2&P_2^{-1}CP_2\\end{pmatrix}=\\begin{pmatrix}B&O_1\\\\O_2&D\\end{pmatrix}.$$\n故两分块矩阵相似。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch6-24",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "已知 $A=\\begin{pmatrix}1&2\\\\2&1\\end{pmatrix}$，求 $A^{k}$，其中 $k$ 是正整数。",
+  "options": [
+   "$A^{k}=\\dfrac{1}{2}\\begin{pmatrix}(-1)^{k}+3^{k}&(-1)^{k+1}+3^{k}\\\\(-1)^{k+1}+3^{k}&(-1)^{k}+3^{k}\\end{pmatrix}$",
+   "$A^{k}=\\begin{pmatrix}3^{k}&0\\\\0&(-1)^{k}\\end{pmatrix}$",
+   "$A^{k}=\\dfrac{1}{2}\\begin{pmatrix}3^{k}+(-1)^{k}&3^{k}+1\\\\3^{k}+1&3^{k}+(-1)^{k}\\end{pmatrix}$",
+   "$A^{k}=\\dfrac{1}{2}\\begin{pmatrix}3^{k}-(-1)^{k}&3^{k}+(-1)^{k}\\\\3^{k}+(-1)^{k}&3^{k}-(-1)^{k}\\end{pmatrix}$"
+  ],
+  "answer": 0,
+  "hint": "$A$ 的特征值为 $3,-1$；用 $A=P\\Lambda P^{-1}$ 或 $A=2J-E$（$J$ 为全 $1$ 矩阵）",
+  "solution": "取 $P=\\begin{pmatrix}1&1\\\\-1&1\\end{pmatrix}$，则 $P^{-1}AP=\\mathrm{diag}(-1,3)$，$P^{-1}=\\frac{1}{2}\\begin{pmatrix}1&-1\\\\1&1\\end{pmatrix}$。于是\n$$A^{k}=\\begin{pmatrix}1&1\\\\-1&1\\end{pmatrix}\\begin{pmatrix}(-1)^{k}&0\\\\0&3^{k}\\end{pmatrix}\\frac{1}{2}\\begin{pmatrix}1&-1\\\\1&1\\end{pmatrix}\n=\\frac{1}{2}\\begin{pmatrix}(-1)^{k}+3^{k}&(-1)^{k+1}+3^{k}\\\\(-1)^{k+1}+3^{k}&(-1)^{k}+3^{k}\\end{pmatrix}.$$\n（也可用 $A=2J-E$，$J^{2}=2J$ 展开验证 $k=1$ 时得原矩阵。）官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch6-25",
+  "subject": "高代",
+  "chapter": "第6章 特征值与特征向量",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "设 $\\alpha$ 是 $n$ 阶矩阵 $A$ 的属于特征值 $\\lambda$ 的特征向量，验证 $\\beta=P^{-1}\\alpha$ 一定是 $B=P^{-1}AP$ 的属于特征值 $\\lambda$ 的特征向量。",
+  "answer": "证明见解析",
+  "hint": "直接算 $B\\beta$，并用 $PP^{-1}=E$",
+  "solution": "$\\beta=P^{-1}\\alpha\\neq0$（$P^{-1}$ 可逆，$\\alpha\\neq0$），且\n$$B\\beta=P^{-1}AP\\cdot P^{-1}\\alpha=P^{-1}A\\alpha=P^{-1}(\\lambda\\alpha)=\\lambda P^{-1}\\alpha=\\lambda\\beta.$$\n故 $\\beta$ 是 $B$ 的属于 $\\lambda$ 的特征向量。官方：证明略 [✓官方]"
+ }
+]

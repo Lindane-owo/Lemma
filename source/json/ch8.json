@@ -1,0 +1,469 @@
+[
+ {
+  "id": "ch8-1-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "已知 $O(0,0,0),\\;A(-1,1,4),\\;B(0,-3,3),\\;C(-4,1,1)$，求过 $O,A,B,C$ 四点的球面方程。",
+  "answer": "$x^2+y^2+z^2+4x+2y-4z=0$",
+  "hint": "设一般式 $x^2+y^2+z^2+Dx+Ey+Fz+G=0$，过原点先定出 $G=0$",
+  "solution": "设球面方程为 $x^2+y^2+z^2+Dx+Ey+Fz+G=0$。代入 $O$ 得 $G=0$；代入 $A$：$18-D+E+4F=0$；代入 $B$：$18-3E+3F=0$，即 $E-F=6$；代入 $C$：$18-4D+E+F=0$。解得 $D=4,\\;E=2,\\;F=-4$，故球面方程为 $x^2+y^2+z^2+4x+2y-4z=0$，即 $(x+2)^2+(y+1)^2+(z-2)^2=9$，球心 $(-2,-1,2)$，半径 $3$。 [✓官方]"
+ },
+ {
+  "id": "ch8-2-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "已知动点到点 $A(2,3,4)$ 与点 $B(1,1,1)$ 的距离之比为 $2:1$，求动点的轨迹方程，并说明它表示什么曲面。",
+  "options": [
+   "$3(x^2+y^2+z^2)-4x-2y-17=0$，球面",
+   "$3(x^2+y^2+z^2)-4x-2y-17=0$，椭球面",
+   "$3(x^2+y^2+z^2)-4x-6y-8z+29=0$，球面",
+   "$x^2+y^2+z^2-4x-2y-17=0$，球面"
+  ],
+  "answer": 0,
+  "hint": "把 $|PM|=2|PN|$ 两边平方，避免出现根式",
+  "solution": "设动点 $P(x,y,z)$，由 $|PA|=2|PB|$ 得 $(x-2)^2+(y-3)^2+(z-4)^2=4\\big[(x-1)^2+(y-1)^2+(z-1)^2\\big]$。左边 $=x^2+y^2+z^2-4x-6y-8z+29$，右边 $=4x^2+4y^2+4z^2-8x-8y-8z+12$，整理得 $3(x^2+y^2+z^2)-4x-2y-17=0$，即 $\\left(x-\\frac23\\right)^2+\\left(y-\\frac13\\right)^2+z^2=\\frac{56}{9}$，是球面（阿波罗尼斯球）。 [✓官方]"
+ },
+ {
+  "id": "ch8-3-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "写出 $xOy$ 平面上的抛物线 $y=4x^2$ 绕 $y$ 轴旋转一周所形成的旋转面方程。",
+  "options": [
+   "$y=4(x^2+z^2)$",
+   "$y=4x^2+z^2$",
+   "$y^2=4(x^2+z^2)$",
+   "$y=4x^2$"
+  ],
+  "answer": 0,
+  "hint": "绕 $y$ 轴旋转：把 $x^2$ 换成 $x^2+z^2$",
+  "solution": "旋转时曲面上点到 $y$ 轴的距离 $\\sqrt{x^2+z^2}$ 等于原曲线上对应点的 $|x|$，故只需把方程中的 $x^2$ 换成 $x^2+z^2$，得 $y=4(x^2+z^2)$（旋转抛物面）。 [✓官方]"
+ },
+ {
+  "id": "ch8-3-2",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "写出 $xOz$ 平面上的椭圆 $\\frac{x^2}{4}+\\frac{z^2}{9}=1$ 绕 $x$ 轴旋转一周所形成的旋转面方程。",
+  "options": [
+   "$\\frac{x^2}{4}+\\frac{y^2+z^2}{9}=1$",
+   "$\\frac{x^2+y^2}{4}+\\frac{z^2}{9}=1$",
+   "$\\frac{x^2}{4}+\\frac{y^2}{9}+z^2=1$",
+   "$\\frac{x^2}{4}-\\frac{y^2+z^2}{9}=1$"
+  ],
+  "answer": 0,
+  "hint": "绕 $x$ 轴旋转：把 $z^2$ 换成 $y^2+z^2$",
+  "solution": "绕 $x$ 轴旋转，点到 $x$ 轴的距离为 $\\sqrt{y^2+z^2}$，故把 $z^2$ 换成 $y^2+z^2$，得 $\\frac{x^2}{4}+\\frac{y^2+z^2}{9}=1$（旋转椭球面）。 [✓官方]"
+ },
+ {
+  "id": "ch8-3-3",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "写出 $yOz$ 平面上的双曲线 $\\frac{y^2}{4}-z^2=1$ 绕 $y$ 轴旋转一周所形成的旋转面方程。",
+  "options": [
+   "$\\frac{y^2}{4}-x^2-z^2=1$",
+   "$\\frac{y^2+z^2}{4}-x^2=1$",
+   "$\\frac{y^2}{4}-z^2=1$",
+   "$\\frac{y^2}{4}+x^2+z^2=1$"
+  ],
+  "answer": 0,
+  "hint": "绕 $y$ 轴旋转：把 $z^2$ 换成 $x^2+z^2$",
+  "solution": "绕 $y$ 轴旋转，把 $z^2$ 换成 $x^2+z^2$，得 $\\frac{y^2}{4}-x^2-z^2=1$（旋转单叶双曲面，因原双曲线与 $y$ 轴不相交）。 [✓官方]"
+ },
+ {
+  "id": "ch8-3-4",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "写出 $yOz$ 平面上的直线 $y+z=0$ 绕 $z$ 轴旋转一周所形成的旋转面方程。",
+  "options": [
+   "$x^2+y^2=z^2$",
+   "$x^2+z^2=y^2$",
+   "$x^2+y^2+z^2=0$",
+   "$x^2+y^2=2z^2$"
+  ],
+  "answer": 0,
+  "hint": "先由 $z=-y$ 得 $z^2=y^2$，再把 $y^2$ 换成 $x^2+y^2$",
+  "solution": "直线 $y+z=0$ 上点到 $z$ 轴的距离为 $|y|$，且 $z=-y$，故 $z^2=y^2$；把 $y^2$ 换成 $x^2+y^2$ 得 $z^2=x^2+y^2$，即顶点在原点、半顶角 $45^\\circ$ 的圆锥面。 [✓官方]"
+ },
+ {
+  "id": "ch8-4-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "说明方程 $\\frac{x^2}{9}-\\frac{y^2}{4}-\\frac{z^2}{4}=1$ 所表示的旋转面是怎样形成的。",
+  "options": [
+   "由 $xOy$ 面上的双曲线 $\\frac{x^2}{9}-\\frac{y^2}{4}=1$ 绕 $x$ 轴旋转一周形成",
+   "由 $xOy$ 面上的双曲线 $\\frac{x^2}{9}-\\frac{y^2}{4}=1$ 绕 $y$ 轴旋转一周形成",
+   "由 $xOz$ 面上的椭圆 $\\frac{x^2}{9}+\\frac{z^2}{4}=1$ 绕 $x$ 轴旋转一周形成",
+   "由 $yOz$ 面上的双曲线 $\\frac{y^2}{4}-\\frac{z^2}{4}=1$ 绕 $z$ 轴旋转一周形成"
+  ],
+  "answer": 0,
+  "hint": "找一条含旋转轴的坐标面截痕，看曲线绕哪条轴旋转能生成另两个平方项",
+  "solution": "方程中 $y,z$ 的系数相同，说明是绕 $x$ 轴旋转的旋转面。在 $xOy$ 面上截痕为双曲线 $\\frac{x^2}{9}-\\frac{y^2}{4}=1$，它绕 $x$ 轴旋转一周即得该曲面（旋转双叶双曲面）；同样可由 $xOz$ 面上的双曲线 $\\frac{x^2}{9}-\\frac{z^2}{4}=1$ 绕 $x$ 轴旋转得到。 [✓官方]"
+ },
+ {
+  "id": "ch8-4-2",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "说明方程 $x^2+y^2-\\frac{z^2}{4}=1$ 所表示的旋转面是怎样形成的。",
+  "options": [
+   "由 $xOz$ 面上的双曲线 $x^2-\\frac{z^2}{4}=1$ 绕 $z$ 轴旋转一周形成",
+   "由 $xOz$ 面上的双曲线 $x^2-\\frac{z^2}{4}=1$ 绕 $x$ 轴旋转一周形成",
+   "由 $xOy$ 面上的圆 $x^2+y^2=1$ 绕 $z$ 轴旋转一周形成",
+   "由 $yOz$ 面上的抛物线 $z^2=4y^2$ 绕 $z$ 轴旋转一周形成"
+  ],
+  "answer": 0,
+  "hint": "$x,y$ 系数相同 → 旋转轴是 $z$ 轴；再看截痕与旋转轴是否相交",
+  "solution": "$x,y$ 的系数相同，故为绕 $z$ 轴的旋转面。在 $xOz$ 面上截痕为双曲线 $x^2-\\frac{z^2}{4}=1$，它不与 $z$ 轴相交，绕 $z$ 轴旋转得旋转单叶双曲面；也可由 $yOz$ 面上的双曲线 $y^2-\\frac{z^2}{4}=1$ 绕 $z$ 轴旋转得到。 [✓官方]"
+ },
+ {
+  "id": "ch8-4-3",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "说明方程 $x^2+\\frac{y^2}{4}+z^2=1$ 所表示的旋转面是怎样形成的。",
+  "options": [
+   "由 $xOy$ 面上的椭圆 $x^2+\\frac{y^2}{4}=1$ 绕 $y$ 轴旋转一周形成",
+   "由 $xOy$ 面上的椭圆 $x^2+\\frac{y^2}{4}=1$ 绕 $x$ 轴旋转一周形成",
+   "由 $xOz$ 面上的圆 $x^2+z^2=1$ 绕 $x$ 轴旋转一周形成",
+   "由 $yOz$ 面上的椭圆 $\\frac{y^2}{4}+z^2=1$ 绕 $z$ 轴旋转一周形成"
+  ],
+  "answer": 0,
+  "hint": "$x,z$ 系数相同 → 绕 $y$ 轴旋转；截痕是椭圆",
+  "solution": "$x,z$ 的系数都是 $1$，故为绕 $y$ 轴的旋转面。在 $xOy$ 面上截痕为椭圆 $x^2+\\frac{y^2}{4}=1$，绕 $y$ 轴旋转一周得旋转椭球面；也可由 $yOz$ 面上的椭圆 $\\frac{y^2}{4}+z^2=1$ 绕 $y$ 轴旋转得到。 [✓官方]"
+ },
+ {
+  "id": "ch8-4-4",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "说明方程 $y=x^2+z^2$ 所表示的旋转面是怎样形成的。",
+  "options": [
+   "由 $xOy$ 面上的抛物线 $y=x^2$ 绕 $y$ 轴旋转一周形成",
+   "由 $xOy$ 面上的抛物线 $y=x^2$ 绕 $x$ 轴旋转一周形成",
+   "由 $xOz$ 面上的抛物线 $z^2=y$ 绕 $z$ 轴旋转一周形成",
+   "由 $xOy$ 面上的直线 $y=x$ 绕 $y$ 轴旋转一周形成"
+  ],
+  "answer": 0,
+  "hint": "只有 $x,z$ 同时以平方和出现 → 绕 $y$ 轴旋转",
+  "solution": "把 $y=x^2+z^2$ 写成 $y=\\big(\\sqrt{x^2+z^2}\\big)^2$，可见曲面上点到 $y$ 轴距离的平方等于点的 $y$ 坐标，故由 $xOy$ 面上的抛物线 $y=x^2$ 绕 $y$ 轴旋转一周形成（旋转抛物面）；也可由 $yOz$ 面上的抛物线 $y=z^2$ 绕 $y$ 轴旋转得到。 [✓官方]"
+ },
+ {
+  "id": "ch8-4-5",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "说明方程 $x=\\sqrt{y^2+z^2}$ 所表示的旋转面是怎样形成的。",
+  "options": [
+   "由 $xOy$ 面上的半直线 $x=y\\;(y\\geqslant 0)$ 绕 $x$ 轴旋转一周形成",
+   "由 $xOy$ 面上的半直线 $x=y\\;(y\\geqslant 0)$ 绕 $y$ 轴旋转一周形成",
+   "由 $yOz$ 面上的圆 $y^2+z^2=1$ 绕 $x$ 轴旋转一周形成",
+   "由 $xOy$ 面上的整条直线 $x=y$ 绕 $x$ 轴旋转一周形成"
+  ],
+  "answer": 0,
+  "hint": "先看清 $x\\geqslant 0$：它是半锥面，不是整个双锥面",
+  "solution": "由 $x=\\sqrt{y^2+z^2}$ 得 $x\\geqslant 0$ 且 $x^2=y^2+z^2$，这是顶点在原点、半顶角 $45^\\circ$ 的圆锥面中 $x\\geqslant 0$ 的一半。它由 $xOy$ 面上的半直线 $x=y\\;(y\\geqslant 0)$ 绕 $x$ 轴旋转一周形成；也可由 $xOz$ 面上的半直线 $x=z\\;(z\\geqslant 0)$ 绕 $x$ 轴旋转得到。 [✓官方]"
+ },
+ {
+  "id": "ch8-5-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "画出方程 $\\frac{x^2}{4}+y^2=1$ 所表示的曲面。",
+  "answer": "作图见解析",
+  "hint": "方程缺 $z$ → 母线平行 $z$ 轴的柱面",
+  "solution": "方程中不含 $z$，故为母线平行于 $z$ 轴的柱面：以 $xOy$ 面上的椭圆 $\\frac{x^2}{4}+y^2=1$ 为准线，沿 $z$ 轴方向平移即得（椭圆柱面）。作图：先在 $xOy$ 面画出长半轴 $2$（沿 $x$ 轴）、短半轴 $1$（沿 $y$ 轴）的椭圆，再沿平行于 $z$ 轴的方向平移出一族平行线。 [✓官方（原书答“略”，作图题）]"
+ },
+ {
+  "id": "ch8-5-2",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "画出方程 $y^2-z^2=1$ 所表示的曲面。",
+  "answer": "作图见解析",
+  "hint": "缺 $x$ → 母线平行 $x$ 轴的双曲柱面",
+  "solution": "方程中不含 $x$，故为母线平行于 $x$ 轴的双曲柱面：以 $yOz$ 面上的双曲线 $y^2-z^2=1$（顶点 $(\\pm1,0)$）为准线，沿 $x$ 轴方向平移即得。作图：先画 $yOz$ 面上的双曲线及其两条渐近线 $z=\\pm y$，再沿 $x$ 轴方向拉伸。 [✓官方（作图题，原书答“略”）]"
+ },
+ {
+  "id": "ch8-5-3",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "画出方程 $x=z^2+1$ 所表示的曲面。",
+  "answer": "作图见解析",
+  "hint": "缺 $y$ → 母线平行 $y$ 轴的抛物柱面",
+  "solution": "方程中不含 $y$，故为母线平行于 $y$ 轴的抛物柱面：以 $xOz$ 面上的抛物线 $x=z^2+1$（顶点 $(1,0)$，开口沿 $x$ 轴正向）为准线，沿 $y$ 轴方向平移即得。作图：先画 $xOz$ 面上的抛物线，再沿 $y$ 轴方向拉伸。 [✓官方（作图题，原书答“略”）]"
+ },
+ {
+  "id": "ch8-5-4",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "画出方程 $y=\\sqrt{1-x^2}$ 所表示的曲面。",
+  "answer": "作图见解析",
+  "hint": "先看等式成立的条件 $-1\\leqslant x\\leqslant 1,\\;y\\geqslant 0$，再平方",
+  "solution": "由 $y=\\sqrt{1-x^2}\\geqslant 0$ 得 $x^2+y^2=1\\;(y\\geqslant 0)$。方程不含 $z$，故为母线平行于 $z$ 轴的半圆柱面：准线是 $xOy$ 面上单位圆的上半圆周（含端点 $(\\pm1,0)$），沿 $z$ 轴方向平移即得（只取 $y\\geqslant 0$ 的那一半柱面）。作图：画上半圆周，再沿 $z$ 轴拉伸。 [✓官方（作图题，原书答“略”）]"
+ },
+ {
+  "id": "ch8-6-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "将二次曲面 $2x^2+3y^2+3z^2+4yz=1$ 的方程化为标准方程，并说明它表示什么曲面。",
+  "options": [
+   "$2\\tilde x^2+\\tilde y^2+5\\tilde z^2=1$，椭球面",
+   "$2\\tilde x^2+\\tilde y^2+5\\tilde z^2=-1$，双叶双曲面",
+   "$2\\tilde x^2+3\\tilde y^2+3\\tilde z^2=1$，椭球面",
+   "$\\tilde x^2+\\tilde y^2+2\\tilde z^2=1$，椭球面"
+  ],
+  "answer": 0,
+  "hint": "二次型矩阵为 $\\operatorname{diag}(2,\\begin{pmatrix}3&2\\\\2&3\\end{pmatrix})$，先求特征值",
+  "solution": "二次型矩阵 $\\boldsymbol A=\\begin{pmatrix}2&0&0\\\\0&3&2\\\\0&2&3\\end{pmatrix}$，特征值为 $2,\\;1,\\;5$。取正交变换 $x=\\tilde x,\\;y=\\frac{1}{\\sqrt2}(\\tilde y+\\tilde z),\\;z=\\frac{1}{\\sqrt2}(\\tilde z-\\tilde y)$，则 $3y^2+3z^2+4yz=\\tilde y^2+5\\tilde z^2$，方程化为 $2\\tilde x^2+\\tilde y^2+5\\tilde z^2=1$，即 $\\frac{\\tilde x^2}{1/2}+\\frac{\\tilde y^2}{1}+\\frac{\\tilde z^2}{1/5}=1$，为椭球面（半轴 $\\frac{\\sqrt2}{2},1,\\frac{\\sqrt5}{5}$）。 [✓官方]"
+ },
+ {
+  "id": "ch8-6-2",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "将二次曲面 $z=xy$ 的方程化为标准方程，并说明它表示什么曲面。",
+  "options": [
+   "$\\tilde z=\\frac12\\tilde x^2-\\frac12\\tilde y^2$，双曲抛物面（马鞍面）",
+   "$\\tilde z=\\frac12\\tilde x^2+\\frac12\\tilde y^2$，椭圆抛物面",
+   "$\\tilde z^2=\\frac12\\tilde x^2-\\frac12\\tilde y^2$，双曲抛物面",
+   "$\\tilde z=\\tilde x^2-\\tilde y^2$，双曲抛物面"
+  ],
+  "answer": 0,
+  "hint": "绕 $z$ 轴转 $45^\\circ$：$x=\\frac{1}{\\sqrt2}(\\tilde x+\\tilde y),\\;y=\\frac{1}{\\sqrt2}(\\tilde x-\\tilde y)$",
+  "solution": "作旋转变换 $x=\\frac{1}{\\sqrt2}(\\tilde x+\\tilde y),\\;y=\\frac{1}{\\sqrt2}(\\tilde x-\\tilde y),\\;z=\\tilde z$，则 $xy=\\frac12(\\tilde x^2-\\tilde y^2)$，方程化为 $\\tilde z=\\frac12\\tilde x^2-\\frac12\\tilde y^2$，为双曲抛物面（马鞍面）。 [✓官方]"
+ },
+ {
+  "id": "ch8-6-3",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "将二次曲面 $x^2-2y^2+z^2+4xy+8xz+4yz=3$ 的方程化为标准方程，并说明它表示什么曲面。",
+  "options": [
+   "$\\tilde x^2+\\tilde y^2-2\\tilde z^2=-1$，双叶双曲面",
+   "$\\tilde x^2+\\tilde y^2-2\\tilde z^2=1$，单叶双曲面",
+   "$2\\tilde x^2+\\tilde y^2-\\tilde z^2=1$，单叶双曲面",
+   "$\\tilde x^2-\\tilde y^2-2\\tilde z^2=1$，双叶双曲面"
+  ],
+  "answer": 0,
+  "hint": "二次型矩阵 $\\begin{pmatrix}1&2&4\\\\2&-2&2\\\\4&2&1\\end{pmatrix}$，特征值为 $6,-3,-3$",
+  "solution": "二次型矩阵 $\\boldsymbol A=\\begin{pmatrix}1&2&4\\\\2&-2&2\\\\4&2&1\\end{pmatrix}$，特征多项式 $\\lambda^3-27\\lambda-54=(\\lambda-6)(\\lambda+3)^2$，特征值 $6,-3,-3$。取正交变换 $x=\\frac{1}{\\sqrt5}\\tilde x-\\frac{4}{\\sqrt{45}}\\tilde y+\\frac23\\tilde z,\\;y=-\\frac{2}{\\sqrt5}\\tilde x-\\frac{2}{\\sqrt{45}}\\tilde y+\\frac13\\tilde z,\\;z=\\frac{5}{\\sqrt{45}}\\tilde y+\\frac23\\tilde z$，二次型化为 $-3\\tilde x^2-3\\tilde y^2+6\\tilde z^2$，方程即 $-\\tilde x^2-\\tilde y^2+2\\tilde z^2=1$，亦即 $\\tilde x^2+\\tilde y^2-2\\tilde z^2=-1$，为双叶双曲面。 [✓官方]"
+ },
+ {
+  "id": "ch8-7-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "画出方程 $\\frac{x^2}{4}+y^2-z^2=1$ 所表示的曲面。",
+  "answer": "作图见解析",
+  "hint": "与 $z=0$ 的截痕是椭圆（腰），与 $y=0$、$x=0$ 的截痕是双曲线 → 单叶双曲面",
+  "solution": "$\\frac{x^2}{4}+y^2=1+z^2$：与平面 $z=z_0$ 的截痕都是椭圆 $\\frac{x^2}{4}+y^2=1+z_0^2$，$z=0$ 时为腰椭圆 $\\frac{x^2}{4}+y^2=1$；与 $y=0$ 的截痕是双曲线 $\\frac{x^2}{4}-z^2=1$，与 $x=0$ 的截痕是双曲线 $y^2-z^2=1$。故为单叶双曲面（绕 $z$ 轴旋转）。作图：先画腰椭圆与两条双曲线截痕，再用一族椭圆连接。 [✓官方（作图题，原书答“略”）]"
+ },
+ {
+  "id": "ch8-7-2",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "画出方程 $x^2-4y^2-z^2=4$ 所表示的曲面。",
+  "answer": "作图见解析",
+  "hint": "先化为标准形 $\\frac{x^2}{4}-y^2-\\frac{z^2}{4}=1$",
+  "solution": "方程即 $\\frac{x^2}{4}-y^2-\\frac{z^2}{4}=1$。与平面 $x=x_0\\;(|x_0|\\geqslant 2)$ 的截痕是圆 $y^2+z^2=\\frac{x_0^2}{4}-1$；与 $x=0$ 无截痕，说明曲面分成 $x\\geqslant 2$ 与 $x\\leqslant -2$ 两支，顶点为 $(\\pm2,0,0)$。故为绕 $x$ 轴旋转的双叶双曲面。作图：画出 $xOy$ 面上的双曲线 $\\frac{x^2}{4}-y^2=1$ 并绕 $x$ 轴旋转。 [✓官方（作图题，原书答“略”）]"
+ },
+ {
+  "id": "ch8-7-3",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "画出方程 $x=2y^2+z^2$ 所表示的曲面。",
+  "answer": "作图见解析",
+  "hint": "与 $x=x_0\\;(x_0\\geqslant0)$ 的截痕是椭圆 → 椭圆抛物面",
+  "solution": "方程 $x=2y^2+z^2$ 中 $y,z$ 只以平方和出现，且 $x\\geqslant 0$。与平面 $x=x_0\\;(x_0>0)$ 的截痕是椭圆 $2y^2+z^2=x_0$；与 $y=0$ 的截痕是抛物线 $x=z^2$，与 $z=0$ 的截痕是抛物线 $x=2y^2$。故为顶点在原点、开口沿 $x$ 轴正向的椭圆抛物面。作图：画出两条抛物线截痕，再用一族椭圆连接。 [✓官方（作图题，原书答“略”）]"
+ },
+ {
+  "id": "ch8-8-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "将曲线 $\\begin{cases}(x-1)^2+(y+1)^2+(z-2)^2=9,\\\\ z=1\\end{cases}$ 化为参数方程。",
+  "options": [
+   "$\\begin{cases}x=1+2\\sqrt2\\cos\\theta\\\\ y=-1+2\\sqrt2\\sin\\theta\\\\ z=1\\end{cases}\\;(0\\leqslant\\theta<2\\pi)$",
+   "$\\begin{cases}x=1+3\\cos\\theta\\\\ y=-1+3\\sin\\theta\\\\ z=1\\end{cases}\\;(0\\leqslant\\theta<2\\pi)$",
+   "$\\begin{cases}x=1+2\\sqrt2\\cos\\theta\\\\ y=-1+2\\sqrt2\\sin\\theta\\\\ z=2\\end{cases}\\;(0\\leqslant\\theta<2\\pi)$",
+   "$\\begin{cases}x=2\\sqrt2\\cos\\theta\\\\ y=2\\sqrt2\\sin\\theta\\\\ z=1\\end{cases}\\;(0\\leqslant\\theta<2\\pi)$"
+  ],
+  "answer": 0,
+  "hint": "把 $z=1$ 代入球面，得平面 $z=1$ 上的圆，先求半径",
+  "solution": "把 $z=1$ 代入球面方程：$(x-1)^2+(y+1)^2+(1-2)^2=9$，即 $(x-1)^2+(y+1)^2=8$，是平面 $z=1$ 上以 $(1,-1,1)$ 为圆心、半径 $2\\sqrt2$ 的圆，故参数方程为 $x=1+2\\sqrt2\\cos\\theta,\\;y=-1+2\\sqrt2\\sin\\theta,\\;z=1\\;(0\\leqslant\\theta<2\\pi)$。 [✓官方]"
+ },
+ {
+  "id": "ch8-8-2",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "将曲线 $\\begin{cases}x^2+y^2+z^2=4,\\\\ z=y\\end{cases}$ 化为参数方程。",
+  "options": [
+   "$\\begin{cases}x=2\\cos\\theta\\\\ y=\\sqrt2\\sin\\theta\\\\ z=\\sqrt2\\sin\\theta\\end{cases}\\;(0\\leqslant\\theta<2\\pi)$",
+   "$\\begin{cases}x=2\\cos\\theta\\\\ y=2\\sin\\theta\\\\ z=2\\sin\\theta\\end{cases}\\;(0\\leqslant\\theta<2\\pi)$",
+   "$\\begin{cases}x=2\\cos\\theta\\\\ y=\\sqrt2\\sin\\theta\\\\ z=\\sqrt2\\cos\\theta\\end{cases}\\;(0\\leqslant\\theta<2\\pi)$",
+   "$\\begin{cases}x=\\sqrt2\\cos\\theta\\\\ y=\\sqrt2\\sin\\theta\\\\ z=\\sqrt2\\sin\\theta\\end{cases}\\;(0\\leqslant\\theta<2\\pi)$"
+  ],
+  "answer": 0,
+  "hint": "由 $z=y$ 消去 $z$，得 $x^2+2y^2=4$（椭圆）",
+  "solution": "由 $z=y$ 得 $x^2+2y^2=4$，即 $\\frac{x^2}{4}+\\frac{y^2}{2}=1$，是平面 $z=y$ 上的椭圆，半轴为 $2$ 与 $\\sqrt2$。令 $x=2\\cos\\theta,\\;y=\\sqrt2\\sin\\theta$，则 $z=y=\\sqrt2\\sin\\theta$，即 $x=2\\cos\\theta,\\;y=\\sqrt2\\sin\\theta,\\;z=\\sqrt2\\sin\\theta\\;(0\\leqslant\\theta<2\\pi)$。 [✓官方]"
+ },
+ {
+  "id": "ch8-9-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求曲线 $\\begin{cases}x^2+y^2+z^2=9,\\\\ y-z=1\\end{cases}$ 在 $xOy$ 平面上的投影。",
+  "options": [
+   "$\\begin{cases}x^2+2\\left(y-\\frac12\\right)^2=\\frac{17}{2}\\\\ z=0\\end{cases}$",
+   "$\\begin{cases}x^2+2\\left(y-\\frac12\\right)^2=\\frac{17}{2}\\\\ x=0\\end{cases}$",
+   "$\\begin{cases}x^2+2\\left(y-\\frac12\\right)^2=\\frac{15}{2}\\\\ z=0\\end{cases}$",
+   "$\\begin{cases}x^2+y^2=9\\\\ z=0\\end{cases}$"
+  ],
+  "answer": 0,
+  "hint": "投影到 $xOy$ 面：消去 $z$，得投影柱面，再与 $z=0$ 联立",
+  "solution": "由 $y-z=1$ 得 $z=y-1$，代入球面方程：$x^2+y^2+(y-1)^2=9$，即 $x^2+2y^2-2y=8$，配方得 $x^2+2\\left(y-\\frac12\\right)^2=\\frac{17}{2}$。这是母线平行 $z$ 轴的投影柱面，再与 $z=0$ 联立即为投影曲线。 [✓官方]"
+ },
+ {
+  "id": "ch8-9-2",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求曲线 $\\begin{cases}x=y^2+z^2,\\\\ x=4\\end{cases}$ 在 $yOz$ 平面上的投影。",
+  "options": [
+   "$\\begin{cases}y^2+z^2=4\\\\ x=0\\end{cases}$",
+   "$\\begin{cases}y^2+z^2=4\\\\ x=4\\end{cases}$",
+   "$\\begin{cases}y^2+z^2=16\\\\ x=0\\end{cases}$",
+   "$\\begin{cases}y^2+z^2\\leqslant 4\\\\ x=0\\end{cases}$"
+  ],
+  "answer": 0,
+  "hint": "投影到 $yOz$ 面：消去 $x$，再与 $x=0$ 联立",
+  "solution": "由 $x=4$ 代入 $x=y^2+z^2$ 得 $y^2+z^2=4$，这是母线平行 $x$ 轴的投影柱面，与 $x=0$ 联立即为 $yOz$ 面上的投影：$\\begin{cases}y^2+z^2=4,\\\\ x=0\\end{cases}$（半径为 $2$ 的圆）。 [✓官方]"
+ },
+ {
+  "id": "ch8-9-3",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求曲线 $\\begin{cases}x^2+y^2+z^2=2,\\\\ y=\\sqrt{x^2+z^2}\\end{cases}$ 在 $xOz$ 平面上的投影。",
+  "options": [
+   "$\\begin{cases}x^2+z^2=1\\\\ y=0\\end{cases}$",
+   "$\\begin{cases}x^2+z^2=2\\\\ y=0\\end{cases}$",
+   "$\\begin{cases}x^2+z^2=1\\\\ y=1\\end{cases}$",
+   "$\\begin{cases}x^2+z^2\\leqslant 1\\\\ y=0\\end{cases}$"
+  ],
+  "answer": 0,
+  "hint": "先由 $y=\\sqrt{x^2+z^2}$ 得 $y^2=x^2+z^2$，再代入球面方程",
+  "solution": "由 $y=\\sqrt{x^2+z^2}$ 得 $y\\geqslant 0$ 且 $y^2=x^2+z^2$，代入 $x^2+y^2+z^2=2$ 得 $2(x^2+z^2)=2$，即 $x^2+z^2=1$，且 $y=1$。故曲线是平面 $y=1$ 上的单位圆，在 $xOz$ 面上的投影为 $\\begin{cases}x^2+z^2=1,\\\\ y=0\\end{cases}$。 [✓官方]"
+ },
+ {
+  "id": "ch8-10-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "求以曲线 $\\begin{cases}x^2+y^2+z^2=4,\\\\ x+y+z=0\\end{cases}$ 为准线、母线平行于 $z$ 轴的柱面方程。",
+  "options": [
+   "$x^2+y^2+xy=2$",
+   "$x^2+y^2+2xy=4$",
+   "$x^2+y^2+xy=4$",
+   "$x^2+y^2-xy=2$"
+  ],
+  "answer": 0,
+  "hint": "母线平行 $z$ 轴 → 只需从方程组中消去 $z$",
+  "solution": "设 $P(x,y,z)$ 在柱面上，则过 $P$ 平行于 $z$ 轴的直线与准线相交，故 $P$ 的 $x,y$ 满足准线上某点的 $x,y$，即消去 $z$ 所得的关系。由 $x+y+z=0$ 得 $z=-(x+y)$，代入 $x^2+y^2+z^2=4$：$x^2+y^2+(x+y)^2=4$，即 $2x^2+2y^2+2xy=4$，故柱面方程为 $x^2+y^2+xy=2$。 [✓官方]"
+ },
+ {
+  "id": "ch8-10-2",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "求以曲线 $\\begin{cases}2x^2+y^2+z^2=16,\\\\ y=\\sqrt{x^2+z^2}\\end{cases}$ 为准线、母线平行于 $y$ 轴的柱面方程。",
+  "options": [
+   "$3x^2+2z^2=16$",
+   "$2x^2+3z^2=16$",
+   "$x^2+2z^2=16$",
+   "$3x^2+2z^2=8$"
+  ],
+  "answer": 0,
+  "hint": "母线平行 $y$ 轴 → 消去 $y$：由第二式得 $y^2=x^2+z^2$",
+  "solution": "母线平行于 $y$ 轴，故只需消去 $y$。由 $y=\\sqrt{x^2+z^2}$ 得 $y^2=x^2+z^2$，代入 $2x^2+y^2+z^2=16$：$2x^2+(x^2+z^2)+z^2=16$，即 $3x^2+2z^2=16$。 [✓官方]"
+ },
+ {
+  "id": "ch8-10-3",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "求以曲线 $\\begin{cases}x^2+y^2+z^2=16,\\\\ y=-\\sqrt{x^2+z^2}\\end{cases}$ 为准线、母线平行于 $x$ 轴的柱面方程。",
+  "options": [
+   "$y=-2\\sqrt2\\;(|z|\\leqslant 2\\sqrt2)$",
+   "$y=2\\sqrt2\\;(|z|\\leqslant 2\\sqrt2)$",
+   "$y=-2\\sqrt2$（无范围限制）",
+   "$y=-\\sqrt2\\;(|z|\\leqslant 2\\sqrt2)$"
+  ],
+  "answer": 0,
+  "hint": "母线平行 $x$ 轴 → 消去 $x$：$x^2+z^2=y^2$，注意 $y\\leqslant 0$ 的限制",
+  "solution": "由 $y=-\\sqrt{x^2+z^2}\\leqslant 0$ 得 $x^2+z^2=y^2$，代入 $x^2+y^2+z^2=16$ 得 $2y^2=16$，即 $y=-2\\sqrt2$；又准线上要求 $x^2+z^2=8$，故 $|z|\\leqslant 2\\sqrt2$。柱面退化为平面 $y=-2\\sqrt2$ 上 $|z|\\leqslant 2\\sqrt2$ 的部分，即 $y=-2\\sqrt2\\;(|z|\\leqslant 2\\sqrt2)$。 [✓官方]"
+ },
+ {
+  "id": "ch8-11-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "求螺旋线 $\\begin{cases}x=a\\cos\\theta,\\\\ y=a\\sin\\theta,\\\\ z=b\\theta\\end{cases}$ 在三个坐标面上的投影曲线的直角坐标方程。",
+  "answer": "$xOy$ 面：$\\begin{cases}x^2+y^2=a^2,\\\\ z=0\\end{cases}$；$yOz$ 面：$\\begin{cases}y=a\\sin\\frac{z}{b},\\\\ x=0\\end{cases}$；$xOz$ 面：$\\begin{cases}x=a\\cos\\frac{z}{b},\\\\ y=0\\end{cases}$",
+  "hint": "投影到某坐标面就是消去该面法向的坐标；注意 $\\theta=\\frac{z}{b}$",
+  "solution": "在 $xOy$ 面上投影：消去 $z$（即消去 $\\theta$），由 $x=a\\cos\\theta,\\;y=a\\sin\\theta$ 得 $x^2+y^2=a^2$，故投影为 $\\begin{cases}x^2+y^2=a^2,\\\\ z=0\\end{cases}$（圆）。在 $yOz$ 面上投影：由 $z=b\\theta$ 得 $\\theta=\\frac{z}{b}$，代入 $y=a\\sin\\theta$ 得 $y=a\\sin\\frac{z}{b}$，故投影为 $\\begin{cases}y=a\\sin\\frac{z}{b},\\\\ x=0\\end{cases}$（正弦曲线）。在 $xOz$ 面上投影：同理得 $\\begin{cases}x=a\\cos\\frac{z}{b},\\\\ y=0\\end{cases}$（余弦曲线）。 [✓官方]"
+ },
+ {
+  "id": "ch8-12-1",
+  "subject": "高代",
+  "chapter": "第8章 空间曲面与曲线",
+  "difficulty": 3,
+  "type": "fill",
+  "statement": "求上半球面 $z=\\sqrt{4-x^2-y^2}$ 与圆锥面 $z=\\sqrt{x^2+y^2}$ 所围的立体在三个坐标面上的投影。",
+  "answer": "$xOy$ 面：$\\begin{cases}x^2+y^2\\leqslant 2,\\\\ z=0\\end{cases}$；$yOz$ 面：$\\begin{cases}|y|\\leqslant z\\leqslant\\sqrt{4-y^2},\\\\ x=0\\end{cases}$；$xOz$ 面：$\\begin{cases}|x|\\leqslant z\\leqslant\\sqrt{4-x^2},\\\\ y=0\\end{cases}$",
+  "hint": "先求两曲面交线：$x^2+y^2=2$；立体满足 $\\sqrt{x^2+y^2}\\leqslant z\\leqslant\\sqrt{4-x^2-y^2}$",
+  "solution": "两曲面交线：由 $\\sqrt{4-x^2-y^2}=\\sqrt{x^2+y^2}$ 得 $x^2+y^2=2$，$z=\\sqrt2$。所围立体为 $\\Omega:\\sqrt{x^2+y^2}\\leqslant z\\leqslant\\sqrt{4-x^2-y^2}$。在 $xOy$ 面上投影是圆盘 $x^2+y^2\\leqslant 2$（$z=0$）。在 $yOz$ 面上投影：取 $x=0$，立体截出 $|y|\\leqslant z\\leqslant\\sqrt{4-y^2}$，其中 $-\\sqrt2\\leqslant y\\leqslant\\sqrt2$。在 $xOz$ 面上投影：由对称性得 $|x|\\leqslant z\\leqslant\\sqrt{4-x^2}$。 [✓官方]"
+ }
+]

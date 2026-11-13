@@ -1,0 +1,1214 @@
+[
+ {
+  "id": "ch7-1-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "计算内积 $(\\alpha,\\beta)$：$\\alpha=(-1,0,3,-5)$，$\\beta=(4,-2,0,1)$。",
+  "answer": "-9",
+  "hint": "对应分量相乘再相加",
+  "solution": "$(\\alpha,\\beta)=(-1)\\times4+0\\times(-2)+3\\times0+(-5)\\times1=-4-5=-9$。官方答案：$-9$ [✓官方]"
+ },
+ {
+  "id": "ch7-1-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "计算内积 $(\\alpha,\\beta)$：$\\alpha=(\\sqrt{3},-1,0,-4)$，$\\beta=(-\\sqrt{3},1,5,-2)$。",
+  "answer": "4",
+  "hint": "$\\sqrt3\\cdot(-\\sqrt3)=-3$",
+  "solution": "$(\\alpha,\\beta)=-\\sqrt{3}\\cdot\\sqrt{3}+(-1)\\times1+0\\times5+(-4)\\times(-2)=-3-1+0+8=4$。官方答案：$4$ [✓官方]"
+ },
+ {
+  "id": "ch7-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "设 $\\alpha=(-1,1,2)$，$\\beta=(4,-2,-1)$，求 $\\big((\\alpha,\\alpha)\\beta-\\dfrac{1}{2}(\\alpha,\\beta)\\alpha,\\ 6\\alpha\\big)$。",
+  "answer": "-144",
+  "hint": "先算 $(\\alpha,\\alpha)$ 与 $(\\alpha,\\beta)$，再用内积的双线性",
+  "solution": "$(\\alpha,\\alpha)=1+1+4=6$，$(\\alpha,\\beta)=-4-2-2=-8$，故\n$$(\\alpha,\\alpha)\\beta-\\frac{1}{2}(\\alpha,\\beta)\\alpha=6\\beta+4\\alpha=(24,-12,-6)+(-4,4,8)=(20,-8,2).$$\n于是所求 $=(20,-8,2,)\\,6\\alpha\\big)=6\\big[(20,-8,2),(-1,1,2)\\big]=6(-20-8+4)=6\\times(-24)=-144$。官方答案：$-144$ [✓官方]"
+ },
+ {
+  "id": "ch7-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求参数 $k$，使得 $\\alpha=\\left(\\dfrac{1}{3}k,\\ \\dfrac{1}{2}k,\\ k\\right)$ 是单位向量。",
+  "options": [
+   "$k=\\pm\\dfrac{7}{6}$",
+   "$k=\\pm\\dfrac{3}{7}$",
+   "$k=\\pm\\dfrac{6}{7}$",
+   "$k=\\pm1$"
+  ],
+  "answer": 2,
+  "hint": "$\\|\\alpha\\|^{2}=\\frac{k^{2}}{9}+\\frac{k^{2}}{4}+k^{2}=1$",
+  "solution": "单位向量要求 $\\|\\alpha\\|=1$，即\n$$\\frac{k^{2}}{9}+\\frac{k^{2}}{4}+k^{2}=k^{2}\\left(\\frac{4+9+36}{36}\\right)=\\frac{49}{36}k^{2}=1,$$\n故 $k^{2}=\\dfrac{36}{49}$，$k=\\pm\\dfrac{6}{7}$。官方答案：$k=\\pm\\frac{6}{7}$ [✓官方]"
+ },
+ {
+  "id": "ch7-4",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "设 $\\alpha$ 和 $\\beta$ 是两个 $n$ 维向量，求证：$\\|\\alpha+\\beta\\|^{2}+\\|\\alpha-\\beta\\|^{2}=2\\|\\alpha\\|^{2}+2\\|\\beta\\|^{2}$。",
+  "answer": "证明见解析",
+  "hint": "用 $\\|x\\|^{2}=(x,x)$ 展开",
+  "solution": "由 $\\|x\\|^{2}=(x,x)$ 及内积的双线性，\n$$\\|\\alpha+\\beta\\|^{2}=(\\alpha,\\alpha)+2(\\alpha,\\beta)+(\\beta,\\beta),\\qquad\n\\|\\alpha-\\beta\\|^{2}=(\\alpha,\\alpha)-2(\\alpha,\\beta)+(\\beta,\\beta).$$\n两式相加即得 $\\|\\alpha+\\beta\\|^{2}+\\|\\alpha-\\beta\\|^{2}=2\\|\\alpha\\|^{2}+2\\|\\beta\\|^{2}$（平行四边形公式）。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-5-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "在 $\\mathbf{R}^{3}$ 中求出所有与 $\\alpha=(1,-1,0)$ 正交的向量。",
+  "options": [
+   "$k(1,-1,0)$，$k$ 为任意实数",
+   "$k_1(0,0,1)+k_2(1,0,-1)$，$k_1,k_2$ 为任意实数",
+   "$k_1(1,1,0)+k_2(0,0,1)$，$k_1,k_2$ 为任意实数",
+   "$k_1(1,1,0)+k_2(1,0,0)$，$k_1,k_2$ 为任意实数"
+  ],
+  "answer": 2,
+  "hint": "设 $x=(x_1,x_2,x_3)$，解 $x_1-x_2=0$",
+  "solution": "设 $x=(x_1,x_2,x_3)$，由 $(\\alpha,x)=x_1-x_2=0$ 得 $x_1=x_2$，$x_3$ 任意，故\n$$x=k_1(1,1,0)+k_2(0,0,1),\\qquad k_1,k_2\\in\\mathbf{R}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-5-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "在 $\\mathbf{R}^{3}$ 中求出所有与 $\\alpha=(1,-1,1)$，$\\beta=(-1,1,1)$ 都正交的向量。",
+  "options": [
+   "$k(1,0,1)$，$k$ 为任意实数",
+   "$k(0,1,1)$，$k$ 为任意实数",
+   "$k(1,-1,0)$，$k$ 为任意实数",
+   "$k(1,1,0)$，$k$ 为任意实数"
+  ],
+  "answer": 3,
+  "hint": "两个方程相加减",
+  "solution": "设 $x=(x_1,x_2,x_3)$，需\n$$x_1-x_2+x_3=0,\\qquad -x_1+x_2+x_3=0.$$\n两式相加得 $2x_3=0$，即 $x_3=0$；代回得 $x_1=x_2$。故 $x=k(1,1,0)$（$k$ 为任意实数）。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-6",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "在 $\\mathbf{R}^{4}$ 中求一个单位向量 $\\beta$，使它与以下三个向量都正交：$\\alpha_1=(1,1,-1,1)$，$\\alpha_2=(1,-1,-1,1)$，$\\alpha_3=(2,1,1,3)$。",
+  "options": [
+   "$\\beta=\\pm\\dfrac{1}{\\sqrt{26}}(4,0,1,3)^{\\mathrm T}$",
+   "$\\beta=\\pm\\dfrac{1}{\\sqrt{26}}(-4,0,-1,3)^{\\mathrm T}$",
+   "$\\beta=\\pm\\dfrac{1}{\\sqrt{14}}(-4,0,-1,3)^{\\mathrm T}$",
+   "$\\beta=\\pm\\dfrac{1}{\\sqrt{26}}(-4,0,1,3)^{\\mathrm T}$"
+  ],
+  "answer": 1,
+  "hint": "解齐次方程组 $\\alpha_i^{\\mathrm T}x=0$，再单位化",
+  "solution": "解方程组\n$$\\begin{cases}x_1+x_2-x_3+x_4=0\\\\ x_1-x_2-x_3+x_4=0\\\\ 2x_1+x_2+x_3+3x_4=0\\end{cases}$$\n由前两式得 $x_2=0$，$x_3=x_1+x_4$；代入第三式得 $3x_1+4x_4=0$，取 $x_4=3$，$x_1=-4$，$x_3=-1$，得基础解系 $(-4,0,-1,3)^{\\mathrm T}$，$\\|(-4,0,-1,3)\\|=\\sqrt{26}$。故\n$$\\beta=\\pm\\frac{1}{\\sqrt{26}}(-4,0,-1,3)^{\\mathrm T}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-7",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "已知在 $\\mathbf{R}^{3}$ 中有某个非零向量同时垂直于以下三个向量，求 $\\lambda$ 的值：$\\alpha_1=(1,0,2)$，$\\alpha_2=(-1,1,-3)$，$\\alpha_3=(2,-1,\\lambda)$。",
+  "answer": "5",
+  "hint": "存在非零向量与三者都正交 $\\Leftrightarrow$ 三向量线性相关",
+  "solution": "存在非零向量 $x$ 满足 $\\alpha_i^{\\mathrm T}x=0\\ (i=1,2,3)$，等价于以 $\\alpha_1,\\alpha_2,\\alpha_3$ 为行的齐次方程组有非零解，即三向量线性相关：\n$$\\begin{vmatrix}1&0&2\\\\-1&1&-3\\\\2&-1&\\lambda\\end{vmatrix}=1\\cdot(\\lambda-3)-0+2\\cdot(1-2)=\\lambda-3-2=\\lambda-5=0,$$\n故 $\\lambda=5$。官方答案：$\\lambda=5$ [✓官方]"
+ },
+ {
+  "id": "ch7-8-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "将向量组 $\\alpha_1=(1,1)^{\\mathrm T}$，$\\alpha_2=(2,0)^{\\mathrm T}$ 正交规范化。",
+  "options": [
+   "$e_1=\\dfrac{1}{\\sqrt2}(1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt2}(-1,1)^{\\mathrm T}$",
+   "$e_1=\\dfrac{1}{\\sqrt2}(1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt2}(1,-1)^{\\mathrm T}$",
+   "$e_1=(1,1)^{\\mathrm T}$，$e_2=(2,0)^{\\mathrm T}$",
+   "$e_1=\\dfrac{1}{\\sqrt2}(1,-1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt2}(1,1)^{\\mathrm T}$"
+  ],
+  "answer": 1,
+  "hint": "施密特正交化：$\\beta_2=\\alpha_2-\\frac{(\\alpha_2,\\beta_1)}{(\\beta_1,\\beta_1)}\\beta_1$",
+  "solution": "取 $\\beta_1=\\alpha_1=(1,1)^{\\mathrm T}$，则 $(\\alpha_2,\\beta_1)=2$，$(\\beta_1,\\beta_1)=2$，\n$$\\beta_2=\\alpha_2-\\frac{2}{2}\\beta_1=(2,0)^{\\mathrm T}-(1,1)^{\\mathrm T}=(1,-1)^{\\mathrm T}.$$\n单位化得 $e_1=\\dfrac{1}{\\sqrt2}(1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt2}(1,-1)^{\\mathrm T}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-8-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "将向量组 $\\alpha_1=(1,1,1)^{\\mathrm T}$，$\\alpha_2=(1,2,3)^{\\mathrm T}$，$\\alpha_3=(1,4,9)^{\\mathrm T}$ 正交规范化。",
+  "options": [
+   "$e_1=\\dfrac{1}{\\sqrt3}(1,1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt2}(1,0,1)^{\\mathrm T}$，$e_3=\\dfrac{1}{\\sqrt6}(1,2,1)^{\\mathrm T}$",
+   "$e_1=\\dfrac{1}{\\sqrt3}(1,1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt6}(-1,0,1)^{\\mathrm T}$，$e_3=\\dfrac{1}{\\sqrt2}(1,-2,1)^{\\mathrm T}$",
+   "$e_1=\\dfrac{1}{\\sqrt3}(1,1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt2}(-1,0,1)^{\\mathrm T}$，$e_3=\\dfrac{1}{\\sqrt6}(1,-2,1)^{\\mathrm T}$",
+   "$e_1=\\dfrac{1}{\\sqrt3}(1,1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt2}(-1,0,1)^{\\mathrm T}$，$e_3=\\dfrac{1}{\\sqrt6}(1,2,-1)^{\\mathrm T}$"
+  ],
+  "answer": 2,
+  "hint": "逐步减去在前面的正交向量上的投影",
+  "solution": "$\\beta_1=\\alpha_1=(1,1,1)^{\\mathrm T}$；$(\\alpha_2,\\beta_1)=6$，$(\\beta_1,\\beta_1)=3$，$\\beta_2=\\alpha_2-2\\beta_1=(-1,0,1)^{\\mathrm T}$；\n$(\\alpha_3,\\beta_1)=14$，$(\\alpha_3,\\beta_2)=8$，$\\beta_3=\\alpha_3-\\frac{14}{3}\\beta_1-\\frac{8}{2}\\beta_2=\\left(\\frac13,-\\frac23,\\frac13\\right)^{\\mathrm T}$。\n单位化得\n$$e_1=\\frac{1}{\\sqrt3}(1,1,1)^{\\mathrm T},\\quad e_2=\\frac{1}{\\sqrt2}(-1,0,1)^{\\mathrm T},\\quad e_3=\\frac{1}{\\sqrt6}(1,-2,1)^{\\mathrm T}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-8-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "将向量组 $\\alpha_1=(0,1,1,1)^{\\mathrm T}$，$\\alpha_2=(1,0,1,1)^{\\mathrm T}$，$\\alpha_3=(1,1,0,1)^{\\mathrm T}$ 正交规范化。",
+  "options": [
+   "$e_1=\\dfrac{1}{\\sqrt3}(0,1,1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt{15}}(3,-2,1,1)^{\\mathrm T}$，$e_3=\\dfrac{1}{\\sqrt{35}}(3,3,4,1)^{\\mathrm T}$",
+   "$e_1=\\dfrac{1}{\\sqrt3}(0,1,1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt{14}}(3,-2,1,1)^{\\mathrm T}$，$e_3=\\dfrac{1}{\\sqrt{35}}(3,3,-4,1)^{\\mathrm T}$",
+   "$e_1=\\dfrac{1}{\\sqrt3}(0,1,1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt{15}}(3,-2,1,1)^{\\mathrm T}$，$e_3=\\dfrac{1}{\\sqrt3}(1,1,-1,1)^{\\mathrm T}$",
+   "$e_1=\\dfrac{1}{\\sqrt3}(0,1,1,1)^{\\mathrm T}$，$e_2=\\dfrac{1}{\\sqrt{15}}(3,-2,1,1)^{\\mathrm T}$，$e_3=\\dfrac{1}{\\sqrt{35}}(3,3,-4,1)^{\\mathrm T}$"
+  ],
+  "answer": 3,
+  "hint": "三个向量地位对称，计算量不大但要仔细",
+  "solution": "$\\beta_1=(0,1,1,1)^{\\mathrm T}$；$(\\alpha_2,\\beta_1)=2$，$(\\beta_1,\\beta_1)=3$，$\\beta_2=\\alpha_2-\\frac23\\beta_1=\\frac13(3,-2,1,1)^{\\mathrm T}$；\n$(\\alpha_3,\\beta_1)=2$，$(\\alpha_3,\\beta_2)=\\frac{1}{3}(3-2+0+1)=\\frac23$，$(\\beta_2,\\beta_2)=\\frac{15}{9}$，\n$$\\beta_3=\\alpha_3-\\frac23\\beta_1-\\frac{2/3}{15/9}\\beta_2=\\frac15(3,3,-4,1)^{\\mathrm T}.$$\n单位化得\n$$e_1=\\frac{1}{\\sqrt3}(0,1,1,1)^{\\mathrm T},\\quad e_2=\\frac{1}{\\sqrt{15}}(3,-2,1,1)^{\\mathrm T},\\quad e_3=\\frac{1}{\\sqrt{35}}(3,3,-4,1)^{\\mathrm T}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-9-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求一个正交矩阵 $O$，使它的第 $1$ 列为 $\\beta_1=\\left(\\dfrac13,\\dfrac23,-\\dfrac23\\right)^{\\mathrm T}$。",
+  "options": [
+   "$O=\\begin{pmatrix}\\frac13&-\\frac{2}{\\sqrt5}&\\frac{2}{\\sqrt{45}}\\\\\\frac23&\\frac{1}{\\sqrt5}&-\\frac{4}{\\sqrt{45}}\\\\-\\frac23&0&\\frac{5}{\\sqrt{45}}\\end{pmatrix}$",
+   "$O=\\begin{pmatrix}\\frac13&\\frac{2}{\\sqrt5}&\\frac{2}{\\sqrt{45}}\\\\\\frac23&-\\frac{1}{\\sqrt5}&\\frac{4}{\\sqrt{45}}\\\\-\\frac23&0&\\frac{5}{\\sqrt{45}}\\end{pmatrix}$",
+   "$O=\\begin{pmatrix}\\frac13&-\\frac{2}{\\sqrt5}&\\frac{2}{\\sqrt{45}}\\\\\\frac23&\\frac{1}{\\sqrt5}&\\frac{4}{\\sqrt{45}}\\\\-\\frac23&0&\\frac{5}{\\sqrt{45}}\\end{pmatrix}$",
+   "$O=\\begin{pmatrix}\\frac13&-\\frac{2}{\\sqrt5}&\\frac{2}{3}\\\\\\frac23&\\frac{1}{\\sqrt5}&\\frac{4}{3}\\\\-\\frac23&0&\\frac{5}{3}\\end{pmatrix}$"
+  ],
+  "answer": 2,
+  "hint": "先取两个与 $\\beta_1$ 正交的单位向量，凑成标准正交基",
+  "solution": "取 $e_2=\\left(-\\dfrac{2}{\\sqrt5},\\dfrac{1}{\\sqrt5},0\\right)^{\\mathrm T}$，它与 $\\beta_1$ 正交且为单位向量。再取\n$$e_3=\\beta_1\\times e_2=\\left(\\frac{2}{3\\sqrt5},\\frac{4}{3\\sqrt5},\\frac{5}{3\\sqrt5}\\right)^{\\mathrm T}=\\frac{1}{\\sqrt{45}}(2,4,5)^{\\mathrm T},$$\n它与 $\\beta_1,e_2$ 都正交且为单位向量。于是\n$$O=\\begin{pmatrix}\\frac13&-\\frac{2}{\\sqrt5}&\\frac{2}{\\sqrt{45}}\\\\\\frac23&\\frac{1}{\\sqrt5}&\\frac{4}{\\sqrt{45}}\\\\-\\frac23&0&\\frac{5}{\\sqrt{45}}\\end{pmatrix}$$\n是正交矩阵（答案不唯一）。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-9-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求一个正交矩阵 $O$，使它的第 $1,2$ 行分别为 $\\alpha_1=\\left(\\dfrac12,\\dfrac12,\\dfrac12,\\dfrac12\\right)$，$\\alpha_2=\\left(\\dfrac12,-\\dfrac12,\\dfrac12,-\\dfrac12\\right)$。",
+  "options": [
+   "$O=\\frac12\\begin{pmatrix}1&1&1&1\\\\1&-1&1&-1\\\\1&0&-1&0\\\\0&1&0&-1\\end{pmatrix}$",
+   "$O=\\begin{pmatrix}\\frac12&\\frac12&\\frac12&\\frac12\\\\\\frac12&-\\frac12&\\frac12&-\\frac12\\\\\\frac{1}{\\sqrt2}&0&\\frac{1}{\\sqrt2}&0\\\\0&\\frac{1}{\\sqrt2}&0&\\frac{1}{\\sqrt2}\\end{pmatrix}$",
+   "$O=\\begin{pmatrix}\\frac12&\\frac12&\\frac12&\\frac12\\\\\\frac12&-\\frac12&-\\frac12&\\frac12\\\\\\frac{1}{\\sqrt2}&0&-\\frac{1}{\\sqrt2}&0\\\\0&\\frac{1}{\\sqrt2}&0&-\\frac{1}{\\sqrt2}\\end{pmatrix}$",
+   "$O=\\begin{pmatrix}\\frac12&\\frac12&\\frac12&\\frac12\\\\\\frac12&-\\frac12&\\frac12&-\\frac12\\\\\\frac{1}{\\sqrt2}&0&-\\frac{1}{\\sqrt2}&0\\\\0&\\frac{1}{\\sqrt2}&0&-\\frac{1}{\\sqrt2}\\end{pmatrix}$"
+  ],
+  "answer": 3,
+  "hint": "再补两个与 $\\alpha_1,\\alpha_2$ 都正交的单位行向量",
+  "solution": "取 $\\alpha_3=\\dfrac{1}{\\sqrt2}(1,0,-1,0)$，$\\alpha_4=\\dfrac{1}{\\sqrt2}(0,1,0,-1)$，它们都是单位向量且两两正交，故\n$$O=\\begin{pmatrix}\\frac12&\\frac12&\\frac12&\\frac12\\\\\\frac12&-\\frac12&\\frac12&-\\frac12\\\\\\frac{1}{\\sqrt2}&0&-\\frac{1}{\\sqrt2}&0\\\\0&\\frac{1}{\\sqrt2}&0&-\\frac{1}{\\sqrt2}\\end{pmatrix}$$\n是正交矩阵（答案不唯一）。注：书末此处漏写了第 $3,4$ 行的因子 $\\sqrt2$，按原样相乘不是正交矩阵。官方答案（修正后）[✓官方]"
+ },
+ {
+  "id": "ch7-10",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "判定以下方阵是否为正交矩阵：\n(1) $\\begin{pmatrix}1&-1\\\\1&1\\end{pmatrix}$；\n(2) $\\dfrac{1}{\\sqrt2}\\begin{pmatrix}1&0&1\\\\-1&0&1\\\\0&\\sqrt2&0\\end{pmatrix}$；\n(3) $\\dfrac19\\begin{pmatrix}1&-8&-4\\\\-8&1&-4\\\\-4&-4&7\\end{pmatrix}$；\n(4) $\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&-\\frac{2\\sqrt2}{3}&\\frac13\\\\-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix}$。",
+  "options": [
+   "不是；是；是；是",
+   "是；是；是；是",
+   "不是；不是；是；是",
+   "不是；是；不是；是"
+  ],
+  "answer": 0,
+  "hint": "正交矩阵 $\\Leftrightarrow A^{\\mathrm T}A=E$，即行（列）向量组是标准正交基",
+  "solution": "(1) 第 1 列 $(1,1)^{\\mathrm T}$ 的长度为 $\\sqrt2\\neq1$，**不是**正交矩阵。\n(2) 三行长度依次为 $\\frac{\\sqrt2}{2},1,1$…直接验算 $A^{\\mathrm T}A=E$：各行长度均为 $1$，两两内积为 $0$，**是**正交矩阵。\n(3) 每行长度平方为 $\\frac{1+64+16}{81}=1$，$\\frac{64+1+16}{81}=1$，$\\frac{16+16+49}{81}=1$，且行内积为 $\\frac{-8-8+16}{81}=0$、$\\frac{-4+32-28}{81}=0$、$\\frac{32-4-28}{81}=0$，**是**正交矩阵。\n(4) 各行长度为 $1$，行内积为 $0$（如第 1、2 行：$0-\\frac{4}{18}+\\frac29=0$），**是**正交矩阵。\n故结论为：不是；是；是；是。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-11",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设 $A$ 和 $B$ 以及 $A+B$ 都是 $n$ 阶正交矩阵，证明 $(A+B)^{-1}=A^{-1}+B^{-1}$。",
+  "answer": "证明见解析",
+  "hint": "证 $(A+B)(A^{-1}+B^{-1})=E$，用到 $A,B,A+B$ 正交",
+  "solution": "因 $A,B,A+B$ 都是正交矩阵，故 $A^{\\mathrm T}=A^{-1}$，$B^{\\mathrm T}=B^{-1}$，且\n$$(A+B)(A+B)^{\\mathrm T}=E\\ \\Longrightarrow\\ AA^{\\mathrm T}+AB^{\\mathrm T}+BA^{\\mathrm T}+BB^{\\mathrm T}=E\n\\ \\Longrightarrow\\ AB^{\\mathrm T}+BA^{\\mathrm T}=-E.$$\n又\n$$(A+B)(A^{-1}+B^{-1})=(A+B)(A^{\\mathrm T}+B^{\\mathrm T})=AA^{\\mathrm T}+AB^{\\mathrm T}+BA^{\\mathrm T}+BB^{\\mathrm T}=E+(-E)+E=E.$$\n故 $A+B$ 可逆且 $(A+B)^{-1}=A^{-1}+B^{-1}$。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-12",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "试证：若 $n$ 维实向量 $p$ 与任意 $n$ 维实向量都正交，则 $p$ 必为零向量。",
+  "answer": "证明见解析",
+  "hint": "把「任意向量」就取成 $p$ 自己",
+  "solution": "取该\"任意向量\"为 $p$ 本身，由题设 $p$ 与 $p$ 正交，即 $(p,p)=0$。而\n$$(p,p)=p_1^2+p_2^2+\\cdots+p_n^2=0,$$\n实数的平方和非负，故 $p_1=\\cdots=p_n=0$，即 $p=0$。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-13-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求正交矩阵 $O$，使 $O^{\\mathrm T}AO$ 为对角矩阵：$A=\\begin{pmatrix}2&0&0\\\\0&3&2\\\\0&2&3\\end{pmatrix}$。",
+  "options": [
+   "$O=\\dfrac{\\sqrt2}{2}\\begin{pmatrix}\\sqrt2&0&0\\\\0&1&1\\\\0&-1&1\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(2,5,1)$",
+   "$O=\\dfrac{\\sqrt2}{2}\\begin{pmatrix}\\sqrt2&0&0\\\\0&1&1\\\\0&-1&1\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(2,1,5)$",
+   "$O=\\dfrac{\\sqrt2}{2}\\begin{pmatrix}\\sqrt2&0&0\\\\0&1&1\\\\0&1&-1\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(2,1,5)$",
+   "$O=\\begin{pmatrix}1&0&0\\\\0&1&1\\\\0&-1&1\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(2,1,5)$"
+  ],
+  "answer": 1,
+  "hint": "$A$ 已分块对角，只需处理右下 $2\\times2$ 块",
+  "solution": "$|\\lambda E-A|=(\\lambda-2)\\big[(\\lambda-3)^2-4\\big]=(\\lambda-2)(\\lambda-1)(\\lambda-5)$，特征值 $2,1,5$。\n$\\lambda=2$：$p_1=(1,0,0)^{\\mathrm T}$；$\\lambda=1$：$p_2=(0,1,-1)^{\\mathrm T}$；$\\lambda=5$：$p_3=(0,1,1)^{\\mathrm T}$。\n单位化后令\n$$O=\\frac{\\sqrt2}{2}\\begin{pmatrix}\\sqrt2&0&0\\\\0&1&1\\\\0&-1&1\\end{pmatrix},\\qquad O^{\\mathrm T}AO=\\begin{pmatrix}2&0&0\\\\0&1&0\\\\0&0&5\\end{pmatrix}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-13-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求正交矩阵 $O$，使 $O^{\\mathrm T}AO$ 为对角矩阵：$A=\\begin{pmatrix}2&-2&0\\\\-2&1&-2\\\\0&-2&0\\end{pmatrix}$。",
+  "options": [
+   "$O=\\dfrac13\\begin{pmatrix}2&2&1\\\\-2&1&2\\\\1&-2&2\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(4,-2,1)$",
+   "$O=\\dfrac13\\begin{pmatrix}2&-2&1\\\\2&1&2\\\\1&2&2\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(4,1,-2)$",
+   "$O=\\dfrac13\\begin{pmatrix}2&2&1\\\\-2&1&2\\\\1&-2&2\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(4,1,-2)$",
+   "$O=\\dfrac13\\begin{pmatrix}2&2&1\\\\1&-2&2\\\\-2&1&2\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(1,4,-2)$"
+  ],
+  "answer": 2,
+  "hint": "特征值 $4,1,-2$",
+  "solution": "$|\\lambda E-A|=\\lambda^3-3\\lambda^2-6\\lambda+8=(\\lambda-4)(\\lambda-1)(\\lambda+2)$，特征值 $4,1,-2$。\n$\\lambda=4$：$p_1=(2,-2,1)^{\\mathrm T}$；$\\lambda=1$：$p_2=(2,1,-2)^{\\mathrm T}$；$\\lambda=-2$：$p_3=(1,2,2)^{\\mathrm T}$（三者已两两正交）。\n单位化得\n$$O=\\frac13\\begin{pmatrix}2&2&1\\\\-2&1&2\\\\1&-2&2\\end{pmatrix},\\qquad O^{\\mathrm T}AO=\\operatorname{diag}(4,1,-2).$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-13-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "求正交矩阵 $O$，使 $O^{\\mathrm T}AO$ 为对角矩阵：$A=\\begin{pmatrix}1&2&4\\\\2&-2&2\\\\4&2&1\\end{pmatrix}$。",
+  "options": [
+   "$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&-\\frac{2\\sqrt2}{3}&\\frac13\\\\-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(-3,6,-3)$",
+   "$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&\\frac{2\\sqrt2}{3}&\\frac13\\\\-\\frac{\\sqrt2}{2}&-\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(-3,-3,6)$",
+   "$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&-\\frac{2\\sqrt2}{3}&\\frac13\\\\\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&-\\frac23\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(6,-3,-3)$",
+   "$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&-\\frac{2\\sqrt2}{3}&\\frac13\\\\-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(-3,-3,6)$"
+  ],
+  "answer": 3,
+  "hint": "特征值 $-3,-3,6$，二重特征值需正交化",
+  "solution": "$|\\lambda E-A|=\\lambda^3-3\\lambda^2-18\\lambda+54$…分解得 $(\\lambda+3)^2(\\lambda-6)$，特征值 $-3,-3,6$（$\\operatorname{tr}A=0$，$\\det A=-54$）。\n$\\lambda=-3$：由 $(-3E-A)x=0$ 得 $p_1=(1,0,-1)^{\\mathrm T}$，$p_2=(2,1,2)^{\\mathrm T}$（正交化见下）；$\\lambda=6$：$p_3=(2,-2,1)^{\\mathrm T}$。\n取 $q_2=p_2-\\frac{(p_2,p_1)}{(p_1,p_1)}p_1=(2,1,2)^{\\mathrm T}$（恰与 $p_1$ 正交），单位化后\n$$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&-\\frac{2\\sqrt2}{3}&\\frac13\\\\-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix},\\qquad O^{\\mathrm T}AO=\\operatorname{diag}(-3,-3,6).$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-13-4",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "求正交矩阵 $O$，使 $O^{\\mathrm T}AO$ 为对角矩阵：$A=\\begin{pmatrix}1&-1&0&0\\\\-1&1&0&0\\\\0&0&4&2\\\\0&0&2&1\\end{pmatrix}$。",
+  "options": [
+   "$O$ 的第 $1$—$4$ 列依次为 $\\frac{1}{\\sqrt2}(1,1,0,0)^{\\mathrm T},\\frac{1}{\\sqrt2}(1,-1,0,0)^{\\mathrm T},\\frac{1}{\\sqrt5}(0,0,1,-2)^{\\mathrm T},\\frac{1}{\\sqrt5}(0,0,2,1)^{\\mathrm T}$，$O^{\\mathrm T}AO=\\operatorname{diag}(0,2,0,5)$",
+   "$O$ 的第 $1$—$4$ 列依次为 $\\frac{1}{\\sqrt2}(1,1,0,0)^{\\mathrm T},\\frac{1}{\\sqrt2}(1,-1,0,0)^{\\mathrm T},\\frac{1}{\\sqrt5}(0,0,1,-2)^{\\mathrm T},\\frac{1}{\\sqrt5}(0,0,2,1)^{\\mathrm T}$，$O^{\\mathrm T}AO=\\operatorname{diag}(2,0,0,5)$",
+   "$O$ 的第 $1$—$4$ 列依次为 $\\frac{1}{\\sqrt2}(1,-1,0,0)^{\\mathrm T},\\frac{1}{\\sqrt2}(1,1,0,0)^{\\mathrm T},\\frac{1}{\\sqrt5}(0,0,2,1)^{\\mathrm T},\\frac{1}{\\sqrt5}(0,0,1,-2)^{\\mathrm T}$，$O^{\\mathrm T}AO=\\operatorname{diag}(0,2,5,0)$",
+   "$O$ 的第 $1$—$4$ 列依次为 $\\frac{1}{\\sqrt2}(1,1,0,0)^{\\mathrm T},\\frac{1}{\\sqrt2}(1,-1,0,0)^{\\mathrm T},\\frac{1}{\\sqrt5}(0,0,2,1)^{\\mathrm T},\\frac{1}{\\sqrt5}(0,0,1,-2)^{\\mathrm T}$，$O^{\\mathrm T}AO=\\operatorname{diag}(0,2,0,5)$"
+  ],
+  "answer": 0,
+  "hint": "两个二阶块分别求特征值与特征向量",
+  "solution": "$A$ 是分块对角矩阵，左上块 $\\begin{pmatrix}1&-1\\\\-1&1\\end{pmatrix}$ 的特征值为 $0,2$，特征向量 $(1,1)^{\\mathrm T},(1,-1)^{\\mathrm T}$；右下块 $\\begin{pmatrix}4&2\\\\2&1\\end{pmatrix}$ 的特征值为 $0,5$，特征向量 $(1,-2)^{\\mathrm T},(2,1)^{\\mathrm T}$。\n单位化后令\n$$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{2}&0&0\\\\\\frac{\\sqrt2}{2}&-\\frac{\\sqrt2}{2}&0&0\\\\0&0&\\frac{\\sqrt5}{5}&\\frac{2\\sqrt5}{5}\\\\0&0&-\\frac{2\\sqrt5}{5}&\\frac{\\sqrt5}{5}\\end{pmatrix},\\qquad O^{\\mathrm T}AO=\\operatorname{diag}(0,2,0,5).$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-14",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $n$ 阶实对称矩阵 $A$ 满足 $A^{3}=E$，求证 $A$ 是单位矩阵。",
+  "answer": "证明见解析",
+  "hint": "实对称矩阵的特征值都是实数，且可正交对角化",
+  "solution": "设 $\\lambda$ 是 $A$ 的任一特征值，$p\\neq0$ 为对应特征向量。由 $A^3=E$ 得 $A^3p=p$，即 $\\lambda^3p=p$，故 $\\lambda^3=1$。\n因 $A$ 实对称，其特征值全为实数，而实根只有 $\\lambda=1$。\n又实对称矩阵可正交对角化：存在正交矩阵 $Q$ 使 $Q^{\\mathrm T}AQ=\\operatorname{diag}(\\lambda_1,\\dots,\\lambda_n)=\\operatorname{diag}(1,\\dots,1)=E$，于是 $A=QEQ^{\\mathrm T}=E$。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-15",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设三阶实对称矩阵 $A$ 的特征值为 $\\lambda_1=1,\\lambda_2=2,\\lambda_3=3$。已知 $A$ 的属于 $\\lambda_1$ 和 $\\lambda_2$ 的特征向量分别为 $p_1=(-1,-1,1)^{\\mathrm T}$，$p_2=(1,-2,-1)^{\\mathrm T}$，求 $A$ 的属于 $\\lambda_3$ 的特征向量。",
+  "options": [
+   "$p_3=k(1,0,-1)^{\\mathrm T}\\ (k\\neq0)$",
+   "$p_3=k(1,0,1)^{\\mathrm T}\\ (k\\neq0)$",
+   "$p_3=k(0,1,1)^{\\mathrm T}\\ (k\\neq0)$",
+   "$p_3=k(1,1,0)^{\\mathrm T}\\ (k\\neq0)$"
+  ],
+  "answer": 1,
+  "hint": "实对称矩阵不同特征值的特征向量正交",
+  "solution": "实对称矩阵属于不同特征值的特征向量相互正交，故 $p_3$ 与 $p_1,p_2$ 都正交，解\n$$\\begin{cases}-x_1-x_2+x_3=0\\\\ x_1-2x_2-x_3=0\\end{cases}\\Longrightarrow x_1=x_3,\\ x_2=0.$$\n故 $p_3=k(1,0,1)^{\\mathrm T}\\ (k\\neq0)$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-16-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设 $A$ 是三阶实对称矩阵，其特征值为 $\\lambda_1=\\lambda_2=6,\\lambda_3=2$。已知属于 $\\lambda_1=\\lambda_2=6$ 的特征向量为 $p_1=(1,-1,1)^{\\mathrm T}$，$p_2=(1,1,1)^{\\mathrm T}$。求 $A$ 的属于 $\\lambda_3=2$ 的特征向量 $p_3$。",
+  "options": [
+   "$p_3=k(1,0,-1)^{\\mathrm T}\\ (k\\neq0)$",
+   "$p_3=k(1,0,1)^{\\mathrm T}\\ (k\\neq0)$",
+   "$p_3=k(0,1,-1)^{\\mathrm T}\\ (k\\neq0)$",
+   "$p_3=k(1,-1,0)^{\\mathrm T}\\ (k\\neq0)$"
+  ],
+  "answer": 0,
+  "hint": "$p_3$ 与 $p_1,p_2$ 都正交",
+  "solution": "$p_3\\perp p_1$，$p_3\\perp p_2$，即 $x_1-x_2+x_3=0$，$x_1+x_2+x_3=0$，相减得 $x_2=0$，$x_3=-x_1$。\n故 $p_3=k(1,0,-1)^{\\mathrm T}\\ (k\\neq0)$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-16-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设 $A$ 是三阶实对称矩阵，其特征值为 $\\lambda_1=\\lambda_2=6,\\lambda_3=2$，属于 $\\lambda_1=\\lambda_2=6$ 的特征向量为 $p_1=(1,-1,1)^{\\mathrm T}$，$p_2=(1,1,1)^{\\mathrm T}$。求正交矩阵 $O$，使得 $O^{\\mathrm T}AO$ 为对角形。",
+  "options": [
+   "$O=\\begin{pmatrix}\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{6}&\\frac{\\sqrt2}{2}\\\\\\frac{\\sqrt3}{3}&-\\frac{\\sqrt6}{3}&0\\\\\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{6}&-\\frac{\\sqrt2}{2}\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(2,6,6)$",
+   "$O=\\begin{pmatrix}\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{6}&\\frac{\\sqrt2}{2}\\\\\\frac{\\sqrt3}{3}&-\\frac{\\sqrt6}{3}&0\\\\\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{6}&-\\frac{\\sqrt2}{2}\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(6,6,2)$",
+   "$O=\\begin{pmatrix}\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{3}&\\frac{\\sqrt2}{2}\\\\\\frac{\\sqrt3}{3}&-\\frac{\\sqrt6}{6}&0\\\\\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{6}&-\\frac{\\sqrt2}{2}\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(6,6,2)$",
+   "$O=\\begin{pmatrix}\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{6}&\\frac{\\sqrt2}{2}\\\\\\frac{\\sqrt3}{3}&-\\frac{\\sqrt6}{3}&0\\\\\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{6}&\\frac{\\sqrt2}{2}\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(6,6,2)$"
+  ],
+  "answer": 1,
+  "hint": "把 $p_1,p_2,p_3$ 单位化后按列排成 $O$",
+  "solution": "$p_3=(1,0,-1)^{\\mathrm T}$（与 $p_1,p_2$ 正交）。$\\|p_1\\|=\\sqrt3$，$\\|p_2\\|=\\sqrt3$，$\\|p_3\\|=\\sqrt2$，单位化得\n$$O=\\begin{pmatrix}\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{6}&\\frac{\\sqrt2}{2}\\\\\\frac{\\sqrt3}{3}&-\\frac{\\sqrt6}{3}&0\\\\\\frac{\\sqrt3}{3}&\\frac{\\sqrt6}{6}&-\\frac{\\sqrt2}{2}\\end{pmatrix},\\qquad O^{\\mathrm T}AO=\\operatorname{diag}(6,6,2).$$\n官方答案一致（答案不唯一）[✓官方]"
+ },
+ {
+  "id": "ch7-16-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "设 $A$ 是三阶实对称矩阵，其特征值为 $\\lambda_1=\\lambda_2=6,\\lambda_3=2$，属于 $\\lambda_1=\\lambda_2=6$ 的特征向量为 $p_1=(1,-1,1)^{\\mathrm T}$，$p_2=(1,1,1)^{\\mathrm T}$。求 $A$。",
+  "options": [
+   "$A=\\begin{pmatrix}6&0&2\\\\0&4&0\\\\2&0&6\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}4&0&-2\\\\0&6&0\\\\-2&0&4\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}4&0&2\\\\0&6&0\\\\2&0&4\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}4&2&0\\\\2&4&0\\\\0&0&6\\end{pmatrix}$"
+  ],
+  "answer": 2,
+  "hint": "$A=O\\operatorname{diag}(6,6,2)O^{\\mathrm T}$",
+  "solution": "由 $A=O\\operatorname{diag}(6,6,2)O^{\\mathrm T}$（$O$ 同前一问），得\n$$A=6\\left(\\frac{p_1p_1^{\\mathrm T}}{\\|p_1\\|^2}+\\frac{p_2p_2^{\\mathrm T}}{\\|p_2\\|^2}\\right)+2\\cdot\\frac{p_3p_3^{\\mathrm T}}{\\|p_3\\|^2}\n=\\begin{pmatrix}4&0&2\\\\0&6&0\\\\2&0&4\\end{pmatrix}.$$\n验算：$\\operatorname{tr}A=14=6+6+2$，$A(1,0,-1)^{\\mathrm T}=2(1,0,-1)^{\\mathrm T}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-17-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设 $A$ 是三阶实对称矩阵，其特征值为 $\\lambda_1=\\lambda_2=1,\\lambda_3=-2$。已知 $A$ 的属于 $\\lambda_3=-2$ 的特征向量为 $p_3=(1,1,-1)^{\\mathrm T}$。求 $A$ 的属于 $\\lambda_1=\\lambda_2=1$ 的相互正交的特征向量 $p_1$ 与 $p_2$。",
+  "options": [
+   "$p_1=(1,0,1)^{\\mathrm T}$，$p_2=(1,2,1)^{\\mathrm T}$",
+   "$p_1=(1,0,1)^{\\mathrm T}$，$p_2=(-1,2,1)^{\\mathrm T}$",
+   "$p_1=(1,1,0)^{\\mathrm T}$，$p_2=(-1,2,1)^{\\mathrm T}$",
+   "$p_1=(1,0,1)^{\\mathrm T}$，$p_2=(1,1,1)^{\\mathrm T}$"
+  ],
+  "answer": 1,
+  "hint": "在 $x_1+x_2-x_3=0$ 的解空间里取两个正交向量",
+  "solution": "$p_1,p_2$ 都满足 $p_3^{\\mathrm T}x=0$，即 $x_1+x_2-x_3=0$，解空间维数 $2$。\n取 $p_1=(1,0,1)^{\\mathrm T}$；再由 $p_1^{\\mathrm T}p_2=0$、$p_3^{\\mathrm T}p_2=0$ 解出 $p_2$：设 $p_2=(a,b,c)$，则 $a+c=0$，$a+b-c=0$，取 $a=-1$ 得 $b=2$，$c=1$，即 $p_2=(-1,2,1)^{\\mathrm T}$。检验：$p_1\\cdot p_2=-1+0+1=0$，$p_3\\cdot p_2=-1+2-1=0$。\n故 $p_1=(1,0,1)^{\\mathrm T}$，$p_2=(-1,2,1)^{\\mathrm T}$（答案不唯一）。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-17-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设 $A$ 是三阶实对称矩阵，特征值为 $\\lambda_1=\\lambda_2=1,\\lambda_3=-2$，属于 $\\lambda_3=-2$ 的特征向量为 $p_3=(1,1,-1)^{\\mathrm T}$。求正交矩阵 $O$，使得 $O^{\\mathrm T}AO$ 为对角形。",
+  "options": [
+   "$O=\\begin{pmatrix}\\frac{1}{\\sqrt2}&-\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\0&\\frac{2}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&-\\frac{1}{\\sqrt3}\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(-2,1,1)$",
+   "$O=\\begin{pmatrix}\\frac{1}{\\sqrt2}&-\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\0&\\frac{2}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\\\frac{1}{\\sqrt2}&-\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(1,1,-2)$",
+   "$O=\\begin{pmatrix}\\frac{1}{\\sqrt2}&-\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\0&\\frac{2}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&-\\frac{1}{\\sqrt3}\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(1,1,-2)$",
+   "$O=\\begin{pmatrix}\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\0&\\frac{2}{\\sqrt6}&-\\frac{1}{\\sqrt3}\\\\\\frac{1}{\\sqrt2}&-\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\end{pmatrix}$，$O^{\\mathrm T}AO=\\operatorname{diag}(1,-2,1)$"
+  ],
+  "answer": 2,
+  "hint": "$p_1=(1,0,1)^{\\mathrm T},p_2=(-1,2,1)^{\\mathrm T}$，单位化后排成列",
+  "solution": "取 $p_1=(1,0,1)^{\\mathrm T}$，$p_2=(-1,2,1)^{\\mathrm T}$，$\\|p_1\\|=\\sqrt2$，$\\|p_2\\|=\\sqrt6$，$\\|p_3\\|=\\sqrt3$，则\n$$O=\\begin{pmatrix}\\frac{1}{\\sqrt2}&-\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\0&\\frac{2}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&-\\frac{1}{\\sqrt3}\\end{pmatrix},\\qquad O^{\\mathrm T}AO=\\operatorname{diag}(1,1,-2).$$\n官方答案一致（答案不唯一）[✓官方]"
+ },
+ {
+  "id": "ch7-17-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "设 $A$ 是三阶实对称矩阵，特征值为 $\\lambda_1=\\lambda_2=1,\\lambda_3=-2$，属于 $\\lambda_3=-2$ 的特征向量为 $p_3=(1,1,-1)^{\\mathrm T}$。求 $A$。",
+  "options": [
+   "$A=\\begin{pmatrix}0&1&-1\\\\1&0&1\\\\-1&1&0\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}1&-1&0\\\\-1&1&0\\\\0&0&0\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}0&-1&1\\\\-1&0&-1\\\\1&-1&0\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}0&-1&1\\\\-1&0&1\\\\1&1&0\\end{pmatrix}$"
+  ],
+  "answer": 3,
+  "hint": "$A=O\\operatorname{diag}(1,1,-2)O^{\\mathrm T}$",
+  "solution": "$$A=1\\cdot\\frac{p_1p_1^{\\mathrm T}}{2}+1\\cdot\\frac{p_2p_2^{\\mathrm T}}{6}-2\\cdot\\frac{p_3p_3^{\\mathrm T}}{3}\n=\\begin{pmatrix}0&-1&1\\\\-1&0&1\\\\1&1&0\\end{pmatrix}.$$\n验算：$\\operatorname{tr}A=0=1+1-2$，$A(1,1,-1)^{\\mathrm T}=(-2,-2,2)^{\\mathrm T}=-2(1,1,-1)^{\\mathrm T}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-18",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "设 $A=\\begin{pmatrix}1&2&2\\\\2&1&2\\\\2&2&1\\end{pmatrix}$，求 $A^{k}$（$k$ 为正整数）。",
+  "options": [
+   "$A^{k}=\\dfrac13\\begin{pmatrix}5^{k}+2(-1)^{k}&5^{k}+(-1)^{k+1}&5^{k}+(-1)^{k+1}\\\\5^{k}+(-1)^{k+1}&5^{k}+2(-1)^{k}&5^{k}+(-1)^{k+1}\\\\5^{k}+(-1)^{k+1}&5^{k}+(-1)^{k+1}&5^{k}+2(-1)^{k}\\end{pmatrix}$",
+   "$A^{k}=\\dfrac13\\begin{pmatrix}5^{k}+2(-1)^{k}&5^{k}-(-1)^{k}&5^{k}-(-1)^{k}\\\\5^{k}-(-1)^{k}&5^{k}+2(-1)^{k}&5^{k}-(-1)^{k}\\\\5^{k}-(-1)^{k}&5^{k}-(-1)^{k}&5^{k}+2(-1)^{k}\\end{pmatrix}$",
+   "$A^{k}=\\begin{pmatrix}5^{k}&0&0\\\\0&(-1)^{k}&0\\\\0&0&(-1)^{k}\\end{pmatrix}$",
+   "$A^{k}=\\dfrac13\\begin{pmatrix}5^{k}+2(-1)^{k}&5^{k}+(-1)^{k+1}&5^{k}+(-1)^{k+1}\\\\5^{k}+(-1)^{k+1}&5^{k}+2(-1)^{k}&5^{k}+(-1)^{k-1}\\\\5^{k}+(-1)^{k+1}&5^{k}+(-1)^{k-1}&5^{k}+2(-1)^{k}\\end{pmatrix}$"
+  ],
+  "answer": 0,
+  "hint": "$A$ 的特征值为 $5,-1,-1$，作相似对角化后求幂",
+  "solution": "$A=2J-E$（$J$ 为全 $1$ 矩阵）？更直接：$A$ 的特征值为 $5,-1,-1$，特征向量\n$$p_1=(1,1,1)^{\\mathrm T},\\quad p_2=(1,-1,0)^{\\mathrm T},\\quad p_3=(1,0,-1)^{\\mathrm T}.$$\n取 $P=(p_1,p_2,p_3)$，$P^{-1}AP=\\operatorname{diag}(5,-1,-1)$，故 $A^{k}=P\\operatorname{diag}(5^k,(-1)^k,(-1)^k)P^{-1}$。计算得\n$$A^{k}=\\frac13\\begin{pmatrix}5^{k}+2(-1)^{k}&5^{k}+(-1)^{k+1}&5^{k}+(-1)^{k+1}\\\\5^{k}+(-1)^{k+1}&5^{k}+2(-1)^{k}&5^{k}+(-1)^{k+1}\\\\5^{k}+(-1)^{k+1}&5^{k}+(-1)^{k+1}&5^{k}+2(-1)^{k}\\end{pmatrix}.$$\n（$k=1$ 时即 $A$ 本身。）官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-19",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "试证：若 $A$ 是秩为 $r$ 的 $n$ 阶实对称矩阵，且 $A^{2}=A$，则存在正交矩阵 $T$，使得\n$$T^{-1}AT=\\begin{pmatrix}E_r&O_1\\\\O_2&O_3\\end{pmatrix},$$\n其中 $O_1,O_2,O_3$ 为零矩阵。",
+  "answer": "证明见解析",
+  "hint": "幂等矩阵的特征值只能是 $0$ 或 $1$；实对称矩阵可正交对角化",
+  "solution": "设 $\\lambda$ 是 $A$ 的特征值，$Ap=\\lambda p\\ (p\\neq0)$，则 $A^2p=\\lambda^2p$；由 $A^2=A$ 得 $\\lambda^2=\\lambda$，故 $\\lambda=0$ 或 $1$。\n$A$ 实对称，存在正交矩阵 $Q$ 使 $Q^{\\mathrm T}AQ=\\operatorname{diag}(\\lambda_1,\\dots,\\lambda_n)$。因为正交变换不改变秩，\n$$r=r(A)=r\\big(\\operatorname{diag}(\\lambda_1,\\dots,\\lambda_n)\\big)=\\#\\{i:\\lambda_i=1\\}.$$\n适当调整 $Q$ 的列次序（仍是正交矩阵），可使前 $r$ 个对角元为 $1$、其余为 $0$，即\n$$T^{\\mathrm T}AT=\\begin{pmatrix}E_r&O_1\\\\O_2&O_3\\end{pmatrix},\\qquad T^{-1}=T^{\\mathrm T}.$$\n官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-20",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "试证：若 $A$ 是 $n$ 阶实对称矩阵，且 $A^{2}=E$，则存在正交矩阵 $T$，使得\n$$T^{-1}AT=\\begin{pmatrix}E_p&O_1\\\\O_2&-E_{n-p}\\end{pmatrix},$$\n其中 $O_1,O_2$ 为零矩阵，$p$ 为 $A$ 的正惯性指数。",
+  "answer": "证明见解析",
+  "hint": "$A^2=E$ 给出 $\\lambda=\\pm1$；正特征值个数即正惯性指数",
+  "solution": "由 $A^2=E$ 得 $\\lambda^2=1$，故特征值只能是 $1$ 或 $-1$。\n$A$ 实对称，存在正交矩阵 $Q$ 使 $Q^{\\mathrm T}AQ=\\operatorname{diag}(\\lambda_1,\\dots,\\lambda_n)$。设其中有 $p$ 个 $1$、$n-p$ 个 $-1$（这正是 $A$ 的正、负惯性指数），调整列次序后可写成\n$$Q^{\\mathrm T}AQ=\\begin{pmatrix}E_p&O_1\\\\O_2&-E_{n-p}\\end{pmatrix}.$$\n取 $T=Q$ 即得结论。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-21",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设 $A$ 是 $n$ 阶实对称矩阵，且存在正整数 $k$，使得 $A^{k}=O$，其中 $O$ 为零矩阵（称 $A$ 为幂零矩阵）。求证：$A=O$。",
+  "answer": "证明见解析",
+  "hint": "幂零矩阵的特征值全为 $0$，再用实对称可对角化",
+  "solution": "设 $\\lambda$ 为 $A$ 的任一特征值，$Ap=\\lambda p\\ (p\\neq0)$，则 $A^kp=\\lambda^kp$；由 $A^k=O$ 得 $\\lambda^k=0$，故 $\\lambda=0$。\n即 $A$ 的 $n$ 个特征值全为 $0$。又 $A$ 是实对称矩阵，可正交对角化：存在正交矩阵 $Q$ 使\n$$Q^{\\mathrm T}AQ=\\operatorname{diag}(0,\\dots,0)=O,$$\n于是 $A=QOQ^{\\mathrm T}=O$。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-22-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "写出下列二次型的矩阵表示式：$f(x,y)=x^{2}-4xy+3y^{2}$。",
+  "options": [
+   "$f=\\tilde x^{\\mathrm T}A\\tilde x$，$\\tilde x=(x,y)^{\\mathrm T}$，$A=\\begin{pmatrix}1&-4\\\\-4&3\\end{pmatrix}$",
+   "$f=\\tilde x^{\\mathrm T}A\\tilde x$，$\\tilde x=(x,y)^{\\mathrm T}$，$A=\\begin{pmatrix}1&-2\\\\-2&3\\end{pmatrix}$",
+   "$f=\\tilde x^{\\mathrm T}A\\tilde x$，$\\tilde x=(x,y)^{\\mathrm T}$，$A=\\begin{pmatrix}1&2\\\\2&3\\end{pmatrix}$",
+   "$f=\\tilde x^{\\mathrm T}A\\tilde x$，$\\tilde x=(x,y)^{\\mathrm T}$，$A=\\begin{pmatrix}1&0\\\\0&3\\end{pmatrix}$"
+  ],
+  "answer": 1,
+  "hint": "交叉项系数 $2a_{12}=-4$",
+  "solution": "设 $f=\\tilde x^{\\mathrm T}A\\tilde x$，$\\tilde x=(x,y)^{\\mathrm T}$，则 $a_{11}=1$，$a_{22}=3$，$2a_{12}=-4$ 即 $a_{12}=a_{21}=-2$，故\n$$A=\\begin{pmatrix}1&-2\\\\-2&3\\end{pmatrix}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-22-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "写出下列二次型的矩阵表示式：$f(x,y,z)=xy+xz-yz$。",
+  "options": [
+   "$A=\\begin{pmatrix}0&1&1\\\\1&0&-1\\\\1&-1&0\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}0&\\frac12&\\frac12\\\\\\frac12&0&\\frac12\\\\\\frac12&\\frac12&0\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}0&\\frac12&\\frac12\\\\\\frac12&0&-\\frac12\\\\\\frac12&-\\frac12&0\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}1&\\frac12&\\frac12\\\\\\frac12&1&-\\frac12\\\\\\frac12&-\\frac12&1\\end{pmatrix}$"
+  ],
+  "answer": 2,
+  "hint": "三个交叉项各贡献 $\\frac12$ 到对称位置",
+  "solution": "交叉项 $xy$、$xz$、$-yz$ 的系数分别对应 $2a_{12}=1$，$2a_{13}=1$，$2a_{23}=-1$，故 $a_{12}=a_{21}=\\frac12$，$a_{13}=a_{31}=\\frac12$，$a_{23}=a_{32}=-\\frac12$，对角元全为 $0$：\n$$A=\\begin{pmatrix}0&\\frac12&\\frac12\\\\\\frac12&0&-\\frac12\\\\\\frac12&-\\frac12&0\\end{pmatrix}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-22-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "写出下列二次型的矩阵表示式：$f(x_1,x_2,x_3)=x_1^{2}+2x_1x_2+x_2^{2}-x_3^{2}-4x_1x_3$。",
+  "options": [
+   "$f=x^{\\mathrm T}Ax$，$x=(x_1,x_2,x_3)^{\\mathrm T}$，$A=\\begin{pmatrix}1&2&-4\\\\2&1&0\\\\-4&0&-1\\end{pmatrix}$",
+   "$f=x^{\\mathrm T}Ax$，$x=(x_1,x_2,x_3)^{\\mathrm T}$，$A=\\begin{pmatrix}1&1&-4\\\\1&1&0\\\\-4&0&-1\\end{pmatrix}$",
+   "$f=x^{\\mathrm T}Ax$，$x=(x_1,x_2,x_3)^{\\mathrm T}$，$A=\\begin{pmatrix}1&1&-2\\\\1&1&0\\\\-2&0&1\\end{pmatrix}$",
+   "$f=x^{\\mathrm T}Ax$，$x=(x_1,x_2,x_3)^{\\mathrm T}$，$A=\\begin{pmatrix}1&1&-2\\\\1&1&0\\\\-2&0&-1\\end{pmatrix}$"
+  ],
+  "answer": 3,
+  "hint": "$2a_{12}=2$，$2a_{13}=-4$",
+  "solution": "$a_{11}=a_{22}=1$，$a_{33}=-1$，$2a_{12}=2\\Rightarrow a_{12}=1$，$2a_{13}=-4\\Rightarrow a_{13}=a_{31}=-2$，$a_{23}=0$，故\n$$A=\\begin{pmatrix}1&1&-2\\\\1&1&0\\\\-2&0&-1\\end{pmatrix},\\qquad f=x^{\\mathrm T}Ax,\\ x=(x_1,x_2,x_3)^{\\mathrm T}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-22-4",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "写出下列二次型的矩阵表示式：$f(x_1,x_2,x_3,x_4)=3x_1^{2}-2x_1x_2+4x_1x_4-5x_2^{2}-6x_2x_3+x_3^{2}-8x_3x_4-7x_4^{2}$。",
+  "options": [
+   "$A=\\begin{pmatrix}3&-1&0&2\\\\-1&-5&-3&0\\\\0&-3&1&-4\\\\2&0&-4&-7\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}3&-2&0&4\\\\-2&-5&-6&0\\\\0&-6&1&-8\\\\4&0&-8&-7\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}3&-1&0&2\\\\-1&-5&-3&0\\\\0&-3&1&-4\\\\2&0&-4&7\\end{pmatrix}$",
+   "$A=\\begin{pmatrix}3&-1&0&-2\\\\-1&-5&-3&0\\\\0&-3&1&4\\\\-2&0&4&-7\\end{pmatrix}$"
+  ],
+  "answer": 0,
+  "hint": "$2a_{12}=-2$，$2a_{14}=4$，$2a_{23}=-6$，$2a_{34}=-8$",
+  "solution": "$a_{11}=3$，$a_{22}=-5$，$a_{33}=1$，$a_{44}=-7$；交叉项系数除以 $2$：$a_{12}=-1$，$a_{14}=2$，$a_{23}=-3$，$a_{34}=-4$，其余为 $0$，故\n$$A=\\begin{pmatrix}3&-1&0&2\\\\-1&-5&-3&0\\\\0&-3&1&-4\\\\2&0&-4&-7\\end{pmatrix}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-22-5",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "写出下列二次型的矩阵表示式：$f(x_1,x_2,\\cdots,x_n)=\\sum\\limits_{i=1}^{n-1}\\sum\\limits_{j=i+1}^{n}2x_ix_j$。",
+  "options": [
+   "$A$ 是主对角线上元素全为 $0$、其余元素全为 $2$ 的 $n$ 阶对称矩阵",
+   "$A$ 是主对角线上元素全为 $0$、其余元素全为 $1$ 的 $n$ 阶对称矩阵",
+   "$A$ 是元素全为 $1$ 的 $n$ 阶矩阵",
+   "$A$ 是单位矩阵 $E$"
+  ],
+  "answer": 1,
+  "hint": "所有 $x_ix_j\\ (i<j)$ 的系数都是 $2$，故 $a_{ij}=1$",
+  "solution": "$f$ 中不含平方项（对角元为 $0$），每个交叉项 $2x_ix_j\\ (i<j)$ 的系数为 $2$，故 $a_{ij}=a_{ji}=1\\ (i\\neq j)$，即 $A$ 是主对角线上元素全为 $0$、其余元素全为 $1$ 的 $n$ 阶对称矩阵：\n$$A=(a_{ij}),\\quad a_{ii}=0,\\quad a_{ij}=1\\ (i\\neq j).$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-23-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "choice",
+  "statement": "写出下列对称矩阵 $A$ 对应的二次型 $f$：$A=\\begin{pmatrix}a&b\\\\b&d\\end{pmatrix}$。",
+  "options": [
+   "$f(x_1,x_2)=ax_1^{2}+bx_1x_2+dx_2^{2}$",
+   "$f(x_1,x_2)=ax_1^{2}+2bx_1x_2+2dx_2^{2}$",
+   "$f(x_1,x_2)=ax_1^{2}+2bx_1x_2+dx_2^{2}$",
+   "$f(x_1,x_2)=2ax_1^{2}+2bx_1x_2+2dx_2^{2}$"
+  ],
+  "answer": 2,
+  "hint": "$f=a_{11}x_1^2+2a_{12}x_1x_2+a_{22}x_2^2$",
+  "solution": "$f=ax_1^{2}+2bx_1x_2+dx_2^{2}$（交叉项系数是矩阵中对应元素的 $2$ 倍）。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-23-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "写出下列对称矩阵 $A$ 对应的二次型 $f$：$A=\\begin{pmatrix}1&1&0\\\\1&-1&2\\\\0&2&0\\end{pmatrix}$。",
+  "options": [
+   "$f(x_1,x_2,x_3)=x_1^{2}-x_2^{2}+2x_1x_2+2x_2x_3$",
+   "$f(x_1,x_2,x_3)=x_1^{2}-x_2^{2}+x_1x_2+4x_2x_3$",
+   "$f(x_1,x_2,x_3)=x_1^{2}+x_2^{2}+2x_1x_2+4x_2x_3$",
+   "$f(x_1,x_2,x_3)=x_1^{2}-x_2^{2}+2x_1x_2+4x_2x_3$"
+  ],
+  "answer": 3,
+  "hint": "对角元给平方项，非对角元乘 $2$ 给交叉项",
+  "solution": "$f=x_1^{2}-x_2^{2}+0\\cdot x_3^{2}+2(1)x_1x_2+2(0)x_1x_3+2(2)x_2x_3$\n$$=x_1^{2}-x_2^{2}+2x_1x_2+4x_2x_3.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-23-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "写出下列对称矩阵 $A$ 对应的二次型 $f$：$A=\\begin{pmatrix}-1&1&-3\\\\1&-2&0\\\\-3&0&4\\end{pmatrix}$。",
+  "options": [
+   "$f(x_1,x_2,x_3)=-x_1^{2}-2x_2^{2}+4x_3^{2}+2x_1x_2-6x_1x_3$",
+   "$f(x_1,x_2,x_3)=-x_1^{2}-2x_2^{2}+4x_3^{2}+x_1x_2-3x_1x_3$",
+   "$f(x_1,x_2,x_3)=-x_1^{2}-2x_2^{2}+4x_3^{2}+2x_1x_2-3x_1x_3$",
+   "$f(x_1,x_2,x_3)=-x_1^{2}-2x_2^{2}+4x_3^{2}+2x_1x_2+6x_1x_3$"
+  ],
+  "answer": 0,
+  "hint": "$a_{12}=1$ 给出 $2x_1x_2$",
+  "solution": "$f=-x_1^{2}-2x_2^{2}+4x_3^{2}+2x_1x_2-6x_1x_3+0\\cdot x_2x_3$\n$$=-x_1^{2}-2x_2^{2}+4x_3^{2}+2x_1x_2-6x_1x_3.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-23-4",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "写出下列对称矩阵 $A$ 对应的二次型 $f$：$A=\\begin{pmatrix}-1&\\frac12&1&-2\\\\\\frac12&3&3&-1\\\\1&3&0&\\frac32\\\\-2&-1&\\frac32&-2\\end{pmatrix}$。",
+  "options": [
+   "$f=-x_1^{2}+3x_2^{2}-2x_4^{2}+x_1x_2+2x_1x_3-4x_1x_4+6x_2x_3-2x_2x_4+\\frac32x_3x_4$",
+   "$f=-x_1^{2}+3x_2^{2}-2x_4^{2}+x_1x_2+2x_1x_3-4x_1x_4+6x_2x_3-2x_2x_4+3x_3x_4$",
+   "$f=-x_1^{2}+3x_2^{2}-2x_4^{2}+x_1x_2+x_1x_3-2x_1x_4+3x_2x_3-x_2x_4+3x_3x_4$",
+   "$f=-x_1^{2}+3x_2^{2}+2x_4^{2}+x_1x_2+2x_1x_3-4x_1x_4+6x_2x_3-2x_2x_4+3x_3x_4$"
+  ],
+  "answer": 1,
+  "hint": "$2a_{34}=3$ 给出 $3x_3x_4$",
+  "solution": "对角元给平方项：$-x_1^{2}+3x_2^{2}+0\\cdot x_3^{2}-2x_4^{2}$；非对角元乘 $2$：\n$$f=-x_1^{2}+3x_2^{2}-2x_4^{2}+x_1x_2+2x_1x_3-4x_1x_4+6x_2x_3-2x_2x_4+3x_3x_4.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-24-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "用正交变换将下列二次型化为标准形，并求出所做的正交变换：$f(x_1,x_2,x_3)=2x_1^{2}+3x_2^{2}+3x_3^{2}+4x_2x_3$。",
+  "options": [
+   "取 $x=Oy$，$O=\\begin{pmatrix}1&0&0\\\\0&-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{2}\\\\0&\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{2}\\end{pmatrix}$，$f=2y_1^{2}+5y_2^{2}+y_3^{2}$",
+   "取 $x=Oy$，$O=\\begin{pmatrix}1&0&0\\\\0&\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{2}\\\\0&\\frac{\\sqrt2}{2}&-\\frac{\\sqrt2}{2}\\end{pmatrix}$，$f=2y_1^{2}+y_2^{2}+5y_3^{2}$",
+   "取 $x=Oy$，$O=\\begin{pmatrix}1&0&0\\\\0&-\\frac{\\sqrt2}{2}&-\\frac{\\sqrt2}{2}\\\\0&\\frac{\\sqrt2}{2}&-\\frac{\\sqrt2}{2}\\end{pmatrix}$，$f=2y_1^{2}-y_2^{2}+5y_3^{2}$",
+   "取 $x=Oy$，$O=\\begin{pmatrix}1&0&0\\\\0&-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{2}\\\\0&\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{2}\\end{pmatrix}$，$f=2y_1^{2}+y_2^{2}+5y_3^{2}$"
+  ],
+  "answer": 3,
+  "hint": "特征值 $2,1,5$；$x=Oy$",
+  "solution": "二次型的矩阵 $A=\\begin{pmatrix}2&0&0\\\\0&3&2\\\\0&2&3\\end{pmatrix}$，特征值 $\\lambda_1=2,\\lambda_2=1,\\lambda_3=5$，对应单位特征向量\n$$e_1=(1,0,0)^{\\mathrm T},\\ e_2=\\frac{1}{\\sqrt2}(0,1,-1)^{\\mathrm T},\\ e_3=\\frac{1}{\\sqrt2}(0,1,1)^{\\mathrm T}.$$\n令 $O=(e_1,e_2,e_3)$，作正交变换 $x=Oy$，则\n$$f=2y_1^{2}+y_2^{2}+5y_3^{2}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-24-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "用正交变换将下列二次型化为标准形，并求出所做的正交变换：$f(x_1,x_2,x_3)=x_1^{2}-2x_2^{2}+x_3^{2}+4x_1x_2+8x_1x_3+4x_2x_3$。",
+  "options": [
+   "取 $x=Oy$，$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&-\\frac{2\\sqrt2}{3}&\\frac13\\\\-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix}$，$f=-3y_1^{2}-3y_2^{2}+6y_3^{2}$",
+   "取 $x=Oy$，$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&-\\frac{2\\sqrt2}{3}&\\frac13\\\\-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix}$，$f=6y_1^{2}-3y_2^{2}-3y_3^{2}$",
+   "取 $x=Oy$，$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&\\frac{2\\sqrt2}{3}&\\frac13\\\\\\frac{\\sqrt2}{2}&-\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix}$，$f=-3y_1^{2}-3y_2^{2}+6y_3^{2}$",
+   "取 $x=Oy$，$O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&-\\frac{2\\sqrt2}{3}&\\frac13\\\\-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix}$，$f=3y_1^{2}+3y_2^{2}-6y_3^{2}$"
+  ],
+  "answer": 0,
+  "hint": "矩阵为 $\\begin{pmatrix}1&2&4\\\\2&-2&2\\\\4&2&1\\end{pmatrix}$，特征值 $6,-3,-3$",
+  "solution": "$A=\\begin{pmatrix}1&2&4\\\\2&-2&2\\\\4&2&1\\end{pmatrix}$，$|\\lambda E-A|=(\\lambda-6)(\\lambda+3)^2$，特征值 $6,-3,-3$。\n$\\lambda=-3$ 时 $(-3E-A)x=0$ 给出两个正交特征向量 $p_1=(1,0,-1)^{\\mathrm T}$，$p_2=(2,1,2)^{\\mathrm T}$；$\\lambda=6$ 时 $p_3=(2,-2,1)^{\\mathrm T}$。\n单位化并令 $O$ 的三列为 $e_1,e_2,e_3$，则 $x=Oy$ 把 $f$ 化为\n$$f=-3y_1^{2}-3y_2^{2}+6y_3^{2},\\qquad O=\\begin{pmatrix}\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\\\0&-\\frac{2\\sqrt2}{3}&\\frac13\\\\-\\frac{\\sqrt2}{2}&\\frac{\\sqrt2}{6}&\\frac23\\end{pmatrix}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-25",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "已知实二次型 $f=a(x_1^{2}+x_2^{2}+x_3^{2})+4(x_1x_2+x_1x_3+x_2x_3)$，经过某个正交变换后，$f$ 可化成标准形 $f=6y_1^{2}$，求 $a$ 的值。",
+  "answer": "2",
+  "hint": "正交变换不改变特征值，故 $f$ 的特征值只能是 $6,0,0$",
+  "solution": "$f$ 的矩阵为 $A=\\begin{pmatrix}a&2&2\\\\2&a&2\\\\2&2&a\\end{pmatrix}$，其特征值为 $a+4$（特征向量 $(1,1,1)^{\\mathrm T}$）与 $a-2$（二重，特征向量与 $(1,1,1)^{\\mathrm T}$ 正交）。\n标准形为 $6y_1^{2}$ 说明 $A$ 的特征值为 $6,0,0$，故 $a+4=6$ 且 $a-2=0$，得 $a=2$。官方答案：$a=2$ [✓官方]"
+ },
+ {
+  "id": "ch7-26-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设二次型 $f(x_1,x_2,x_3)=x^{\\mathrm T}Ax=ax_1^{2}+2x_2^{2}-2x_3^{2}+2bx_1x_3\\ (b>0)$。已知 $f$ 的矩阵 $A$ 的特征值之和为 $1$，特征值之积为 $-12$。求 $a$ 和 $b$ 的值。",
+  "options": [
+   "$a=1$，$b=-2$",
+   "$a=1$，$b=2$",
+   "$a=2$，$b=1$",
+   "$a=-1$，$b=2$"
+  ],
+  "answer": 1,
+  "hint": "特征值之和 $=\\operatorname{tr}A$，之积 $=\\det A$",
+  "solution": "$A=\\begin{pmatrix}a&0&b\\\\0&2&0\\\\b&0&-2\\end{pmatrix}$，故\n$$\\operatorname{tr}A=a+2-2=a=1,\\qquad \\det A=2\\cdot(-2a-b^2)=2(-2-b^2)=-12.$$\n由 $-2-b^2=-6$ 得 $b^2=4$，又 $b>0$，故 $b=2$。即 $a=1,\\ b=2$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-26-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设 $f(x_1,x_2,x_3)=ax_1^{2}+2x_2^{2}-2x_3^{2}+2bx_1x_3\\ (b>0)$，其中 $a=1,b=2$。求正交变换 $x=Oy$，将 $f$ 化为标准形。",
+  "options": [
+   "$O=\\dfrac{\\sqrt5}{5}\\begin{pmatrix}1&0&2\\\\0&\\sqrt5&0\\\\-2&0&1\\end{pmatrix}$，$f=3y_1^{2}+2y_2^{2}-2y_3^{2}$",
+   "$O=\\dfrac{\\sqrt5}{5}\\begin{pmatrix}1&0&-2\\\\0&\\sqrt5&0\\\\2&0&1\\end{pmatrix}$，$f=-3y_1^{2}+2y_2^{2}+2y_3^{2}$",
+   "$O=\\dfrac{\\sqrt5}{5}\\begin{pmatrix}1&0&2\\\\0&\\sqrt5&0\\\\-2&0&1\\end{pmatrix}$，$f=-3y_1^{2}+2y_2^{2}+2y_3^{2}$",
+   "$O=\\dfrac{\\sqrt5}{5}\\begin{pmatrix}1&0&2\\\\0&\\sqrt5&0\\\\-2&0&1\\end{pmatrix}$，$f=-3y_1^{2}+2y_2^{2}-2y_3^{2}$"
+  ],
+  "answer": 2,
+  "hint": "$A=\\begin{pmatrix}1&0&2\\\\0&2&0\\\\2&0&-2\\end{pmatrix}$，特征值 $-3,2,2$",
+  "solution": "$A=\\begin{pmatrix}1&0&2\\\\0&2&0\\\\2&0&-2\\end{pmatrix}$，$|\\lambda E-A|=(\\lambda-2)\\big[(\\lambda-1)(\\lambda+2)-4\\big]=(\\lambda-2)(\\lambda-2)(\\lambda+3)$，特征值 $2,2,-3$。\n$\\lambda=-3$：$p_1=(1,0,-2)^{\\mathrm T}$；$\\lambda=2$：$p_2=(0,1,0)^{\\mathrm T}$，$p_3=(2,0,1)^{\\mathrm T}$。单位化后令\n$$O=\\frac{\\sqrt5}{5}\\begin{pmatrix}1&0&2\\\\0&\\sqrt5&0\\\\-2&0&1\\end{pmatrix},$$\n则 $x=Oy$ 使 $f=-3y_1^{2}+2y_2^{2}+2y_3^{2}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-26-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设 $f(x_1,x_2,x_3)=ax_1^{2}+2x_2^{2}-2x_3^{2}+2bx_1x_3\\ (b>0)$，其中 $a=1,b=2$。写出 $f$ 的规范形。",
+  "options": [
+   "$f=z_1^{2}-z_2^{2}-z_3^{2}$",
+   "$f=-z_1^{2}-z_2^{2}+z_3^{2}$",
+   "$f=z_1^{2}+z_2^{2}+z_3^{2}$",
+   "$f=z_1^{2}+z_2^{2}-z_3^{2}$"
+  ],
+  "answer": 3,
+  "hint": "规范形只保留正负号：两个正、一个负",
+  "solution": "由前一问，$f$ 的标准形为 $-3y_1^{2}+2y_2^{2}+2y_3^{2}$，有两个正项、一个负项，惯性指数为 $(2,1)$。\n再令 $z_1=\\sqrt2y_2,\\ z_2=\\sqrt2y_3,\\ z_3=\\sqrt3y_1$，得规范形\n$$f=z_1^{2}+z_2^{2}-z_3^{2}.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-27-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "已知 $\\beta=\\left(\\dfrac{1}{\\sqrt2},-\\dfrac{1}{\\sqrt2},0\\right)^{\\mathrm T}$ 是对称矩阵 $A=\\begin{pmatrix}4&2&a\\\\2&4&2\\\\a&2&4\\end{pmatrix}$ 的单位特征向量。求 $a$，并求 $\\beta$ 对应的特征值 $\\lambda$。",
+  "options": [
+   "$a=2$，$\\lambda=4$",
+   "$a=0$，$\\lambda=2$",
+   "$a=2$，$\\lambda=2$",
+   "$a=-2$，$\\lambda=2$"
+  ],
+  "answer": 2,
+  "hint": "$A\\beta=\\lambda\\beta$，比较第一个分量",
+  "solution": "设 $A\\beta=\\lambda\\beta$，即\n$$A\\beta=\\left(\\frac{4}{\\sqrt2}-\\frac{2}{\\sqrt2},\\ \\frac{2}{\\sqrt2}-\\frac{4}{\\sqrt2},\\ \\frac{a}{\\sqrt2}-\\frac{2}{\\sqrt2}\\right)^{\\mathrm T}=\\left(\\frac{2}{\\sqrt2},-\\frac{2}{\\sqrt2},\\frac{a-2}{\\sqrt2}\\right)^{\\mathrm T}\n=\\lambda\\left(\\frac{1}{\\sqrt2},-\\frac{1}{\\sqrt2},0\\right)^{\\mathrm T}.$$\n由前两个分量得 $\\lambda=2$；再由第三个分量 $\\frac{a-2}{\\sqrt2}=0$ 得 $a=2$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-27-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "已知 $\\beta=\\left(\\dfrac{1}{\\sqrt2},-\\dfrac{1}{\\sqrt2},0\\right)^{\\mathrm T}$ 是对称矩阵 $A=\\begin{pmatrix}4&2&2\\\\2&4&2\\\\2&2&4\\end{pmatrix}$ 的单位特征向量。求以 $\\beta$ 为第 $1$ 列的正交矩阵 $P$，使得在正交变换 $x=Py$ 下二次型 $f=x^{\\mathrm T}Ax$ 化为标准形，并写出标准形（$x=(x_1,x_2,x_3)^{\\mathrm T}$，$y=(y_1,y_2,y_3)^{\\mathrm T}$）。",
+  "options": [
+   "$P=\\begin{pmatrix}\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\-\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\0&-\\frac{2}{\\sqrt6}&\\frac{1}{\\sqrt3}\\end{pmatrix}$，$f=8y_1^{2}+2y_2^{2}+2y_3^{2}$",
+   "$P=\\begin{pmatrix}\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt3}&\\frac{1}{\\sqrt6}\\\\-\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt3}&\\frac{1}{\\sqrt6}\\\\0&\\frac{1}{\\sqrt3}&-\\frac{2}{\\sqrt6}\\end{pmatrix}$，$f=2y_1^{2}+8y_2^{2}+2y_3^{2}$",
+   "$P=\\begin{pmatrix}\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\-\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\0&-\\frac{2}{\\sqrt6}&-\\frac{1}{\\sqrt3}\\end{pmatrix}$，$f=2y_1^{2}+2y_2^{2}+8y_3^{2}$",
+   "$P=\\begin{pmatrix}\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\-\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\0&-\\frac{2}{\\sqrt6}&\\frac{1}{\\sqrt3}\\end{pmatrix}$，$f=2y_1^{2}+2y_2^{2}+8y_3^{2}$"
+  ],
+  "answer": 3,
+  "hint": "$A$ 的特征值为 $2,2,8$；再取两个与 $\\beta$ 正交的单位向量",
+  "solution": "$A$ 的特征多项式 $|\\lambda E-A|=(\\lambda-2)^2(\\lambda-8)$，特征值 $2,2,8$。$\\beta$ 对应 $\\lambda=2$。\n在与 $\\beta$ 正交的平面内再取 $\\lambda=2$ 的单位特征向量 $p_2=\\frac{1}{\\sqrt6}(1,1,-2)^{\\mathrm T}$，以及 $\\lambda=8$ 的单位特征向量 $p_3=\\frac{1}{\\sqrt3}(1,1,1)^{\\mathrm T}$。令\n$$P=\\begin{pmatrix}\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\-\\frac{1}{\\sqrt2}&\\frac{1}{\\sqrt6}&\\frac{1}{\\sqrt3}\\\\0&-\\frac{2}{\\sqrt6}&\\frac{1}{\\sqrt3}\\end{pmatrix},$$\n则 $P$ 为正交矩阵且 $x=Py$ 使 $f=2y_1^{2}+2y_2^{2}+8y_3^{2}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-28-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "用配方法将下列二次型化为标准形，并求出所做的可逆线性变换：$f(x_1,x_2,x_3)=x_1^{2}+2x_2^{2}+2x_1x_2-2x_1x_3$。",
+  "options": [
+   "$x=Cy$，$C=\\begin{pmatrix}1&-1&2\\\\0&1&-1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}+y_2^{2}+2y_3^{2}$",
+   "$x=Cy$，$C=\\begin{pmatrix}1&1&2\\\\0&1&1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}+y_2^{2}-2y_3^{2}$",
+   "$x=Cy$，$C=\\begin{pmatrix}1&-1&2\\\\0&1&-1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}-y_2^{2}-2y_3^{2}$",
+   "$x=Cy$，$C=\\begin{pmatrix}1&-1&2\\\\0&1&-1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}+y_2^{2}-2y_3^{2}$"
+  ],
+  "answer": 3,
+  "hint": "按 $x_1$ 配方：$x_1^{2}+2x_1(x_2-x_3)$",
+  "solution": "$$\\begin{aligned}f&=x_1^{2}+2x_1x_2-2x_1x_3+2x_2^{2}\\\\\n&=(x_1+x_2-x_3)^{2}-(x_2-x_3)^{2}+2x_2^{2}\\\\\n&=(x_1+x_2-x_3)^{2}+(x_2+x_3)^{2}-2x_3^{2}.\\end{aligned}$$\n令 $y_1=x_1+x_2-x_3$，$y_2=x_2+x_3$，$y_3=x_3$，则 $f=y_1^{2}+y_2^{2}-2y_3^{2}$，且\n$$x_1=y_1-y_2+2y_3,\\quad x_2=y_2-y_3,\\quad x_3=y_3,$$\n即 $x=Cy$，$C=\\begin{pmatrix}1&-1&2\\\\0&1&-1\\\\0&0&1\\end{pmatrix}$，$|C|=1\\neq0$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-28-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "用配方法将下列二次型化为标准形，并求出所做的可逆线性变换：$f(x_1,x_2,x_3)=x_1x_2+x_1x_3+x_2x_3$。",
+  "options": [
+   "$x=Cy$，$C=\\begin{pmatrix}1&1&-1\\\\1&-1&-1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}-y_2^{2}-y_3^{2}$",
+   "$x=Cy$，$C=\\begin{pmatrix}1&1&-1\\\\1&-1&-1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}+y_2^{2}-y_3^{2}$",
+   "$x=Cy$，$C=\\begin{pmatrix}1&1&-1\\\\1&-1&-1\\\\0&0&1\\end{pmatrix}$，$f=-y_1^{2}+y_2^{2}+y_3^{2}$",
+   "$x=Cy$，$C=\\begin{pmatrix}1&1&1\\\\1&-1&0\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}-y_2^{2}-y_3^{2}$"
+  ],
+  "answer": 0,
+  "hint": "先令 $x_1=y_1+y_2,\\ x_2=y_1-y_2$ 造出平方项",
+  "solution": "令 $x_1=u_1+u_2$，$x_2=u_1-u_2$，$x_3=u_3$，则\n$$f=u_1^{2}-u_2^{2}+2u_1u_3=(u_1+u_3)^{2}-u_2^{2}-u_3^{2}.$$\n再令 $y_1=u_1+u_3$，$y_2=u_2$，$y_3=u_3$，则 $f=y_1^{2}-y_2^{2}-y_3^{2}$，且 $u_1=y_1-y_3$，$u_2=y_2$，$u_3=y_3$，于是\n$$x_1=y_1+y_2-y_3,\\quad x_2=y_1-y_2-y_3,\\quad x_3=y_3,\\qquad C=\\begin{pmatrix}1&1&-1\\\\1&-1&-1\\\\0&0&1\\end{pmatrix},\\ |C|=-2\\neq0.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-28-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "用配方法将下列二次型化为标准形，并求出所做的可逆线性变换：$f(x_1,x_2,x_3)=x_1^{2}+3x_2^{2}+x_3^{2}+4x_1x_2+2x_1x_3+2x_2x_3$。",
+  "options": [
+   "$x=Cy$，$C=\\begin{pmatrix}1&-2&1\\\\0&1&-1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}+y_2^{2}+y_3^{2}$",
+   "$x=Cy$，$C=\\begin{pmatrix}1&-2&1\\\\0&1&-1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}-y_2^{2}+y_3^{2}$",
+   "$x=Cy$，$C=\\begin{pmatrix}1&2&1\\\\0&1&1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}-y_2^{2}+y_3^{2}$",
+   "$x=Cy$，$C=\\begin{pmatrix}1&-2&1\\\\0&1&-1\\\\0&0&1\\end{pmatrix}$，$f=y_1^{2}-y_2^{2}-y_3^{2}$"
+  ],
+  "answer": 1,
+  "hint": "按 $x_1$ 配方成 $(x_1+2x_2+x_3)^{2}$",
+  "solution": "$$\\begin{aligned}f&=(x_1+2x_2+x_3)^{2}-x_2^{2}-2x_2x_3\\\\\n&=(x_1+2x_2+x_3)^{2}-(x_2+x_3)^{2}+x_3^{2}.\\end{aligned}$$\n令 $y_1=x_1+2x_2+x_3$，$y_2=x_2+x_3$，$y_3=x_3$，则 $f=y_1^{2}-y_2^{2}+y_3^{2}$，且\n$$x_1=y_1-2y_2+y_3,\\quad x_2=y_2-y_3,\\quad x_3=y_3,\\qquad C=\\begin{pmatrix}1&-2&1\\\\0&1&-1\\\\0&0&1\\end{pmatrix},\\ |C|=1\\neq0.$$\n官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-29-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "写出下列二次型的规范形：$f(x_1,x_2,x_3)=x_1^{2}-x_2^{2}-x_3^{2}-2x_1x_2+2x_1x_3+2x_2x_3$。",
+  "options": [
+   "$f=z_1^{2}-z_2^{2}$",
+   "$f=z_1^{2}+z_2^{2}-z_3^{2}$",
+   "$f=z_1^{2}-z_2^{2}-z_3^{2}$",
+   "$f=z_1^{2}+z_2^{2}$"
+  ],
+  "answer": 0,
+  "hint": "先看矩阵的秩与正负惯性指数",
+  "solution": "$A=\\begin{pmatrix}1&-1&1\\\\-1&-1&1\\\\1&1&-1\\end{pmatrix}$，$|\\lambda E-A|=\\lambda(\\lambda-2)(\\lambda+2)$…由\n$$f=(x_1-x_2+x_3)^{2}-2x_2^{2}-2x_3^{2}+4x_2x_3=(x_1-x_2+x_3)^{2}-2(x_2-x_3)^{2}$$\n知秩为 $2$，正、负惯性指数各为 $1$，故规范形为 $f=z_1^{2}-z_2^{2}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-29-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "写出下列二次型的规范形：$f(x_1,x_2,x_3)=x_1x_2-2x_1x_3+2x_2x_3$。",
+  "options": [
+   "$f=z_1^{2}-z_2^{2}+z_3^{2}$",
+   "$f=z_1^{2}+z_2^{2}-z_3^{2}$",
+   "$f=z_1^{2}-z_2^{2}$",
+   "$f=-z_1^{2}-z_2^{2}+z_3^{2}$"
+  ],
+  "answer": 1,
+  "hint": "先作 $x_1=y_1+y_2,\\ x_2=y_1-y_2$ 造平方项",
+  "solution": "令 $x_1=y_1+y_2$，$x_2=y_1-y_2$，$x_3=y_3$，则\n$$f=y_1^{2}-y_2^{2}-2y_1y_3-2y_2y_3+2y_1y_3+2y_2y_3=y_1^{2}-y_2^{2}-2y_2y_3=(y_1)^{2}-(y_2+y_3)^{2}+y_3^{2}.$$\n秩为 $3$，正惯性指数 $2$、负惯性指数 $1$，故规范形 $f=z_1^{2}+z_2^{2}-z_3^{2}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-29-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "写出下列二次型的规范形：$f(x_1,x_2,x_3)=x_1^{2}+2x_2^{2}+2x_3^{2}-2x_1x_2+2x_1x_3-4x_2x_3$。",
+  "options": [
+   "$f=z_1^{2}+z_2^{2}+z_3^{2}$",
+   "$f=z_1^{2}+z_2^{2}-z_3^{2}$",
+   "$f=z_1^{2}+z_2^{2}$",
+   "$f=z_1^{2}$"
+  ],
+  "answer": 2,
+  "hint": "配方成两个平方之和",
+  "solution": "$$\\begin{aligned}f&=(x_1-x_2+x_3)^{2}+x_2^{2}+x_3^{2}-2x_2x_3\\\\\n&=(x_1-x_2+x_3)^{2}+(x_2-x_3)^{2}\\ge0.\\end{aligned}$$\n秩为 $2$，正惯性指数为 $2$，负惯性指数为 $0$，故规范形 $f=z_1^{2}+z_2^{2}$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-30-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "判定下列二次型是否为正定二次型：$f(x_1,x_2,x_3)=2x_1^{2}+2x_1x_2-2x_1x_3-6x_2^{2}-4x_2x_3-x_3^{2}$。",
+  "options": [
+   "不是正定二次型（$\\Delta_2=-13<0$）",
+   "是正定二次型（$\\Delta_1=2>0$）",
+   "是正定二次型（$\\Delta_3=-13<0$，符号一致）",
+   "不是正定二次型（$\\Delta_3=0$）"
+  ],
+  "answer": 0,
+  "hint": "算顺序主子式",
+  "solution": "$A=\\begin{pmatrix}2&1&-1\\\\1&-6&-2\\\\-1&-2&-1\\end{pmatrix}$，\n$$\\Delta_1=2>0,\\qquad \\Delta_2=\\begin{vmatrix}2&1\\\\1&-6\\end{vmatrix}=-13<0,$$\n顺序主子式不全为正，故**不是**正定二次型（实际上不是正定的，取 $x=(1,1,0)$ 得 $f=2+2-6=-2<0$）。官方答案：不是 [✓官方]"
+ },
+ {
+  "id": "ch7-30-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "判定下列二次型是否为正定二次型：$f(x_1,x_2,x_3)=2x_1^{2}+2x_1x_2+4x_1x_3+2x_2^{2}+2x_2x_3+3x_3^{2}$。",
+  "options": [
+   "不是正定二次型（$\\Delta_3=3>0$ 但与 $\\Delta_2$ 不相等）",
+   "是正定二次型（$\\Delta_1=2,\\Delta_2=3,\\Delta_3=3$ 全大于零）",
+   "不是正定二次型（$\\Delta_2=3>0$ 不满足 $\\Delta_2=\\Delta_1^{2}$）",
+   "是正定二次型（因为它不含交叉项）"
+  ],
+  "answer": 1,
+  "hint": "三个顺序主子式都为正就可以",
+  "solution": "$A=\\begin{pmatrix}2&1&2\\\\1&2&1\\\\2&1&3\\end{pmatrix}$，\n$$\\Delta_1=2>0,\\ \\Delta_2=3>0,\\ \\Delta_3=\\begin{vmatrix}2&1&2\\\\1&2&1\\\\2&1&3\\end{vmatrix}=2(6-1)-1(3-2)+2(1-4)=3>0,$$\n故**是**正定二次型。官方答案：是 [✓官方]"
+ },
+ {
+  "id": "ch7-30-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "判定下列二次型是否为正定二次型：$f(x_1,x_2,x_3)=2x_1^{2}+2x_1x_2-4x_1x_3+2x_2^{2}-2x_2x_3+5x_3^{2}$。",
+  "options": [
+   "不是正定二次型（含负的交叉项）",
+   "不是正定二次型（$\\Delta_3=9>0$ 但 $\\Delta_2=3\\ne9$）",
+   "是正定二次型（$\\Delta_1=2,\\Delta_2=3,\\Delta_3=9$ 全大于零）",
+   "是正定二次型（$\\operatorname{tr}A=9>0$，故正定）"
+  ],
+  "answer": 2,
+  "hint": "$\\Delta_3=9$",
+  "solution": "$A=\\begin{pmatrix}2&1&-2\\\\1&2&-1\\\\-2&-1&5\\end{pmatrix}$，\n$$\\Delta_1=2>0,\\ \\Delta_2=3>0,\\ \\Delta_3=2(10-1)-1(5-2)+(-2)(-1+4)=18-3-6=9>0,$$\n故**是**正定二次型。官方答案：是 [✓官方]"
+ },
+ {
+  "id": "ch7-30-4",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "判定下列二次型是否为正定二次型：$f(x_1,x_2,x_3)=x_1^{2}-2x_1x_2-4x_1x_3+2x_2^{2}-4x_2x_3+7x_3^{2}$。",
+  "options": [
+   "是正定二次型（$\\Delta_1=1,\\Delta_2=1$ 均大于零）",
+   "是正定二次型（$\\Delta_3=13>0$）",
+   "不是正定二次型（$\\Delta_2=1$ 太小）",
+   "不是正定二次型（$\\Delta_3=-13<0$）"
+  ],
+  "answer": 3,
+  "hint": "$\\Delta_2=1$，再看 $\\Delta_3$",
+  "solution": "$A=\\begin{pmatrix}1&-1&-2\\\\-1&2&-2\\\\-2&-2&7\\end{pmatrix}$，\n$$\\Delta_1=1>0,\\ \\Delta_2=1>0,\\ \\Delta_3=1(14-4)+1(-7-4)-2(2+4)=10-11-12=-13<0,$$\n故**不是**正定二次型。官方答案：不是 [✓官方]"
+ },
+ {
+  "id": "ch7-30-5",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "判定下列二次型是否为正定二次型：$f(x_1,x_2,x_3,x_4)=x_1^{2}+x_2^{2}+4x_3^{2}+8x_4^{2}+6x_1x_3+4x_1x_4-2x_2x_3+2x_2x_4+2x_3x_4$。",
+  "options": [
+   "不是正定二次型（$\\Delta_3=-6<0$）",
+   "是正定二次型（$\\Delta_1=\\Delta_2=1>0$ 且 $\\Delta_4>0$）",
+   "是正定二次型（对角元 $1,1,4,8$ 全为正）",
+   "不是正定二次型（$\\Delta_4=0$）"
+  ],
+  "answer": 0,
+  "hint": "四阶要多算一步：$\\Delta_3=-6$",
+  "solution": "$A=\\begin{pmatrix}1&0&3&2\\\\0&1&-1&1\\\\3&-1&4&1\\\\2&1&1&8\\end{pmatrix}$，\n$$\\Delta_1=1,\\quad\\Delta_2=1,\\quad\\Delta_3=\\begin{vmatrix}1&0&3\\\\0&1&-1\\\\3&-1&4\\end{vmatrix}=4-1-9=-6<0,$$\n已出现负的顺序主子式，故**不是**正定二次型。官方答案：不是 [✓官方]"
+ },
+ {
+  "id": "ch7-30-6",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "判定下列二次型是否为正定二次型：$f(x_1,x_2,x_3,x_4)=x_1^{2}-2x_1x_2+4x_1x_3+2x_1x_4+3x_2^{2}-6x_2x_3+9x_3^{2}-12x_3x_4+19x_4^{2}$。",
+  "options": [
+   "不是正定二次型（交叉项系数的绝对值较大）",
+   "是正定二次型（$\\Delta_1=1,\\Delta_2=2,\\Delta_3=9,\\Delta_4=45$ 全大于零）",
+   "不是正定二次型（$\\Delta_4=45>0$ 但 $\\Delta_3=9<45$）",
+   "是正定二次型（因为 $19x_4^{2}$ 的系数最大）"
+  ],
+  "answer": 1,
+  "hint": "配方成四个平方之和",
+  "solution": "$A=\\begin{pmatrix}1&-1&2&1\\\\-1&3&-3&0\\\\2&-3&9&-6\\\\1&0&-6&19\\end{pmatrix}$，各阶顺序主子式为\n$$\\Delta_1=1,\\quad\\Delta_2=2,\\quad\\Delta_3=9,\\quad\\Delta_4=45,$$\n全部大于零，故**是**正定二次型。官方答案：是 [✓官方]"
+ },
+ {
+  "id": "ch7-31-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "确定参数 $\\lambda$ 的取值范围，使得下列二次型为正定二次型：$f(x_1,x_2,x_3)=x_1^{2}+2\\lambda x_1x_2-2x_1x_3+x_2^{2}+4x_2x_3+5x_3^{2}$。",
+  "options": [
+   "$-1<\\lambda<1$",
+   "$-\\dfrac45<\\lambda<0$",
+   "$0<\\lambda<\\dfrac45$",
+   "$-\\dfrac45<\\lambda<\\dfrac45$"
+  ],
+  "answer": 1,
+  "hint": "算出 $\\Delta_2$、$\\Delta_3$ 后解不等式组",
+  "solution": "$A=\\begin{pmatrix}1&\\lambda&-1\\\\\\lambda&1&2\\\\-1&2&5\\end{pmatrix}$，\n$$\\Delta_1=1>0,\\quad \\Delta_2=1-\\lambda^{2}>0\\ \\Longrightarrow\\ -1<\\lambda<1,$$\n$$\\Delta_3=1(5-4)-\\lambda(5\\lambda+2)+(-1)(2\\lambda+1)=1-5\\lambda^{2}-2\\lambda-2\\lambda-1=-5\\lambda^{2}-4\\lambda>0.$$\n由 $\\lambda(5\\lambda+4)<0$ 得 $-\\frac45<\\lambda<0$；它与 $(-1,1)$ 的交集仍是 $-\\frac45<\\lambda<0$，即\n$$-\\frac45<\\lambda<0.$$\n官方答案：$-\\frac45<\\lambda<0$ [✓官方]"
+ },
+ {
+  "id": "ch7-31-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "确定参数 $\\lambda$ 的取值范围，使得下列二次型为正定二次型：$f(x_1,x_2,x_3)=5x_1^{2}+4x_1x_2-2x_1x_3+x_2^{2}+4x_2x_3+\\lambda x_3^{2}$。",
+  "options": [
+   "$\\lambda>4$",
+   "$\\lambda>-29$",
+   "$\\lambda>29$",
+   "$\\lambda>0$"
+  ],
+  "answer": 2,
+  "hint": "$\\Delta_3$ 是关于 $\\lambda$ 的一次式",
+  "solution": "$A=\\begin{pmatrix}5&2&-1\\\\2&1&2\\\\-1&2&\\lambda\\end{pmatrix}$，\n$$\\Delta_1=5>0,\\quad\\Delta_2=1>0,\\quad\\Delta_3=5(\\lambda-4)-2(2\\lambda+2)+(-1)(4+1)=5\\lambda-20-4\\lambda-4-5=\\lambda-29>0,$$\n故 $\\lambda>29$。官方答案：$\\lambda>29$ [✓官方]"
+ },
+ {
+  "id": "ch7-31-3",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "确定参数 $\\lambda$ 的取值范围，使得下列二次型为正定二次型：$f(x_1,x_2,x_3,x_4)=\\lambda(x_1^{2}+x_2^{2}+x_3^{2})+2(x_1x_2-x_2x_3+x_1x_3)+x_4^{2}$。",
+  "options": [
+   "$\\lambda>1$",
+   "$\\lambda>0$",
+   "$\\lambda>2$ 且 $\\lambda\\neq-1$",
+   "$\\lambda>2$"
+  ],
+  "answer": 3,
+  "hint": "$x_4^{2}$ 的系数已为 $1$，只需前三个变量部分正定",
+  "solution": "$A=\\begin{pmatrix}\\lambda&1&1&0\\\\1&\\lambda&-1&0\\\\1&-1&\\lambda&0\\\\0&0&0&1\\end{pmatrix}$，其顺序主子式\n$$\\Delta_1=\\lambda,\\quad\\Delta_2=\\lambda^{2}-1,\\quad\\Delta_3=\\lambda(\\lambda^{2}-1)-1(\\lambda+1)+1(-1-\\lambda)=\\lambda^{3}-3\\lambda-2=(\\lambda-2)(\\lambda+1)^{2},$$\n$$\\Delta_4=1\\cdot\\Delta_3=(\\lambda-2)(\\lambda+1)^{2}.$$\n要求 $\\Delta_1>0$ 且 $(\\lambda-2)(\\lambda+1)^2>0$，即 $\\lambda>0$ 且 $\\lambda>2$，故 $\\lambda>2$。官方答案：$\\lambda>2$ [✓官方]"
+ },
+ {
+  "id": "ch7-32-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求参数 $a$ 的取值范围，使得下列对称矩阵为正定矩阵：$A=\\begin{pmatrix}1&1&0\\\\1&a&0\\\\0&0&a^{2}\\end{pmatrix}$。",
+  "options": [
+   "$a>0$",
+   "$a>1$ 且 $a\\neq0$",
+   "$a>1$",
+   "$a>-1$"
+  ],
+  "answer": 2,
+  "hint": "$\\Delta_2=a-1$，$\\Delta_3=a^{2}(a-1)$",
+  "solution": "$\\Delta_1=1>0$，$\\Delta_2=a-1>0$，$\\Delta_3=a^{2}(a-1)>0$，故 $a>1$。官方答案：$a>1$ [✓官方]"
+ },
+ {
+  "id": "ch7-32-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "求参数 $a$ 的取值范围，使得下列对称矩阵为正定矩阵：$A=\\begin{pmatrix}5&2&-1\\\\2&1&-1\\\\-1&-1&a\\end{pmatrix}$。",
+  "options": [
+   "$a>1$",
+   "$a>0$",
+   "$a>-2$",
+   "$a>2$"
+  ],
+  "answer": 3,
+  "hint": "$\\Delta_3=a-2$",
+  "solution": "$\\Delta_1=5>0$，$\\Delta_2=1>0$，\n$$\\Delta_3=5(a-1)-2(2a-1)+(-1)(-2+1)=5a-5-4a+2+1=a-2>0,$$\n故 $a>2$。官方答案：$a>2$ [✓官方]"
+ },
+ {
+  "id": "ch7-33",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "设 $A=\\begin{pmatrix}1&0&1\\\\0&2&0\\\\1&0&1\\end{pmatrix}$，问 $a$ 为何值时，$B=(aE+A)^{2}$ 为正定矩阵？",
+  "options": [
+   "$a>0$",
+   "$a\\neq-2$ 且 $a\\neq0$",
+   "$a>-2$ 且 $a\\neq0$",
+   "$a\\neq2$ 且 $a\\neq0$"
+  ],
+  "answer": 1,
+  "hint": "$B$ 对称，其特征值是 $aE+A$ 特征值的平方",
+  "solution": "$A$ 的特征值为 $0,2,2$，故 $aE+A$ 的特征值为 $a,\\ a+2,\\ a+2$，从而 $B$ 的特征值为\n$$a^{2},\\ (a+2)^{2},\\ (a+2)^{2},$$\n它们全大于 $0$ 当且仅当 $a\\neq0$ 且 $a\\neq-2$。又 $B$ 是实对称矩阵，故 $B$ 正定 $\\Leftrightarrow a\\neq-2$ 且 $a\\neq0$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-34-1",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设三阶实对称矩阵 $A$ 满足 $A^{2}+2A=O$，其中 $O$ 为零矩阵，且 $r(A)=2$。求出 $A$ 的全体特征值。",
+  "options": [
+   "$\\lambda_1=\\lambda_2=-2$，$\\lambda_3=0$",
+   "$\\lambda_1=\\lambda_2=0$，$\\lambda_3=-2$",
+   "$\\lambda_1=\\lambda_2=2$，$\\lambda_3=0$",
+   "$\\lambda_1=-2$，$\\lambda_2=\\lambda_3=0$"
+  ],
+  "answer": 0,
+  "hint": "$A^2+2A=0$ 给出 $\\lambda(\\lambda+2)=0$",
+  "solution": "设 $Ap=\\lambda p\\ (p\\neq0)$，则 $(A^2+2A)p=(\\lambda^2+2\\lambda)p=0$，故 $\\lambda=0$ 或 $\\lambda=-2$。\n$A$ 实对称可对角化，$r(A)=2$ 说明非零特征值有 $2$ 个，即 $\\lambda_1=\\lambda_2=-2$，$\\lambda_3=0$。官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch7-34-2",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "设三阶实对称矩阵 $A$ 满足 $A^{2}+2A=O$，且 $r(A)=2$（特征值为 $-2,-2,0$）。当 $k$ 为何值时，$kE+A$ 必为正定矩阵？",
+  "options": [
+   "$k>0$",
+   "$k>2$",
+   "$k>-2$",
+   "$k>2$ 且 $k\\neq0$"
+  ],
+  "answer": 1,
+  "hint": "$kE+A$ 的特征值为 $k-2,k-2,k$",
+  "solution": "$kE+A$ 是实对称矩阵，其特征值为\n$$k+\\lambda_i=k-2,\\ k-2,\\ k.$$\n正定要求三个特征值全大于 $0$，即 $k-2>0$ 且 $k>0$，故 $k>2$。官方答案：$k>2$ [✓官方]"
+ },
+ {
+  "id": "ch7-35",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "下述推理是否正确：因为三元二次型\n$$f(x_1,x_2,x_3)=x_1^{2}+x_2^{2}+x_3^{2}-x_1x_2-x_2x_3-x_1x_3=\\frac12(x_1-x_2)^{2}+\\frac12(x_2-x_3)^{2}+\\frac12(x_1-x_3)^{2}$$\n可以化成三项平方和，所以它一定是正定二次型。",
+  "options": [
+   "正确，三项平方和非负，故 $f$ 正定",
+   "正确，因为平方项的系数 $\\frac12>0$",
+   "不正确，因为 $f$ 的矩阵不是对称矩阵",
+   "不正确，取 $x_1=x_2=x_3=1$ 得 $f=0$，故 $f$ 不是正定二次型"
+  ],
+  "answer": 3,
+  "hint": "平方和为 $0$ 不一定只有零解",
+  "solution": "推理**不正确**。三项平方和虽然都非负，但取 $x_1=x_2=x_3=1\\neq0$ 时每项都为 $0$，即\n$$f(1,1,1)=0,$$\n存在非零向量使 $f=0$，不满足正定的定义（正定要求对一切 $x\\neq0$ 都有 $f(x)>0$）。\n事实上该二次型半正定、秩为 $2$（$f=\\frac12\\sum(x_i-x_j)^2$ 的秩为 $2$，规范形为 $z_1^{2}+z_2^{2}$）。官方答案：不正确 [✓官方]"
+ },
+ {
+  "id": "ch7-36",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "求证：$n$ 阶矩阵 $A$ 既是正交矩阵又是正定矩阵当且仅当 $A$ 为单位矩阵。",
+  "answer": "证明见解析",
+  "hint": "正交 $+$ 对称 $\\Rightarrow A^{2}=E$；正定 $\\Rightarrow$ 特征值全为 $1$",
+  "solution": "**必要性**：设 $A$ 既正交又正定。正定矩阵是对称矩阵，故 $A^{\\mathrm T}=A$；又 $A^{\\mathrm T}A=E$，于是 $A^{2}=E$。\n设 $A$ 的特征值为 $\\lambda$，则 $\\lambda^{2}=1$，$\\lambda=\\pm1$；正定性给出所有 $\\lambda>0$，故 $\\lambda=1$（$n$ 重）。\n$A$ 是实对称矩阵，可正交对角化：$A=Q\\operatorname{diag}(1,\\dots,1)Q^{\\mathrm T}=QEQ^{\\mathrm T}=E$。\n**充分性**：$A=E$ 时 $A^{\\mathrm T}A=E$ 且对任意 $x\\neq0$ 有 $x^{\\mathrm T}Ax=\\|x\\|^{2}>0$，故 $E$ 既正交又正定。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-37",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $A$ 是 $n$ 阶正定矩阵，求证 $A^{k}$ 必是正定矩阵，其中 $k$ 为任意正整数。",
+  "answer": "证明见解析",
+  "hint": "$A=Q\\Lambda Q^{\\mathrm T}$，则 $A^{k}=Q\\Lambda^{k}Q^{\\mathrm T}$",
+  "solution": "$A$ 正定 $\\Rightarrow$ $A$ 实对称，存在正交矩阵 $Q$ 使\n$$A=Q\\operatorname{diag}(\\lambda_1,\\dots,\\lambda_n)Q^{\\mathrm T},\\qquad \\lambda_i>0.$$\n于是\n$$A^{k}=Q\\operatorname{diag}(\\lambda_1^{k},\\dots,\\lambda_n^{k})Q^{\\mathrm T}.$$\n$A^{k}$ 仍是对称矩阵，其特征值 $\\lambda_i^{k}>0\\ (i=1,\\dots,n)$，故 $A^{k}$ 正定。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-38",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "设 $A,B$ 都是 $n$ 阶正定矩阵，求证 $A+B$ 也是正定矩阵。",
+  "answer": "证明见解析",
+  "hint": "直接用正定的定义：对 $x\\neq0$ 比较 $x^{\\mathrm T}(A+B)x$",
+  "solution": "$A,B$ 正定 $\\Rightarrow$ $A^{\\mathrm T}=A$，$B^{\\mathrm T}=B$，故 $(A+B)^{\\mathrm T}=A+B$，$A+B$ 对称。\n对任意 $x\\neq0$，由 $A,B$ 正定得 $x^{\\mathrm T}Ax>0$，$x^{\\mathrm T}Bx>0$，于是\n$$x^{\\mathrm T}(A+B)x=x^{\\mathrm T}Ax+x^{\\mathrm T}Bx>0,$$\n故 $A+B$ 正定。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-39",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $A$ 是 $n$ 阶实对称矩阵。如果对任意 $n$ 维实向量 $x$，都有 $x^{\\mathrm T}Ax=0$，求证 $A$ 为零矩阵。",
+  "answer": "证明见解析",
+  "hint": "取 $x=e_i$ 得 $a_{ii}=0$，取 $x=e_i+e_j$ 得 $a_{ij}=0$",
+  "solution": "记 $A=(a_{ij})$。取 $x=e_i$（第 $i$ 个分量为 $1$、其余为 $0$），则 $x^{\\mathrm T}Ax=a_{ii}=0$，故对角元全为 $0$。\n再取 $x=e_i+e_j\\ (i\\neq j)$，则\n$$x^{\\mathrm T}Ax=a_{ii}+a_{ij}+a_{ji}+a_{jj}=2a_{ij}=0,$$\n其中用到 $A$ 对称即 $a_{ij}=a_{ji}$。故所有 $a_{ij}=0$，即 $A=O$。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-40",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "设 $P$ 为 $n$ 阶可逆矩阵，$A=P^{\\mathrm T}P$。求证：$f=x^{\\mathrm T}Ax$ 为正定二次型。",
+  "answer": "证明见解析",
+  "hint": "$x^{\\mathrm T}P^{\\mathrm T}Px=\\|Px\\|^{2}$",
+  "solution": "$A^{\\mathrm T}=(P^{\\mathrm T}P)^{\\mathrm T}=P^{\\mathrm T}P=A$，故 $A$ 是对称矩阵，$f$ 的矩阵为 $A$。\n对任意 $x\\neq0$，因 $P$ 可逆，$Px\\neq0$，于是\n$$f=x^{\\mathrm T}P^{\\mathrm T}Px=(Px)^{\\mathrm T}(Px)=\\|Px\\|^{2}>0,$$\n故 $f$ 为正定二次型。官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-41",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $A$ 是 $n$ 阶正定矩阵。求证：存在 $n$ 阶可逆矩阵 $P$，使得 $A=P^{\\mathrm T}P$。",
+  "answer": "证明见解析",
+  "hint": "把 $A$ 正交对角化成 $Q\\Lambda Q^{\\mathrm T}$，再取 $P=\\Lambda^{1/2}Q^{\\mathrm T}$",
+  "solution": "$A$ 正定 $\\Rightarrow$ $A$ 实对称，存在正交矩阵 $Q$ 使\n$$A=Q\\operatorname{diag}(\\lambda_1,\\dots,\\lambda_n)Q^{\\mathrm T},\\qquad \\lambda_i>0.$$\n令\n$$\\Lambda^{\\frac12}=\\operatorname{diag}(\\sqrt{\\lambda_1},\\dots,\\sqrt{\\lambda_n}),\\qquad P=\\Lambda^{\\frac12}Q^{\\mathrm T},$$\n则 $P$ 可逆（$\\Lambda^{1/2}$ 与 $Q^{\\mathrm T}$ 都可逆），且\n$$P^{\\mathrm T}P=Q\\Lambda^{\\frac12}\\Lambda^{\\frac12}Q^{\\mathrm T}=Q\\Lambda Q^{\\mathrm T}=A.$$\n官方：证明略 [✓官方]"
+ },
+ {
+  "id": "ch7-42",
+  "subject": "高代",
+  "chapter": "第7章 二次型",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设 $A$ 是 $n$ 阶实对称矩阵。如果存在 $n$ 维实向量 $\\alpha,\\beta$，使得 $\\alpha^{\\mathrm T}A\\alpha>0$，$\\beta^{\\mathrm T}A\\beta<0$，求证：存在 $n$ 维实向量 $x$，使得 $x^{\\mathrm T}Ax=0$。",
+  "answer": "证明见解析",
+  "hint": "$f(x)=x^{\\mathrm T}Ax$ 连续，在 $\\alpha,\\beta$ 的连线上变号；或用惯性定理造零向量",
+  "solution": "记 $f(x)=x^{\\mathrm T}Ax$，它是 $x$ 的连续函数，且 $f(\\alpha)>0>f(\\beta)$。考虑\n$$g(t)=f\\big((1-t)\\alpha+t\\beta\\big),\\qquad t\\in[0,1],$$\n$g$ 连续且 $g(0)=f(\\alpha)>0$，$g(1)=f(\\beta)<0$，由介值定理存在 $t_0\\in(0,1)$ 使 $g(t_0)=0$，即 $x_0=(1-t_0)\\alpha+t_0\\beta$ 满足 $x_0^{\\mathrm T}Ax_0=0$。\n（若 $x_0=0$，则 $\\alpha,\\beta$ 反向共线；此时由 $A$ 的惯性定理：$A$ 既非半正定也非半负定，存在正交矩阵 $Q$ 使 $A=Q\\operatorname{diag}(\\lambda_1,\\dots,\\lambda_n)Q^{\\mathrm T}$，其中既有正特征值也有负特征值。取 $y$ 使 $y_1=1$（对应 $\\lambda_1>0$）、$y_2=\\sqrt{\\lambda_1/|\\lambda_2|}$（对应 $\\lambda_2<0$）、其余分量为 $0$，则 $x=Qy\\neq0$ 且 $x^{\\mathrm T}Ax=\\lambda_1-\\lambda_1=0$，同样得证。）官方：证明略 [✓官方]"
+ }
+]

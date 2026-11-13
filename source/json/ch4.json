@@ -1,0 +1,378 @@
+[
+ {
+  "id": "ch4-1",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "已知 $\\alpha=(2,1,0,4)$，$\\beta=(-1,0,2,4)$，求 $-\\alpha$，$2\\beta$，$\\alpha+\\beta$，$3\\alpha-2\\beta$。",
+  "answer": "$-\\alpha=(-2,-1,0,-4)$，$2\\beta=(-2,0,4,8)$，$\\alpha+\\beta=(1,1,2,8)$，$3\\alpha-2\\beta=(8,3,-4,4)$",
+  "hint": "按分量逐个作数乘与加减",
+  "solution": "逐分量计算：$-\\alpha=(-2,-1,0,-4)$；$2\\beta=(-2,0,4,8)$；$\\alpha+\\beta=(2-1,1+0,0+2,4+4)=(1,1,2,8)$；$3\\alpha-2\\beta=(6,3,0,12)-(-2,0,4,8)=(8,3,-4,4)$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch4-2",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 1,
+  "type": "fill",
+  "statement": "设 $\\alpha=(-5,1,3,2,7)^{\\mathrm T}$，$\\beta=(3,0,-1,-1,2)^{\\mathrm T}$，求 $\\xi$，使 $\\alpha+\\xi=\\beta$。",
+  "answer": "$\\xi=(8,-1,-4,-3,-5)^{\\mathrm T}$",
+  "hint": "移项得 $\\xi=\\beta-\\alpha$",
+  "solution": "$\\xi=\\beta-\\alpha=(3-(-5),0-1,-1-3,-1-2,2-7)^{\\mathrm T}=(8,-1,-4,-3,-5)^{\\mathrm T}$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch4-3",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "试问下列向量 $\\beta$ 能否由其余向量线性表出，若能，写出线性表示式：(1) $\\beta=(4,3)$，$\\alpha_1=(2,1)$，$\\alpha_2=(-1,1)$；(2) $\\beta=(1,1,1)$，$\\alpha_1=(0,1,-1)$，$\\alpha_2=(1,1,0)$，$\\alpha_3=(1,0,2)$；(3) $\\beta=(1,2,0)$，$\\alpha_1=(2,-11,0)$，$\\alpha_2=(1,0,2)$；(4) $\\beta=(2,3,-1,-4)$，$e_1=(1,0,0,0)$，$e_2=(0,1,0,0)$，$e_3=(0,0,1,0)$，$e_4=(0,0,0,1)$。",
+  "answer": "(1) $\\beta=\\frac{7}{3}\\alpha_1+\\frac{2}{3}\\alpha_2$；(2) $\\beta=\\alpha_1+0\\cdot\\alpha_2+\\alpha_3$；(3) 不能表出；(4) $\\beta=2e_1+3e_2-e_3-4e_4$",
+  "hint": "设 $\\beta=x_1\\alpha_1+x_2\\alpha_2+\\cdots$，解方程组看是否有解",
+  "solution": "(1) 由 $\\begin{cases}2x_1-x_2=4\\\\ x_1+x_2=3\\end{cases}$ 得 $x_1=\\frac{7}{3},x_2=\\frac{2}{3}$，故 $\\beta=\\frac{7}{3}\\alpha_1+\\frac{2}{3}\\alpha_2$。(2) 观察得 $\\alpha_1+\\alpha_3=(1,1,1)=\\beta$，故 $\\beta=\\alpha_1+0\\cdot\\alpha_2+\\alpha_3$。(3) 令 $x_1(2,-11,0)+x_2(1,0,2)=(1,2,0)$：由第三分量得 $x_2=0$，由第一分量得 $x_1=\\frac12$，代入第二分量得 $-\\frac{11}{2}\\neq2$，方程组无解，故不能表出。(4) 取标准坐标向量即得 $\\beta=2e_1+3e_2-e_3-4e_4$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch4-4",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "举例说明下列各命题是错误的：(1) 若向量组 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_m$ 线性相关，则 $\\alpha_1$ 可由 $\\alpha_2,\\cdots,\\alpha_m$ 线性表出；(2) 若有不全为 0 的数 $\\lambda_1,\\cdots,\\lambda_m$ 使 $\\lambda_1\\alpha_1+\\cdots+\\lambda_m\\alpha_m+\\lambda_1\\beta_1+\\cdots+\\lambda_m\\beta_m=\\mathbf 0$ 成立，则 $\\lambda_1,\\cdots,\\lambda_m$ 必全不为零或全为零；(3) 若只有当 $\\lambda_1=\\cdots=\\lambda_m=0$ 时上式才成立，则 $\\alpha_1,\\cdots,\\alpha_m$ 线性无关，$\\beta_1,\\cdots,\\beta_m$ 亦线性无关；(4) 若 $\\alpha$ 组、$\\beta$ 组都线性相关，则有不全为 0 的 $\\lambda_1,\\cdots,\\lambda_m$ 使 $\\lambda_1\\alpha_1+\\cdots+\\lambda_m\\alpha_m=\\mathbf 0$ 与 $\\lambda_1\\beta_1+\\cdots+\\lambda_m\\beta_m=\\mathbf 0$ 同时成立。",
+  "answer": "证明见解析",
+  "hint": "逐条构造最简单的反例（多用二维向量）",
+  "solution": "(1) 取 $\\alpha_1=(1,0)$，$\\alpha_2=\\mathbf 0$：$0\\cdot\\alpha_1+1\\cdot\\alpha_2=\\mathbf 0$ 且系数不全为零，故线性相关，但 $\\alpha_1$ 不能由零向量表出。(2) 取 $m=2$，$\\alpha_1=(1,0),\\beta_1=(-1,0),\\alpha_2=(0,1),\\beta_2=(0,1)$，则等式化为 $2\\lambda_2e_2=\\mathbf 0$，取 $\\lambda_1=1,\\lambda_2=0$ 即成立，既非全零也非全不为零。(3) 取 $\\alpha_1=(1,0),\\alpha_2=(2,0),\\beta_1=(0,1),\\beta_2=(0,-2)$：$\\alpha_1+\\beta_1=(1,1)$ 与 $\\alpha_2+\\beta_2=(2,-2)$ 线性无关，等式只在全零时成立，但 $\\alpha$ 组、$\\beta$ 组各自线性相关。(4) 取 $\\alpha_1=(1,0),\\alpha_2=(2,0),\\beta_1=(0,1),\\beta_2=(0,3)$：$\\lambda_1\\alpha_1+\\lambda_2\\alpha_2=\\mathbf 0$ 得 $\\lambda_1=-2\\lambda_2$，$\\lambda_1\\beta_1+\\lambda_2\\beta_2=\\mathbf 0$ 得 $3\\lambda_2=0$，于是 $\\lambda_1=\\lambda_2=0$，不存在同时成立的非零数组。"
+ },
+ {
+  "id": "ch4-5",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "已知 $\\gamma_1=3\\beta_1-\\beta_2+\\beta_3$，$\\gamma_2=\\beta_1+2\\beta_2+4\\beta_3$，而 $\\beta_1=2\\alpha_1+\\alpha_2-5\\alpha_3$，$\\beta_2=\\alpha_1+3\\alpha_2+\\alpha_3$，$\\beta_3=-\\alpha_1+4\\alpha_2-\\alpha_3$。求 $\\gamma_1,\\gamma_2$ 由 $\\alpha_1,\\alpha_2,\\alpha_3$ 的线性表示式。",
+  "options": [
+   "$\\gamma_1=4\\alpha_1+4\\alpha_2-17\\alpha_3,\\quad \\gamma_2=23\\alpha_2-7\\alpha_3$",
+   "$\\gamma_1=4\\alpha_1+4\\alpha_2-17\\alpha_3,\\quad \\gamma_2=23\\alpha_1-7\\alpha_3$",
+   "$\\gamma_1=4\\alpha_1-4\\alpha_2+17\\alpha_3,\\quad \\gamma_2=23\\alpha_2-7\\alpha_3$",
+   "$\\gamma_1=4\\alpha_1+4\\alpha_2+17\\alpha_3,\\quad \\gamma_2=-23\\alpha_2+7\\alpha_3$"
+  ],
+  "answer": 0,
+  "hint": "把 $\\beta_i$ 的表达式直接代入，按 $\\alpha_1,\\alpha_2,\\alpha_3$ 合并同类项",
+  "solution": "$\\gamma_1=3(2\\alpha_1+\\alpha_2-5\\alpha_3)-(\\alpha_1+3\\alpha_2+\\alpha_3)+(-\\alpha_1+4\\alpha_2-\\alpha_3)=4\\alpha_1+4\\alpha_2-17\\alpha_3$；$\\gamma_2=(2\\alpha_1+\\alpha_2-5\\alpha_3)+2(\\alpha_1+3\\alpha_2+\\alpha_3)+4(-\\alpha_1+4\\alpha_2-\\alpha_3)=23\\alpha_2-7\\alpha_3$。（官方答案将 $\\gamma_2$ 印作 $23\\alpha_1-7\\alpha_3$，按题给系数应为 $23\\alpha_2$，系印刷错误）"
+ },
+ {
+  "id": "ch4-6",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "判别下列向量组的线性相关性：(1) $(1,2),(2,3),(4,3)$；(2) $(1,2,3),(1,1,1),(\\frac12,1,\\frac32)$；(3) $(1,-1,0),(2,1,1),(1,3,-1)$；(4) $(1,1,3,1),(4,1,-3,2),(1,0,-1,2)$；(5) $(1,1,2,2,1),(0,2,1,5,-1),(2,0,3,-1,3),(1,1,0,4,-1)$。",
+  "answer": "(1) 线性相关；(2) 线性相关；(3) 线性无关；(4) 线性无关；(5) 线性相关",
+  "hint": "以向量为行（或列）作矩阵，比较矩阵的秩与向量个数",
+  "solution": "(1) 3 个二维向量个数大于维数，必相关；且 $(4,3)=-6(1,2)+5(2,3)$。(2) $(\\frac12,1,\\frac32)=\\frac12(1,2,3)$，相关。(3) 行列式 $\\begin{vmatrix}1&-1&0\\\\2&1&1\\\\1&3&-1\\end{vmatrix}=-7\\neq0$，无关。(4) 设 $a\\alpha_1+b\\alpha_2+c\\alpha_3=\\mathbf 0$，解得 $a=b=c=0$，无关。(5) $(2,0,3,-1,3)=2(1,1,2,2,1)-(0,2,1,5,-1)$，相关。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch4-7",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设向量组 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_r$ 线性无关，证明向量组 $\\beta_1=\\alpha_1+\\alpha_r$，$\\beta_2=\\alpha_2+\\alpha_r$，$\\cdots$，$\\beta_{r-1}=\\alpha_{r-1}+\\alpha_r$，$\\beta_r=\\alpha_r$ 线性无关。",
+  "answer": "证明见解析",
+  "hint": "设 $k_1\\beta_1+\\cdots+k_r\\beta_r=\\mathbf 0$，按 $\\alpha_1,\\cdots,\\alpha_r$ 整理",
+  "solution": "设 $k_1\\beta_1+\\cdots+k_r\\beta_r=\\mathbf 0$，代入得 $k_1\\alpha_1+k_2\\alpha_2+\\cdots+k_{r-1}\\alpha_{r-1}+(k_1+k_2+\\cdots+k_r)\\alpha_r=\\mathbf 0$。因 $\\alpha_1,\\cdots,\\alpha_r$ 线性无关，故 $k_1=\\cdots=k_{r-1}=0$ 且 $k_1+\\cdots+k_r=0$，从而 $k_r=0$，所以 $\\beta_1,\\cdots,\\beta_r$ 线性无关。"
+ },
+ {
+  "id": "ch4-8",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "设向量组 $\\alpha_1,\\alpha_2,\\alpha_3$ 线性无关，问 $l,m$ 满足什么条件时，向量组 $l\\alpha_2-\\alpha_1$，$m\\alpha_3-\\alpha_2$，$\\alpha_1-\\alpha_2$ 线性相关？",
+  "options": [
+   "$l=1$ 或 $m=0$",
+   "$lm=1$",
+   "$l=0$ 或 $m=1$",
+   "$l=m=1$"
+  ],
+  "answer": 0,
+  "hint": "把三个向量写成 $(\\alpha_1,\\alpha_2,\\alpha_3)$ 的系数矩阵，令其行列式为 0",
+  "solution": "三个向量在基 $\\alpha_1,\\alpha_2,\\alpha_3$ 下的系数向量为 $(-1,l,0),(0,-1,m),(1,-1,0)$，行列式 $\\begin{vmatrix}-1&l&0\\\\0&-1&m\\\\1&-1&0\\end{vmatrix}=m(l-1)$。线性相关 $\\Leftrightarrow m(l-1)=0$，即 $l=1$ 或 $m=0$。（官方答案印作 $lm=1$，那是对第三向量为 $\\alpha_1-\\alpha_3$ 的情形；按本版题面第三向量为 $\\alpha_1-\\alpha_2$，条件应为 $l=1$ 或 $m=0$）"
+ },
+ {
+  "id": "ch4-9",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "如果向量组 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_r$ 线性相关，而其中任意 $r-1$ 个向量线性无关，证明：要使 $k_1\\alpha_1+k_2\\alpha_2+\\cdots+k_r\\alpha_r=\\mathbf 0$ 成立，$k_1,k_2,\\cdots,k_r$ 必全不为零或全为零。",
+  "answer": "证明见解析",
+  "hint": "若某个 $k_j=0$，则剩下 $r-1$ 个向量线性相关，与题设矛盾",
+  "solution": "由 $\\alpha_1,\\cdots,\\alpha_r$ 线性相关，存在不全为零的数组使 $\\sum k_i\\alpha_i=\\mathbf 0$。反设其中某个 $k_j=0$，则 $\\sum_{i\\neq j}k_i\\alpha_i=\\mathbf 0$ 且系数不全为零，说明任意 $r-1$ 个向量线性相关，与题设矛盾。故凡使 $\\sum k_i\\alpha_i=\\mathbf 0$ 的数组分量全不为零；而全零数组显然也使等式成立。"
+ },
+ {
+  "id": "ch4-10",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "设 $\\beta_1=\\alpha_1+\\alpha_2$，$\\beta_2=\\alpha_2+\\alpha_3$，$\\beta_3=\\alpha_3+\\alpha_4$，$\\beta_4=\\alpha_4+\\alpha_1$，证明：$\\beta_1,\\beta_2,\\beta_3,\\beta_4$ 线性相关。",
+  "answer": "证明见解析",
+  "hint": "找一组不全为零的系数使线性组合为零向量",
+  "solution": "注意到 $\\beta_1-\\beta_2+\\beta_3-\\beta_4=(\\alpha_1+\\alpha_2)-(\\alpha_2+\\alpha_3)+(\\alpha_3+\\alpha_4)-(\\alpha_4+\\alpha_1)=\\mathbf 0$，系数 $1,-1,1,-1$ 不全为零，故 $\\beta_1,\\beta_2,\\beta_3,\\beta_4$ 线性相关。"
+ },
+ {
+  "id": "ch4-11",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设向量 $\\beta$ 可由向量组 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_m$ 线性表出，试证明表示法唯一的充分必要条件是 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_m$ 线性无关。",
+  "answer": "证明见解析",
+  "hint": "两种表示相减即得齐次关系式；反之用齐次关系式修正表示系数",
+  "solution": "设 $\\beta=\\sum k_i\\alpha_i=\\sum l_i\\alpha_i$，相减得 $\\sum (k_i-l_i)\\alpha_i=\\mathbf 0$。若 $\\alpha$ 组线性无关，则 $k_i=l_i$，表示唯一。反之若表示唯一而 $\\alpha$ 组线性相关，则存在不全为零的 $c_i$ 使 $\\sum c_i\\alpha_i=\\mathbf 0$，于是 $\\beta=\\sum (k_i+c_i)\\alpha_i$ 是另一个不同表示，矛盾。故表示唯一 $\\Leftrightarrow$ $\\alpha_1,\\cdots,\\alpha_m$ 线性无关。"
+ },
+ {
+  "id": "ch4-12",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设向量组 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_s$ 线性无关，$\\beta=b_1\\alpha_1+b_2\\alpha_2+\\cdots+b_s\\alpha_s$。证明：如果某个 $b_i\\neq0$，则用 $\\beta$ 替换 $\\alpha_i$ 后得到的向量组 $\\alpha_1,\\cdots,\\alpha_{i-1},\\beta,\\alpha_{i+1},\\cdots,\\alpha_s$ 也线性无关。",
+  "answer": "证明见解析",
+  "hint": "对替换后的向量组写线性组合，比较 $\\alpha_i$ 的系数",
+  "solution": "设 $c_1\\alpha_1+\\cdots+c_{i-1}\\alpha_{i-1}+c_i\\beta+c_{i+1}\\alpha_{i+1}+\\cdots+c_s\\alpha_s=\\mathbf 0$。把 $\\beta$ 代入并按 $\\alpha_1,\\cdots,\\alpha_s$ 整理，$\\alpha_i$ 的系数为 $c_ib_i$，其余 $\\alpha_j\\ (j\\neq i)$ 的系数为 $c_j+c_ib_j$。由 $\\alpha$ 组线性无关得 $c_ib_i=0$，因 $b_i\\neq0$ 故 $c_i=0$，进而 $c_j=0\\ (j\\neq i)$。所以替换后的 $s$ 个向量线性无关。"
+ },
+ {
+  "id": "ch4-13",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "求下列向量组的秩，并求一个极大线性无关组：(1) $\\alpha_1=(1,2,-1,4)^{\\mathrm T},\\alpha_2=(9,100,10,4)^{\\mathrm T},\\alpha_3=(-2,-4,2,-8)^{\\mathrm T}$；(2) $\\alpha_1=(1,2,1,3)^{\\mathrm T},\\alpha_2=(4,-1,-5,-6)^{\\mathrm T},\\alpha_3=(1,-3,-4,-7)^{\\mathrm T}$；(3) $\\alpha_1=(1,3,6,2)^{\\mathrm T},\\alpha_2=(2,1,2,-1)^{\\mathrm T},\\alpha_3=(3,5,10,2)^{\\mathrm T},\\alpha_4=(-2,1,2,3)^{\\mathrm T}$；(4) $\\alpha_1=(1,0,-2,1)^{\\mathrm T},\\alpha_2=(3,1,0,-1)^{\\mathrm T},\\alpha_3=(1,1,4,-3)^{\\mathrm T},\\alpha_4=(3,0,10,3)^{\\mathrm T}$；(5) $\\alpha_1=(1,-2,-1,0,2)^{\\mathrm T},\\alpha_2=(1,-2,-1,-3,3)^{\\mathrm T},\\alpha_3=(2,-1,0,2,3)^{\\mathrm T},\\alpha_4=(3,3,3,3,4)^{\\mathrm T}$。",
+  "answer": "(1) 秩 2，极大无关组 $\\alpha_1,\\alpha_2$；(2) 秩 2，$\\alpha_1,\\alpha_2$；(3) 秩 2，$\\alpha_1,\\alpha_2$；(4) 秩 3，$\\alpha_1,\\alpha_2,\\alpha_4$；(5) 秩 3，$\\alpha_1,\\alpha_2,\\alpha_3$",
+  "hint": "以向量为列作矩阵化阶梯形，非零行数即秩，主元列对应极大无关组",
+  "solution": "(1) $\\alpha_3=-2\\alpha_1$，$\\alpha_1,\\alpha_2$ 不成比例，秩 2，极大无关组 $\\alpha_1,\\alpha_2$。(2) $\\alpha_3=-\\frac{11}{9}\\alpha_1+\\frac59\\alpha_2$，秩 2，极大无关组 $\\alpha_1,\\alpha_2$。(3) $\\alpha_3=\\frac75\\alpha_1+\\frac45\\alpha_2$，$\\alpha_4=\\frac45\\alpha_1-\\frac75\\alpha_2$，秩 2，极大无关组 $\\alpha_1,\\alpha_2$。(4) $\\alpha_3=-2\\alpha_1+\\alpha_2$，而 $\\alpha_4$ 不能由 $\\alpha_1,\\alpha_2$ 表出，秩 3，极大无关组 $\\alpha_1,\\alpha_2,\\alpha_4$。(5) $\\alpha_4=-4\\alpha_1+\\alpha_2+3\\alpha_3$，$\\alpha_1,\\alpha_2,\\alpha_3$ 线性无关，秩 3，极大无关组 $\\alpha_1,\\alpha_2,\\alpha_3$。其中 (1)(2)(3)(5) 与官方答案一致 [✓官方]；（4）官方印作 $\\alpha_1,\\alpha_2,\\alpha_3$，但 $\\alpha_3=-2\\alpha_1+\\alpha_2$，故应为 $\\alpha_1,\\alpha_2,\\alpha_4$"
+ },
+ {
+  "id": "ch4-14",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "fill",
+  "statement": "求向量组 $\\alpha_1=(0,2,5,1,\\frac12)^{\\mathrm T}$，$\\alpha_2=(2,2,-\\frac12,1,1)^{\\mathrm T}$，$\\alpha_3=(-8,-1,12,4,-3)^{\\mathrm T}$，$\\alpha_4=(4,3,-1,0,2)^{\\mathrm T}$ 的一个极大线性无关组，并用极大线性无关组表示其余向量。",
+  "answer": "极大无关组 $\\alpha_1,\\alpha_2,\\alpha_3$；$\\alpha_4=\\frac23\\alpha_1+\\frac23\\alpha_2-\\frac13\\alpha_3$",
+  "hint": "作矩阵 $(\\alpha_1,\\alpha_2,\\alpha_3,\\alpha_4)$ 化行最简形，主元列即极大无关组",
+  "solution": "以 $\\alpha_1,\\alpha_2,\\alpha_3,\\alpha_4$ 为列作矩阵并化行最简形，主元位于第 1、2、3 列，第 4 列为 $(\\frac23,\\frac23,-\\frac13,0,0)^{\\mathrm T}$，故秩为 3，极大无关组为 $\\alpha_1,\\alpha_2,\\alpha_3$，且 $\\alpha_4=\\frac23\\alpha_1+\\frac23\\alpha_2-\\frac13\\alpha_3$。验证：$\\frac23(0,2,5,1,\\frac12)+\\frac23(2,2,-\\frac12,1,1)-\\frac13(-8,-1,12,4,-3)=(4,3,-1,0,2)=\\alpha_4$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch4-15",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_n$ 是一组 $n$ 维向量，已知 $n$ 维单位坐标向量 $e_1,e_2,\\cdots,e_n$ 能由它们线性表出，证明 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_n$ 线性无关。",
+  "answer": "证明见解析",
+  "hint": "用秩的夹逼：$n=\\mathrm r(e_1,\\cdots,e_n)\\leqslant \\mathrm r(\\alpha_1,\\cdots,\\alpha_n)\\leqslant n$",
+  "solution": "因 $e_1,\\cdots,e_n$ 可由 $\\alpha_1,\\cdots,\\alpha_n$ 线性表出，故 $n=\\mathrm r(e_1,\\cdots,e_n)\\leqslant \\mathrm r(\\alpha_1,\\cdots,\\alpha_n)$；又 $\\alpha_i$ 为 $n$ 维向量，$\\mathrm r(\\alpha_1,\\cdots,\\alpha_n)\\leqslant n$。于是秩为 $n$，即 $\\alpha_1,\\cdots,\\alpha_n$ 线性无关。"
+ },
+ {
+  "id": "ch4-16",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_n$ 是一组 $n$ 维向量，证明它们线性无关的充分必要条件是：任一 $n$ 维向量都可由它们线性表出。",
+  "answer": "证明见解析",
+  "hint": "必要性用 $n$ 个无关向量构成基；充分性用 $e_i$ 可被表出再套用上题",
+  "solution": "必要性：若 $\\alpha_1,\\cdots,\\alpha_n$ 线性无关，则它们是 $\\mathbf R^n$ 的一组基，任一 $n$ 维向量都可由基表出。充分性：若任一 $n$ 维向量都可由它们表出，则 $e_1,\\cdots,e_n$ 也能被表出，由上一题知 $\\alpha_1,\\cdots,\\alpha_n$ 线性无关。"
+ },
+ {
+  "id": "ch4-17",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "证明：如果秩为 $r$ 的向量组可以由它的 $r$ 个向量线性表出，则这 $r$ 个向量构成这个向量组的一个极大线性无关组。",
+  "answer": "证明见解析",
+  "hint": "这 $r$ 个向量张成整个向量组，其秩等于原向量组的秩 $r$",
+  "solution": "设向量组为 $\\alpha_1,\\cdots,\\alpha_m$，秩为 $r$，$\\alpha_{i_1},\\cdots,\\alpha_{i_r}$ 能表出全组。由它们张成的子空间包含全部 $\\alpha_j$，故其维数 $\\geqslant \\mathrm r(\\alpha_1,\\cdots,\\alpha_m)=r$；又其维数 $=\\mathrm r(\\alpha_{i_1},\\cdots,\\alpha_{i_r})\\leqslant r$。于是 $\\mathrm r(\\alpha_{i_1},\\cdots,\\alpha_{i_r})=r$，这 $r$ 个向量线性无关且能表出全组，故为极大线性无关组。"
+ },
+ {
+  "id": "ch4-18",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "证明：$n$ 个方程的 $n$ 元线性方程组 $x_1\\alpha_1+x_2\\alpha_2+\\cdots+x_n\\alpha_n=\\beta$ 对任何 $\\beta\\in\\mathbf R^n$ 都有解的充分必要条件是它的系数行列式 $|A|\\neq0$。",
+  "answer": "证明见解析",
+  "hint": "有解 $\\Leftrightarrow$ $\\alpha_1,\\cdots,\\alpha_n$ 张成 $\\mathbf R^n$ $\\Leftrightarrow$ 它们线性无关",
+  "solution": "记 $A=(\\alpha_1,\\cdots,\\alpha_n)$。若 $|A|\\neq0$，则 $\\alpha_1,\\cdots,\\alpha_n$ 线性无关，构成 $\\mathbf R^n$ 的基，任一 $\\beta$ 都能被表出，方程组有解且唯一。反之，若对任何 $\\beta$ 都有解，则 $e_1,\\cdots,e_n$ 均可由 $\\alpha_1,\\cdots,\\alpha_n$ 表出，由第 15 题知它们线性无关，故 $|A|\\neq0$。"
+ },
+ {
+  "id": "ch4-19",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "证明：$\\mathrm r(\\alpha_1,\\alpha_2,\\cdots,\\alpha_r,\\beta_1,\\beta_2,\\cdots,\\beta_s)\\leqslant \\mathrm r(\\alpha_1,\\cdots,\\alpha_r)+\\mathrm r(\\beta_1,\\cdots,\\beta_s)$。",
+  "answer": "证明见解析",
+  "hint": "取两个向量组的极大无关组，看合并组能否由它们表出",
+  "solution": "设 $\\alpha$ 组的极大无关组为 $\\alpha_{i_1},\\cdots,\\alpha_{i_p}$（$p=\\mathrm r(\\alpha)$），$\\beta$ 组的极大无关组为 $\\beta_{j_1},\\cdots,\\beta_{j_q}$（$q=\\mathrm r(\\beta)$）。合并组中每个向量都能由这 $p+q$ 个向量线性表出，故合并组的秩不超过 $p+q$，即得所证不等式。"
+ },
+ {
+  "id": "ch4-20",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "证明 $\\mathrm r(A+B)\\leqslant \\mathrm r(A)+\\mathrm r(B)$。",
+  "answer": "证明见解析",
+  "hint": "$A+B$ 的列是 $A$ 的列与 $B$ 的列的线性组合，用上题（列向量组形式）",
+  "solution": "设 $A=(\\alpha_1,\\cdots,\\alpha_n)$，$B=(\\beta_1,\\cdots,\\beta_n)$，则 $A+B=(\\alpha_1+\\beta_1,\\cdots,\\alpha_n+\\beta_n)$。$A+B$ 的每个列向量都能由 $\\alpha_1,\\cdots,\\alpha_n,\\beta_1,\\cdots,\\beta_n$ 表出，故 $\\mathrm r(A+B)\\leqslant \\mathrm r(\\alpha_1,\\cdots,\\alpha_n,\\beta_1,\\cdots,\\beta_n)\\leqslant \\mathrm r(A)+\\mathrm r(B)$。"
+ },
+ {
+  "id": "ch4-21",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "fill",
+  "statement": "判别下面的集合是否构成向量空间，若构成向量空间，求一个基及维数：(1) 平面上不平行于某一向量的所有向量的集合；(2) $V=\\{\\alpha=(x_1,x_2,\\cdots,x_n)\\mid x_1+x_2+\\cdots+x_n=0\\}$；(3) $V=\\{\\alpha=(x_1,x_2,\\cdots,x_n)\\mid x_1+x_2+\\cdots+x_n=1\\}$；(4) $V=\\{\\alpha=(x_1,x_2,x_3)\\mid x_1=5x_2\\}$。",
+  "answer": "(1) 不是向量空间；(2) 是，$\\dim V=n-1$，基 $(-1,1,0,\\cdots,0),(-1,0,1,\\cdots,0),\\cdots,(-1,0,\\cdots,0,1)$；(3) 不是向量空间；(4) 是，$\\dim V=2$，基 $(5,1,0),(0,0,1)$",
+  "hint": "先查零向量是否属于该集合，再查对加法与数乘是否封闭",
+  "solution": "(1) 不是：$\\alpha$ 与 $-\\alpha$ 都不平行于给定向量，但 $\\alpha+(-\\alpha)=\\mathbf 0$ 平行于它，对加法不封闭。(2) 是：齐次方程的解集，$\\dim V=n-1$，基可取 $(-1,1,0,\\cdots,0),\\cdots,(-1,0,\\cdots,0,1)$。(3) 不是：不含零向量。(4) 是：$x_1=5x_2$ 为齐次方程，$\\dim V=2$，基 $(5,1,0),(0,0,1)$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch4-22",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 1,
+  "type": "proof",
+  "statement": "证明向量组 $\\alpha_1=(1,1,0)^{\\mathrm T}$，$\\alpha_2=(0,0,2)^{\\mathrm T}$，$\\alpha_3=(0,3,2)^{\\mathrm T}$ 是 $\\mathbf R^3$ 上的一个基。",
+  "answer": "证明见解析",
+  "hint": "3 个三维向量线性无关即为基，算行列式不为 0",
+  "solution": "以 $\\alpha_1,\\alpha_2,\\alpha_3$ 为列作行列式：$\\begin{vmatrix}1&0&0\\\\1&0&3\\\\0&2&2\\end{vmatrix}=1\\cdot(0\\cdot2-3\\cdot2)=-6\\neq0$，故三向量线性无关。$\\mathbf R^3$ 中 3 个线性无关的向量构成一个基。"
+ },
+ {
+  "id": "ch4-23",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "choice",
+  "statement": "证明向量组 $\\alpha_1=(1,1,0,1)^{\\mathrm T}$，$\\alpha_2=(2,1,3,1)^{\\mathrm T}$，$\\alpha_3=(1,1,0,0)^{\\mathrm T}$，$\\alpha_4=(0,1,-1,-1)^{\\mathrm T}$ 构成 $\\mathbf R^4$ 的一个基，并把向量 $\\beta=(2,2,4,1)^{\\mathrm T}$ 用这个基线性表出。",
+  "options": [
+   "$\\beta=\\alpha_1+2\\alpha_2-3\\alpha_3+2\\alpha_4$",
+   "$\\beta=2\\alpha_1+\\alpha_2-3\\alpha_3-2\\alpha_4$",
+   "$\\beta=\\alpha_1-2\\alpha_2+3\\alpha_3+2\\alpha_4$",
+   "$\\beta=-\\alpha_1+2\\alpha_2+3\\alpha_3-2\\alpha_4$"
+  ],
+  "answer": 0,
+  "hint": "先算 $|\\alpha_1,\\alpha_2,\\alpha_3,\\alpha_4|$ 说明是基，再解线性方程组求表出系数",
+  "solution": "以 $\\alpha_1,\\alpha_2,\\alpha_3,\\alpha_4$ 为列作行列式得 $-2\\neq0$，故它们线性无关，构成 $\\mathbf R^4$ 的基。设 $\\beta=x_1\\alpha_1+x_2\\alpha_2+x_3\\alpha_3+x_4\\alpha_4$，解得 $x_1=1,x_2=2,x_3=-3,x_4=2$，即 $\\beta=\\alpha_1+2\\alpha_2-3\\alpha_3+2\\alpha_4$。验证：$(1+4-3,1+2-3+2,0+6-0-2,1+2-0-2)=(2,2,4,1)$。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch4-24",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "fill",
+  "statement": "在 $\\mathbf R^3$ 中求一个向量 $\\gamma$，使它在下面两个基：(1) $\\alpha_1=(1,0,1)^{\\mathrm T}$，$\\alpha_2=(-1,0,0)^{\\mathrm T}$，$\\alpha_3=(0,1,1)^{\\mathrm T}$；(2) $\\beta_1=(0,-1,1)^{\\mathrm T}$，$\\beta_2=(1,-1,0)^{\\mathrm T}$，$\\beta_3=(1,0,1)^{\\mathrm T}$ 下有相同的坐标。",
+  "answer": "$\\gamma=(1,3,2)^{\\mathrm T}$（答案不唯一）",
+  "hint": "设公共坐标为 $(x_1,x_2,x_3)$，则 $x_1(\\alpha_1-\\beta_1)+x_2(\\alpha_2-\\beta_2)+x_3(\\alpha_3-\\beta_3)=\\mathbf 0$",
+  "solution": "设公共坐标为 $(x_1,x_2,x_3)^{\\mathrm T}$，则 $x_1\\alpha_1+x_2\\alpha_2+x_3\\alpha_3=x_1\\beta_1+x_2\\beta_2+x_3\\beta_3$。由 $\\alpha_1-\\beta_1=(1,1,0)$，$\\alpha_2-\\beta_2=(-2,1,0)$，$\\alpha_3-\\beta_3=(-1,1,0)$ 得 $\\begin{cases}x_1-2x_2-x_3=0\\\\ x_1+x_2+x_3=0\\end{cases}$，取 $x_3=3$ 得 $x_2=-2,x_1=-1$，于是 $\\gamma=-\\alpha_1-2\\alpha_2+3\\alpha_3=(1,3,2)^{\\mathrm T}$。与官方答案一致（答案不唯一）[✓官方]"
+ },
+ {
+  "id": "ch4-25",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "choice",
+  "statement": "设 $\\mathbf R^n$ 的一个基为 $\\alpha_1=(1,0,0,\\cdots,0)^{\\mathrm T}$，$\\alpha_2=(1,1,0,\\cdots,0)^{\\mathrm T}$，$\\cdots$，$\\alpha_n=(1,1,\\cdots,1)^{\\mathrm T}$（即 $\\alpha_i$ 的前 $i$ 个分量为 1、其余为 0），求向量 $\\alpha=(a_1,a_2,\\cdots,a_n)^{\\mathrm T}$ 在此基下的坐标。",
+  "options": [
+   "$(a_1-a_2,\\;a_2-a_3,\\;\\cdots,\\;a_{n-1}-a_n,\\;a_n)$",
+   "$(a_1-a_2-a_3-\\cdots-a_n,\\;a_2-a_3-\\cdots-a_n,\\;\\cdots,\\;a_{n-1}-a_n,\\;a_n)$",
+   "$(a_1,\\;a_2-a_1,\\;\\cdots,\\;a_n-a_{n-1})$",
+   "$(a_n,\\;a_{n-1}-a_n,\\;\\cdots,\\;a_1-a_2)$"
+  ],
+  "answer": 0,
+  "hint": "由 $a_k=x_k+x_{k+1}+\\cdots+x_n$ 从 $k=n$ 起回代",
+  "solution": "设 $\\alpha=x_1\\alpha_1+x_2\\alpha_2+\\cdots+x_n\\alpha_n$，则 $a_k=x_k+x_{k+1}+\\cdots+x_n\\ (k=1,\\cdots,n)$。从 $k=n$ 起回代：$x_n=a_n$，$x_{n-1}=a_{n-1}-a_n$，$\\cdots$，$x_k=a_k-a_{k+1}$，故坐标为 $(a_1-a_2,a_2-a_3,\\cdots,a_{n-1}-a_n,a_n)$。（官方答案印作 $a_1-a_2-a_3-\\cdots-a_n,\\ a_2-a_3-\\cdots-a_n,\\cdots$，与本基不符，应为印刷错误）"
+ },
+ {
+  "id": "ch4-26",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设向量组 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_r$ 线性无关，又向量组 $\\beta_1,\\beta_2,\\cdots,\\beta_s$ 是 $\\alpha_1,\\cdots,\\alpha_r$ 的线性组合，即 $\\beta_i=\\sum_{j=1}^{r}b_{ij}\\alpha_j\\ (i=1,2,\\cdots,s)$。证明：$\\beta_1,\\cdots,\\beta_s$ 线性相关的充分必要条件是矩阵 $(b_{ij})_{s\\times r}$ 的秩小于 $s$。",
+  "answer": "证明见解析",
+  "hint": "把 $\\sum x_i\\beta_i=\\mathbf 0$ 化为 $\\sum_j(\\sum_i x_ib_{ij})\\alpha_j=\\mathbf 0$，再用 $\\alpha$ 组无关",
+  "solution": "设 $B=(b_{ij})_{s\\times r}$，则 $\\sum_{i=1}^{s}x_i\\beta_i=\\sum_{j=1}^{r}(\\sum_{i=1}^{s}x_ib_{ij})\\alpha_j$。因 $\\alpha_1,\\cdots,\\alpha_r$ 线性无关，$\\sum x_i\\beta_i=\\mathbf 0\\Leftrightarrow B^{\\mathrm T}x=\\mathbf 0$。于是 $\\beta$ 组线性相关 $\\Leftrightarrow$ 存在 $x\\neq\\mathbf 0$ 使 $B^{\\mathrm T}x=\\mathbf 0$ $\\Leftrightarrow \\mathrm r(B^{\\mathrm T})<s\\Leftrightarrow \\mathrm r(B)<s$。"
+ },
+ {
+  "id": "ch4-27",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "fill",
+  "statement": "设 $s\\times n$ 矩阵 $A=\\begin{pmatrix}1&a&a^2&\\cdots&a^{n-1}\\\\1&a^2&a^4&\\cdots&a^{2(n-1)}\\\\\\vdots&\\vdots&\\vdots&&\\vdots\\\\1&a^s&a^{2s}&\\cdots&a^{s(n-1)}\\end{pmatrix}$，其中 $s\\leqslant n$，且当 $0<r<n$ 时 $a^r\\neq1$。求 $A$ 的秩和它的列向量组的一个极大线性无关组。",
+  "answer": "$\\mathrm r(A)=s$；$A$ 的前 $s$ 列构成列向量组的一个极大线性无关组",
+  "hint": "第 $i$ 行为 $1,t_i,t_i^2,\\cdots,t_i^{n-1}$，$t_i=a^{i-1}$，这是范德蒙德型矩阵",
+  "solution": "记 $t_i=a^{i-1}$，则 $A$ 的第 $i$ 行为 $(1,t_i,t_i^2,\\cdots,t_i^{n-1})$。由 $a^r\\neq1\\ (0<r<n)$ 知 $t_1,\\cdots,t_s$ 互不相同，故前 $s$ 列构成的 $s$ 阶范德蒙德行列式 $\\prod_{1\\leqslant i<j\\leqslant s}(t_j-t_i)\\neq0$，这 $s$ 列线性无关，$\\mathrm r(A)\\geqslant s$；又 $A$ 只有 $s$ 行，$\\mathrm r(A)=s$，前 $s$ 列即极大线性无关组。与官方答案一致 [✓官方]"
+ },
+ {
+  "id": "ch4-28",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设 $\\lambda_1,\\lambda_2,\\cdots,\\lambda_k$ 为互不相同的数，向量组 $\\alpha_i=(1,\\lambda_i,\\lambda_i^2,\\cdots,\\lambda_i^{n-1})$，$i=1,2,\\cdots,k$。证明：(1) $k\\leqslant n$ 时，向量组线性无关；(2) $k>n$ 时，向量组线性相关。",
+  "answer": "证明见解析",
+  "hint": "(1) 取前 $k$ 列构成范德蒙德行列式；(2) $n$ 维空间最多有 $n$ 个线性无关向量",
+  "solution": "(1) 当 $k\\leqslant n$ 时，取前 $k$ 个分量组成 $k$ 阶行列式 $\\begin{vmatrix}1&\\lambda_1&\\cdots&\\lambda_1^{k-1}\\\\1&\\lambda_2&\\cdots&\\lambda_2^{k-1}\\\\\\vdots&\\vdots&&\\vdots\\\\1&\\lambda_k&\\cdots&\\lambda_k^{k-1}\\end{vmatrix}=\\prod_{1\\leqslant i<j\\leqslant k}(\\lambda_j-\\lambda_i)\\neq0$，故线性无关。(2) 当 $k>n$ 时，$\\alpha_i$ 都是 $n$ 维向量，任意多于 $n$ 个的 $n$ 维向量必线性相关。"
+ },
+ {
+  "id": "ch4-29",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设 $A,B$ 分别为 $m\\times n$、$n\\times m$ 矩阵，$n>m$ 且 $AB=E_m$，证明 $B$ 的 $m$ 个列向量线性无关。",
+  "answer": "证明见解析",
+  "hint": "设 $Bx=\\mathbf 0$，两边左乘 $A$",
+  "solution": "设 $x$ 使 $Bx=\\mathbf 0$，两边左乘 $A$ 得 $ABx=\\mathbf 0$，而 $AB=E_m$，故 $x=E_mx=\\mathbf 0$。于是 $B$ 的列向量组只有零线性组合为零向量，即 $m$ 个列向量线性无关。（另证：$\\mathrm r(B)\\geqslant \\mathrm r(AB)=m$ 且 $\\mathrm r(B)\\leqslant m$）"
+ },
+ {
+  "id": "ch4-30",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 2,
+  "type": "proof",
+  "statement": "设在向量组 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_r$ 中，$\\alpha_1\\neq\\mathbf 0$，并且每一个向量 $\\alpha_i$ 都不能由它前面的向量 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_{i-1}$ 线性表出，证明 $\\alpha_1,\\alpha_2,\\cdots,\\alpha_r$ 线性无关。",
+  "answer": "证明见解析",
+  "hint": "取使 $\\sum k_i\\alpha_i=\\mathbf 0$ 的下标最大的非零系数，反解出该向量",
+  "solution": "反设线性相关，存在不全为零的 $k_1,\\cdots,k_r$ 使 $\\sum k_i\\alpha_i=\\mathbf 0$。设 $k_s$ 是其中下标最大的非零系数，则 $\\alpha_s=-\\frac{1}{k_s}\\sum_{i<s}k_i\\alpha_i$，即 $\\alpha_s$ 可由前面的向量表出，与题设矛盾（$s=1$ 时 $k_1\\alpha_1=\\mathbf 0$ 与 $\\alpha_1\\neq\\mathbf 0$ 矛盾）。故向量组线性无关。"
+ },
+ {
+  "id": "ch4-31",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "设向量组 I：$\\beta_1,\\beta_2,\\cdots,\\beta_r$ 能由向量组 II：$\\alpha_1,\\alpha_2,\\cdots,\\alpha_s$ 线性表示为 $(\\beta_1,\\beta_2,\\cdots,\\beta_r)=(\\alpha_1,\\alpha_2,\\cdots,\\alpha_s)K$，其中 $K$ 为 $s\\times r$ 矩阵，且向量组 II 线性无关。证明向量组 I 线性无关的充分必要条件是 $\\mathrm r(K)=r$。",
+  "answer": "证明见解析",
+  "hint": "与第 26 题同法：$\\beta$ 组的齐次关系式等价于 $Kx=\\mathbf 0$",
+  "solution": "设 $x=(x_1,\\cdots,x_r)^{\\mathrm T}$，则 $\\sum_{i=1}^{r}x_i\\beta_i=(\\alpha_1,\\cdots,\\alpha_s)Kx$。因 II 线性无关，$\\sum x_i\\beta_i=\\mathbf 0\\Leftrightarrow Kx=\\mathbf 0$。故 I 线性无关 $\\Leftrightarrow$ $Kx=\\mathbf 0$ 只有零解 $\\Leftrightarrow \\mathrm r(K)=r$。"
+ },
+ {
+  "id": "ch4-32",
+  "subject": "高代",
+  "chapter": "第4章 向量组的线性相关性",
+  "difficulty": 3,
+  "type": "proof",
+  "statement": "用矩阵的秩讨论下面三个平面的位置关系：$\\pi_1:a_1x+b_1y+c_1z=0$，$\\pi_2:a_2x+b_2y+c_2z=0$，$\\pi_3:a_3x+b_3y+c_3z=0$。",
+  "answer": "证明见解析",
+  "hint": "这是齐次方程组 $AX=0$，解空间维数 $3-\\mathrm r(A)$ 对应交集的维数",
+  "solution": "记 $A=\\begin{pmatrix}a_1&b_1&c_1\\\\a_2&b_2&c_2\\\\a_3&b_3&c_3\\end{pmatrix}$，三平面都过原点，公共点集为 $AX=\\mathbf 0$ 的解集，维数 $3-\\mathrm r(A)$。(1) $\\mathrm r(A)=3$ 时只有零解，三平面相交于唯一一点 $O(0,0,0)$；(2) $\\mathrm r(A)=2$ 时解空间维数为 1，三平面相交于过原点的一条直线；(3) $\\mathrm r(A)=1$ 时解空间维数为 2，三个法向量共线、三平面重合为同一平面。与官方答案一致 [✓官方]"
+ }
+]
