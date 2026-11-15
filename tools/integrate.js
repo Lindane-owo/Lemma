@@ -1,20 +1,12 @@
 const fs=require('fs'), path=require('path');
 const BASE=path.join(__dirname,'..'), DIR=path.join(BASE,'source','json');
+const { parseNum } = require('../assets/numparse.js');
 
 function isnum(s){
   if(s===null||s===undefined) return false;
-  let t=String(s).trim(); if(!t) return false;
+  const t=String(s).trim(); if(!t) return false;
   if(!isNaN(Number(t))) return true;
-  // 允许 分数/π/根号/简单函数 表达式（与前端 parseNum 保持一致）
-  let u=t.replace(/√\s*\(/g,'sqrt(').replace(/√\s*(\d+(?:\.\d+)?)/g,'sqrt($1)')
-       .replace(/π/g,'PI').replace(/\bpi\b/gi,'PI').replace(/\be\b/gi,'E')
-       .replace(/\^/g,'**').replace(/×/g,'*').replace(/÷/g,'/');
-  const rest=u.replace(/(PI|E|sqrt|sin|cos|tan|ln)/g,'');
-  if(!/^[0-9+\-*/().\s]*$/.test(rest)) return false;
-  try{
-    const v=Function('PI','E','sqrt','sin','cos','tan','ln','"use strict";return ('+u+')')(Math.PI,Math.E,Math.sqrt,Math.sin,Math.cos,Math.tan,Math.log);
-    return typeof v==='number' && isFinite(v);
-  }catch(e){ return false; }
+  return parseNum(t)!==null;
 }
 const YES_POS=new Set(['是','对','能','正确','有','存在','是。']);
 const YES_NEG=new Set(['不是','错','不能','错误','否','没有','不存在','无']);

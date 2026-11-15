@@ -142,42 +142,24 @@ const LS = { get(k,d){ try{ const v=localStorage.getItem(k); return v==null?d:JS
              set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} } };
 let progress = LS.get('progress', {});   // {qid:{tried,correct}}
 let wrongIds = LS.get('wrongIds', []);
-const state = { view:'set', subject:'all', difficulty:0, tag:'all', status:'all', source:'all', book:'all', q:'', tagMore:false, toolsMore:false, detail:null };
+const state = { view:'set', subject:'all', difficulty:0, tag:'all', status:'all', source:'all', book:'all', q:'', tagMore:false, toolsMore:false, detail:null, from:'set', navIds:null, scrollY:0 };
 const app = document.getElementById('app');
 
 function save(){ LS.set('progress',progress); LS.set('wrongIds',wrongIds); }
+function goView(v){
+  state.view = v;
+  document.querySelectorAll('#menu button').forEach(x=>x.classList.toggle('on', x.dataset.view===v));
+  if(v==='wrong') renderWrong(); else { renderSet(); window.scrollTo(0, state.scrollY||0); }
+}
 function renderMath(el){ if(window.renderMathInElement){ renderMathInElement(el,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false}); } }
-function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 /* ---------- 判分 ---------- */
-function latexClean(x){
-  let t = String(x==null?'':x).replace(/\$/g,'').replace(/\\left|\\right/g,'')
-      .replace(/\\[,;!]/g,'').replace(/\\mathrm\{([^{}]*)\}/g,'$1').replace(/\\text\{([^{}]*)\}/g,'$1');
-  for(let i=0;i<3;i++) t = t.replace(/\\[dt]?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g,'(($1)/($2))');
-  t = t.replace(/\\sqrt\s*\[([^{}]*)\]\s*\{([^{}]*)\}/g,'($2)**(1/($1))')
-       .replace(/\\sqrt\s*\{([^{}]*)\}/g,'sqrt($1)')
-       .replace(/\^\{([^{}]*)\}/g,'**($1)')
-       .replace(/\\pi/g,'PI').replace(/\\times|\\cdot/g,'*').replace(/\\div/g,'/')
-       .replace(/\\ln|\\log/g,'ln').replace(/\\sin/g,'sin').replace(/\\cos/g,'cos').replace(/\\tan/g,'tan')
-       .replace(/[{}\\]/g,' ');
-  return t;
-}
-function parseNum(str){
-  let s = latexClean(str).trim(); if(!s) return null;
-  s = s.replace(/√\s*\(/g,'sqrt(').replace(/√\s*(\d+(?:\.\d+)?)/g,'sqrt($1)')
-       .replace(/π/g,'PI').replace(/\bpi\b/gi,'PI').replace(/\be\b/gi,'E')
-       .replace(/\bsqrt\b/gi,'sqrt').replace(/\bsin\b/gi,'sin').replace(/\bcos\b/gi,'cos').replace(/\btan\b/gi,'tan').replace(/\bln\b/gi,'ln')
-       .replace(/\^/g,'**').replace(/×/g,'*').replace(/÷/g,'/');
-  const rest = s.replace(/(PI|E|sqrt|sin|cos|tan|ln)/g,'');
-  if(!/^[0-9+\-*/().\s]*$/.test(rest)) return null;
-  try{ const names=['PI','E','sqrt','sin','cos','tan','ln']; const vals=[Math.PI,Math.E,Math.sqrt,Math.sin,Math.cos,Math.tan,Math.log];
-    const v = Function(...names,'"use strict";return ('+s+')')(...vals);
-    return (typeof v==='number'&&isFinite(v))? v : null; }catch(e){ return null; }
-}
+const { parseNum } = window.LemmaNum;
 function check(q,student){
   if(q.type==='choice') return {correct: choiceIdx(student)===choiceIdx(q.answer)};
   const ans=parseNum(q.answer), stu=parseNum(student);
-  if(stu===null) return {correct:false, msg:'无法识别，请输入数值（如 2/3、0.5、π、sqrt(2)）'};
+  if(stu===null) return {correct:false, msg:'无法识别，请输入数值（如 2/3、0.5、π、2π、sqrt(2)），本次不计入作答'};
   return {correct: ans!==null && Math.abs(stu-ans)<=(q.tolerance||1e-6)};
 }
 
@@ -186,7 +168,7 @@ function statusOf(q){ const p=progress[q.id]; if(!p||!p.tried) return ['未做',
 function rateOf(q){ const p=progress[q.id]; if(!p||!p.tried) return '—'; return Math.round(p.correct/p.tried*100)+'%'; }
 function stats(){
   let done=0,ok=0,passQ=0;
-  for(const id in progress){ const p=progress[id]||{}; done+=(p.tried||0); ok+=(p.correct||0); if((p.correct||0)>0) passQ++; }
+  for(const q of Q){ const p=progress[q.id]||{}; done+=(p.tried||0); ok+=(p.correct||0); if((p.correct||0)>0) passQ++; }
   return {total:Q.length, passQ, done, ok, rate: done? Math.round(ok/done*100):0, wrong:wrongIds.length};
 }
 
@@ -209,7 +191,7 @@ function filtered(){
       }
     }
     if(state.status!=='all'){ const st=statusOf(q)[0]; if(state.status==='未做'&&st!=='未做') return false; if(state.status==='通过'&&st!=='通过') return false; if(state.status==='尝试'&&st!=='尝试') return false; }
-    if(state.source!=='all'){ const isBook=String(q.chapter||'').startsWith('第'); if(state.source==='book'&&!isBook) return false; if(state.source==='practice'&&isBook) return false; }
+    if(state.source!=='all'){ const isBook=q.book!=='practice'; if(state.source==='book'&&!isBook) return false; if(state.source==='practice'&&isBook) return false; }
     if(state.book!=='all' && q.book!==state.book) return false;
     return true;
   });
@@ -222,8 +204,8 @@ function listPanel(list){
     const [stTxt, stCls] = statusOf(q);
     return `<tr>
       <td class="tid">${q.__no}</td>
-      <td class="ttitle" data-id="${q.id}">${esc(q.title||'').slice(0,40) || ('题 ' + q.__no)}</td>
-      <td>${(q.tags||[q.chapter]).map(t=>`<span class="tagchip">${t}</span>`).join('')}</td>
+      <td class="ttitle" data-id="${q.id}">${esc((q.title||'').slice(0,40)) || ('题 ' + q.__no)}</td>
+      <td>${(q.tags||[q.chapter]).map(t=>`<span class="tagchip">${esc(t)}</span>`).join('')}</td>
       <td><span class="diff ${d[1]}">${d[0]}</span></td>
       <td><span class="status ${stCls}"><i></i>${stTxt}</span></td>
       <td class="rate">${rateOf(q)}</td>
@@ -239,6 +221,7 @@ function listPanel(list){
 function renderSet(){
   const st = stats();
   const list = filtered();
+  state.from='set'; state.navIds=list.map(q=>q.id);
   const bc = {}; Q.forEach(q=>{ bc[q.book]=(bc[q.book]||0)+1; });
   const bookMeta = Object.keys(BOOKS).map(k=>BOOKS[k].name+' <b>'+(bc[k]||0)+'</b>').join('<span class="dot">|</span>');
   const diffChips = [['全部',0,''],['基础',1,'d1'],['提高',2,'d2'],['挑战',3,'d3']].map(([L,v,c])=>
@@ -246,7 +229,7 @@ function renderSet(){
   const allTags = tagsIn(state.book);
   const shownTags = state.tagMore ? allTags : allTags.slice(0, 30);
   const tagChips = ['全部'].concat(shownTags).map(c=>
-    `<button class="chip ${state.tag===c?'on':''}" data-tag="${c}">${c==='全部'?'全部考点':c}</button>`).join('')
+    `<button class="chip ${state.tag===c?'on':''}" data-tag="${esc(c)}">${c==='全部'?'全部考点':esc(c)}</button>`).join('')
     + (allTags.length>30 ? `<button class="chip more" data-more="1">${state.tagMore?'收起 ▴':'更多 ▾'}</button>` : '');
   const statusChips = [['全部','all'],['未做','未做'],['尝试','尝试'],['通过','通过']].map(([L,v])=>
     `<button class="chip ${state.status===v?'on':''}" data-status="${v}">${L}</button>`).join('');
@@ -261,7 +244,7 @@ function renderSet(){
       <div class="meta" style="margin-top:6px">已通过 <b>${st.passQ}</b><span class="dot">|</span>总正确率 <b>${st.rate}%</b><span class="dot">|</span>错题 <b>${st.wrong}</b><span class="dot">|</span>难度：<span style="color:var(--d1)">■基础</span> <span style="color:var(--d2)">■提高</span> <span style="color:var(--d3)">■挑战</span></div>
     </div>
     <div class="filters">
-      <div class="frow"><span class="lab">搜索</span><div class="chips"><input id="qsearch" class="search" placeholder="题号 / 标题 / 题干关键词" value="${String(state.q||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"><span class="count">共 ${list.length} 题</span></div></div>
+      <div class="frow"><span class="lab">搜索</span><div class="chips"><input id="qsearch" class="search" placeholder="题号 / 标题 / 题干关键词" value="${esc(state.q)}"><span class="count">共 ${list.length} 题</span></div></div>
       <div class="frow"><span class="lab">难度</span><div class="chips">${diffChips}</div></div>
       <div class="frow"><span class="lab">考点</span><div class="chips">${tagChips}</div></div>
       <div class="frow"><span class="lab">状态</span><div class="chips">${statusChips}</div></div>
@@ -279,6 +262,7 @@ function renderSet(){
     const applySearch=()=>{
       state.q=si.value;
       const list=filtered();
+      state.navIds=list.map(q=>q.id);
       const p=app.querySelector('.panel');
       if(p) p.outerHTML=listPanel(list);
       const c=app.querySelector('.count'); if(c) c.textContent='共 '+list.length+' 题';
@@ -292,13 +276,14 @@ function renderSet(){
   app.querySelectorAll('[data-source]').forEach(b=> b.onclick=()=>{ state.source=b.dataset.source; renderSet(); });
   app.querySelectorAll('[data-book]').forEach(b=> b.onclick=()=>{ state.book=b.dataset.book; renderSet(); });
   app.querySelectorAll('.ttitle').forEach(t=> t.onclick=()=>{ openDetail(t.dataset.id); });
-  renderMath(app);
 }
 
 /* ---------- 详情页 ---------- */
 function openDetail(id){
+  if(state.view!=='detail') state.scrollY = window.scrollY;
   state.detail = Q.find(q=>q.id===id);
   state.view='detail'; renderDetail();
+  window.scrollTo(0,0);
 }
 function choiceIdx(v){
   if(typeof v==='number') return v;
@@ -538,7 +523,7 @@ function bump(qid, correct){
   const p = progress[qid] = progress[qid]||{};
   p.tried = (p.tried||0)+1;
   p.correct = (p.correct||0)+(correct?1:0);
-  if(correct) wrongIds = wrongIds.filter(id=>id!==qid);
+  if(correct) wrongIds = wrongIds.filter(id=>id!==qid); else if(!wrongIds.includes(qid)) wrongIds.push(qid);
   save();
 }
 function recordSelf(q, ok){
@@ -548,10 +533,10 @@ function recordSelf(q, ok){
   else if(!wrongIds.includes(q.id)) wrongIds.push(q.id);
   save();
 }
-function nextOf(q){ return Q[Q.findIndex(x=>x.id===q.id)+1]; }
+function nextOf(q){ const ids=state.navIds||Q.map(x=>x.id); const i=ids.indexOf(q.id); return (i>=0&&i+1<ids.length)? Q.find(x=>x.id===ids[i+1]) : null; }
 function bindNext(q){
   const b=document.getElementById('nextBtn'); if(!b) return;
-  b.onclick=()=>{ const nx=nextOf(q); if(nx) openDetail(nx.id); else { state.view='set'; renderSet(); } };
+  b.onclick=()=>{ const nx=nextOf(q); if(nx) openDetail(nx.id); else goView(state.from); };
 }
 function showSolution(q, opts){
   const self = !!(opts&&opts.self);
@@ -601,7 +586,7 @@ function renderDetail(){
           <div class="tags">
             <span class="diff ${d[1]}">${d[0]}</span>
             <span class="tagchip">${esc(q.subject)}</span>
-            ${(q.tags||[q.chapter]).map(t=>`<span class="tagchip">${t}</span>`).join('')}
+            ${(q.tags||[q.chapter]).map(t=>`<span class="tagchip">${esc(t)}</span>`).join('')}
             <span class="status ${stCls}" style="margin-left:6px"><i></i>${stTxt}</span>
             <button class="wbtn ${inWrong?'on':''}" id="wbtn">${inWrong?'★ 已在错题本':'＋ 加入错题本'}</button>
           </div>
@@ -616,7 +601,7 @@ function renderDetail(){
       <div id="actions" style="display:none;gap:10px;margin-top:2px;flex-wrap:wrap"></div>
     </div>`;
   renderMath(app);
-  document.getElementById('backLink').onclick = ()=>{ state.view='set'; renderSet(); };
+  document.getElementById('backLink').onclick = ()=>{ goView(state.from); };
   const wb = document.getElementById('wbtn');
   wb.onclick = ()=>{
     if(wrongIds.includes(q.id)) wrongIds = wrongIds.filter(id=>id!==q.id);
@@ -656,8 +641,9 @@ function renderDetail(){
       <div class="ansrow"><button class="btn" id="subBtn">提交并查看参考答案</button><span class="hintline">点框里的公式可再次修改；提交后对照解析自我评估</span></div>`;
     const box = document.getElementById('ansBox');
     buildFrom(box, p.draft||'');
-    const sync = ()=>{ const pp = progress[q.id] = progress[q.id]||{}; pp.draft = serializeBox(box); save(); };
-    box.addEventListener('input', ()=>{ sync(); });
+    let draftTimer=null;
+    const sync = ()=>{ clearTimeout(draftTimer); draftTimer=null; const pp = progress[q.id] = progress[q.id]||{}; pp.draft = serializeBox(box); save(); };
+    box.addEventListener('input', ()=>{ clearTimeout(draftTimer); draftTimer=setTimeout(sync, 400); });
     box.addEventListener('paste', e=>{
       e.preventDefault();
       const t=(e.clipboardData||window.clipboardData).getData('text/plain');
@@ -676,6 +662,7 @@ function renderDetail(){
     });
     buildToolbar(box);
     document.getElementById('subBtn').onclick = ()=>{
+      sync();
       closeInlineEditor();
       if(!serializeBox(box).trim() && !confirm('还没写解答，直接查看参考答案吗？')) return;
       markAttempt(q);
@@ -691,6 +678,10 @@ function renderDetail(){
 }
 function judge(q, student){
   const res = check(q, student);
+  if(q.type==='fill' && res.msg){
+    document.getElementById('resultCard').innerHTML = `<div class="fb" style="background:#fffbe6;border-color:#ffe58f;color:#ad6800">${esc(res.msg)}</div>`;
+    return;
+  }
   bump(q.id, res.correct);
   if(q.type==='choice'){
     const area=document.getElementById('answerArea');
@@ -730,13 +721,14 @@ function resultHtml(q,res){
 /* ---------- 错题本 ---------- */
 function renderWrong(){
   const list = Q.filter(q=> wrongIds.includes(q.id));
+  state.from='wrong'; state.navIds=list.map(q=>q.id);
   const rows = list.map(q=>{
     const d=DIFF[q.difficulty]||['',''];
     const p=progress[q.id];
     const [stTxt,stCls]=statusOf(q);
     return `<tr><td class="tid">${q.__no}</td>
-      <td class="ttitle" data-id="${q.id}">${esc(q.title||('题 '+q.__no)).slice(0,40)}</td>
-      <td>${(q.tags||[q.chapter]).map(t=>`<span class="tagchip">${t}</span>`).join('')}</td>
+      <td class="ttitle" data-id="${q.id}">${esc((q.title||('题 '+q.__no)).slice(0,40))}</td>
+      <td>${(q.tags||[q.chapter]).map(t=>`<span class="tagchip">${esc(t)}</span>`).join('')}</td>
       <td><span class="diff ${d[1]}">${d[0]}</span></td>
       <td><span class="status ${stCls}"><i></i>${stTxt}</span></td>
       <td class="rmwrap"><button class="rm" data-rm="${q.id}">移出</button></td></tr>`;
@@ -750,16 +742,13 @@ function renderWrong(){
     wrongIds = wrongIds.filter(id=>id!==b.dataset.rm);
     save(); renderWrong();
   });
-  renderMath(app);
 }
 
 /* ---------- 导航 ---------- */
 document.getElementById('menu').querySelectorAll('button').forEach(b=> b.onclick=()=>{
-  document.querySelectorAll('#menu button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
-  state.view = b.dataset.view;
-  if(state.view==='set') renderSet(); else renderWrong();
+  goView(b.dataset.view);
 });
-document.getElementById('resetBtn').onclick = ()=>{ if(confirm('确定重置所有进度和错题本？')){ progress={}; wrongIds=[]; save(); renderSet(); } };
+document.getElementById('resetBtn').onclick = ()=>{ if(confirm('确定重置所有进度和错题本？')){ progress={}; wrongIds=[]; save(); goView(state.view==='wrong'?'wrong':'set'); } };
 document.querySelectorAll('#menu button').forEach(b=>{ if(b.dataset.view==='set') b.classList.add('on'); });
 
 /* ---------- 启动 ---------- */
